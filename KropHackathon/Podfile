@@ -6,5 +6,6 @@ target 'KropHackathon' do
   use_frameworks!
 
   # Pods for KropHackathon
-
+  pod 'SwiftLint'
+  
 end
