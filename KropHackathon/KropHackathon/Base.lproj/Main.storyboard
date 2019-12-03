@@ -11,13 +11,50 @@
         <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="KropHackathon" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainViewController" id="BYZ-38-t0r" customClass="MainViewController" customModule="KropHackathon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" placeholder="Пошук мед закладу чи послуги" translatesAutoresizingMaskIntoConstraints="NO" id="UE2-gd-JfI">
+                                <rect key="frame" x="20" y="44" width="374" height="56"/>
+                                <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Види медичних послуг" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wH3-ZH-tAV">
+                                <rect key="frame" x="20" y="135" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QNX-PO-frV">
+                                <rect key="frame" x="20" y="171" width="374" height="691"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="9qq-tq-pPR"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="xwp-a7-Idj"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="QNX-PO-frV" secondAttribute="bottom" id="9AC-tB-x73"/>
+                            <constraint firstItem="wH3-ZH-tAV" firstAttribute="top" secondItem="UE2-gd-JfI" secondAttribute="bottom" constant="35" id="DHx-w9-1AT"/>
+                            <constraint firstItem="wH3-ZH-tAV" firstAttribute="trailing" secondItem="UE2-gd-JfI" secondAttribute="trailing" id="EHB-Gm-Lkr"/>
+                            <constraint firstItem="UE2-gd-JfI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="XcZ-1N-QDu"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UE2-gd-JfI" secondAttribute="trailing" constant="20" id="Xid-Vg-l2S"/>
+                            <constraint firstItem="wH3-ZH-tAV" firstAttribute="leading" secondItem="UE2-gd-JfI" secondAttribute="leading" id="jPO-bx-Koa"/>
+                            <constraint firstItem="QNX-PO-frV" firstAttribute="leading" secondItem="wH3-ZH-tAV" secondAttribute="leading" id="jyy-X2-Typ"/>
+                            <constraint firstItem="QNX-PO-frV" firstAttribute="trailing" secondItem="wH3-ZH-tAV" secondAttribute="trailing" id="oyK-2H-0VC"/>
+                            <constraint firstItem="UE2-gd-JfI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="rEE-0R-xef"/>
+                            <constraint firstItem="QNX-PO-frV" firstAttribute="top" secondItem="wH3-ZH-tAV" secondAttribute="bottom" constant="15" id="wba-pG-Iud"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="searchBar" destination="UE2-gd-JfI" id="KFT-Xg-Jqs"/>
+                        <outlet property="tableView" destination="QNX-PO-frV" id="CWI-Xo-XPL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

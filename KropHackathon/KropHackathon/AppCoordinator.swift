@@ -44,7 +44,6 @@ final class AppCoordinator {
         
         mainCoordinator = MainCoordinator(navigationController: navigationController, serviceHolder: serviceHolder)
         mainCoordinator?.start()
-
     }
     
 }
