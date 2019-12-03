@@ -21,6 +21,7 @@
 		C659F93A2396B57C009DE50B /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C659F9392396B57C009DE50B /* MainCoordinator.swift */; };
 		C659F93C2396B5A2009DE50B /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C659F93B2396B5A2009DE50B /* MainViewModel.swift */; };
 		C659F93D2396F6F7009DE50B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6C7AE22395450F00AA51BC /* MainViewController.swift */; };
+		C659F9412396F98D009DE50B /* SFProRoundedHeavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C659F9402396F8C9009DE50B /* SFProRoundedHeavy.ttf */; };
 		E1E9F8345ABA826B38B7F327 /* Pods_KropHackathon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6EA3ABF16065DF238874777 /* Pods_KropHackathon.framework */; };
 		EF6C7ADF2395450F00AA51BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6C7ADE2395450F00AA51BC /* AppDelegate.swift */; };
 		EF6C7AE62395450F00AA51BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF6C7AE42395450F00AA51BC /* Main.storyboard */; };
@@ -44,6 +45,7 @@
 		C659F9282396B533009DE50B /* NSObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSObject.swift; sourceTree = "<group>"; };
 		C659F9392396B57C009DE50B /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		C659F93B2396B5A2009DE50B /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		C659F9402396F8C9009DE50B /* SFProRoundedHeavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SFProRoundedHeavy.ttf; sourceTree = "<group>"; };
 		E6EA3ABF16065DF238874777 /* Pods_KropHackathon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KropHackathon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF6C7ADB2395450F00AA51BC /* KropHackathon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KropHackathon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF6C7ADE2395450F00AA51BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -116,6 +118,22 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
+		C659F93E2396F8A0009DE50B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C659F93F2396F8B0009DE50B /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		C659F93F2396F8B0009DE50B /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				C659F9402396F8C9009DE50B /* SFProRoundedHeavy.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		EF6C7AD22395450F00AA51BC = {
 			isa = PBXGroup;
 			children = (
@@ -140,8 +158,9 @@
 				EF6C7ADE2395450F00AA51BC /* AppDelegate.swift */,
 				C659F9122396B44F009DE50B /* AppCoordinator.swift */,
 				C659F9192396B533009DE50B /* Extensions */,
-				C659F9142396B4C0009DE50B /* Controllers */,
 				C659F9112396B3F4009DE50B /* Services */,
+				C659F9142396B4C0009DE50B /* Controllers */,
+				C659F93E2396F8A0009DE50B /* Resources */,
 				EF6C7AE42395450F00AA51BC /* Main.storyboard */,
 				EF6C7AE72395451000AA51BC /* Assets.xcassets */,
 				EF6C7AE92395451000AA51BC /* LaunchScreen.storyboard */,
@@ -220,6 +239,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF6C7AEB2395451000AA51BC /* LaunchScreen.storyboard in Resources */,
+				C659F9412396F98D009DE50B /* SFProRoundedHeavy.ttf in Resources */,
 				EF6C7AE82395451000AA51BC /* Assets.xcassets in Resources */,
 				EF6C7AE62395450F00AA51BC /* Main.storyboard in Resources */,
 			);
