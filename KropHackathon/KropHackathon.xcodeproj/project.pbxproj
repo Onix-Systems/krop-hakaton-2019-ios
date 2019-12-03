@@ -13,9 +13,24 @@
 		9541B0A52396B52C0084A0C0 /* HospitalServiceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9541B0A32396B52C0084A0C0 /* HospitalServiceTableViewCell.xib */; };
 		9541B0A7239707920084A0C0 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9541B0A6239707920084A0C0 /* Style.swift */; };
 		9541B0A9239708130084A0C0 /* CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9541B0A8239708130084A0C0 /* CALayer.swift */; };
+		C659F9132396B44F009DE50B /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C659F9122396B44F009DE50B /* AppCoordinator.swift */; };
+		C659F9162396B4EC009DE50B /* ServiceHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C659F9152396B4EC009DE50B /* ServiceHolder.swift */; };
+		C659F92A2396B533009DE50B /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = C659F91A2396B533009DE50B /* Date.swift */; };
+		C659F92D2396B533009DE50B /* UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C659F91E2396B533009DE50B /* UICollectionView.swift */; };
+		C659F92E2396B533009DE50B /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C659F91F2396B533009DE50B /* UITableView.swift */; };
+		C659F92F2396B533009DE50B /* UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C659F9202396B533009DE50B /* UITableViewCell.swift */; };
+		C659F9312396B533009DE50B /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C659F9222396B533009DE50B /* UIViewController.swift */; };
+		C659F9322396B533009DE50B /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C659F9232396B533009DE50B /* UIImageView.swift */; };
+		C659F9342396B533009DE50B /* UICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C659F9252396B533009DE50B /* UICollectionViewCell.swift */; };
+		C659F9352396B533009DE50B /* UIStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C659F9262396B533009DE50B /* UIStoryboard.swift */; };
+		C659F9372396B533009DE50B /* NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = C659F9282396B533009DE50B /* NSObject.swift */; };
+		C659F93A2396B57C009DE50B /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C659F9392396B57C009DE50B /* MainCoordinator.swift */; };
+		C659F93C2396B5A2009DE50B /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C659F93B2396B5A2009DE50B /* MainViewModel.swift */; };
+		C659F93D2396F6F7009DE50B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6C7AE22395450F00AA51BC /* MainViewController.swift */; };
+		C659F9412396F98D009DE50B /* SFProRoundedHeavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C659F9402396F8C9009DE50B /* SFProRoundedHeavy.ttf */; };
+		C659F9432396FAFE009DE50B /* SFProRoundedRegular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C659F9422396FAF8009DE50B /* SFProRoundedRegular.ttf */; };
 		E1E9F8345ABA826B38B7F327 /* Pods_KropHackathon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6EA3ABF16065DF238874777 /* Pods_KropHackathon.framework */; };
 		EF6C7ADF2395450F00AA51BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6C7ADE2395450F00AA51BC /* AppDelegate.swift */; };
-		EF6C7AE32395450F00AA51BC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6C7AE22395450F00AA51BC /* ViewController.swift */; };
 		EF6C7AE62395450F00AA51BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF6C7AE42395450F00AA51BC /* Main.storyboard */; };
 		EF6C7AE82395451000AA51BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF6C7AE72395451000AA51BC /* Assets.xcassets */; };
 		EF6C7AEB2395451000AA51BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF6C7AE92395451000AA51BC /* LaunchScreen.storyboard */; };
@@ -30,10 +45,27 @@
 		9541B0A32396B52C0084A0C0 /* HospitalServiceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HospitalServiceTableViewCell.xib; sourceTree = "<group>"; };
 		9541B0A6239707920084A0C0 /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
 		9541B0A8239708130084A0C0 /* CALayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayer.swift; sourceTree = "<group>"; };
+		C659F9122396B44F009DE50B /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		C659F9152396B4EC009DE50B /* ServiceHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceHolder.swift; sourceTree = "<group>"; };
+		C659F91A2396B533009DE50B /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		C659F91E2396B533009DE50B /* UICollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionView.swift; sourceTree = "<group>"; };
+		C659F91F2396B533009DE50B /* UITableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
+		C659F9202396B533009DE50B /* UITableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewCell.swift; sourceTree = "<group>"; };
+		C659F9222396B533009DE50B /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		C659F9232396B533009DE50B /* UIImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
+		C659F9252396B533009DE50B /* UICollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionViewCell.swift; sourceTree = "<group>"; };
+		C659F9262396B533009DE50B /* UIStoryboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStoryboard.swift; sourceTree = "<group>"; };
+		C659F9282396B533009DE50B /* NSObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSObject.swift; sourceTree = "<group>"; };
+		C659F9392396B57C009DE50B /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		C659F93B2396B5A2009DE50B /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		C659F9402396F8C9009DE50B /* SFProRoundedHeavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SFProRoundedHeavy.ttf; sourceTree = "<group>"; };
+		C659F9422396FAF8009DE50B /* SFProRoundedRegular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SFProRoundedRegular.ttf; sourceTree = "<group>"; };
+		C659F9442396FC2D009DE50B /* SFProRoundedBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SFProRoundedBold.ttf; sourceTree = "<group>"; };
+		C659F9462396FCFC009DE50B /* SFProRoundedSemibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SFProRoundedSemibold.ttf; sourceTree = "<group>"; };
 		E6EA3ABF16065DF238874777 /* Pods_KropHackathon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KropHackathon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF6C7ADB2395450F00AA51BC /* KropHackathon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KropHackathon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF6C7ADE2395450F00AA51BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EF6C7AE22395450F00AA51BC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EF6C7AE22395450F00AA51BC /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		EF6C7AE52395450F00AA51BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EF6C7AE72395451000AA51BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EF6C7AEA2395451000AA51BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -93,6 +125,67 @@
 				9541B0A32396B52C0084A0C0 /* HospitalServiceTableViewCell.xib */,
 			);
 			path = HospitalService;
+            sourceTree = "<group>";
+        };
+		C659F9112396B3F4009DE50B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C659F9152396B4EC009DE50B /* ServiceHolder.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		C659F9142396B4C0009DE50B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				EF6C7AE22395450F00AA51BC /* MainViewController.swift */,
+				C659F9392396B57C009DE50B /* MainCoordinator.swift */,
+				C659F93B2396B5A2009DE50B /* MainViewModel.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		C659F9192396B533009DE50B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C659F91B2396B533009DE50B /* UI */,
+				C659F91A2396B533009DE50B /* Date.swift */,
+				C659F9282396B533009DE50B /* NSObject.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C659F91B2396B533009DE50B /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				C659F91E2396B533009DE50B /* UICollectionView.swift */,
+				C659F91F2396B533009DE50B /* UITableView.swift */,
+				C659F9202396B533009DE50B /* UITableViewCell.swift */,
+				C659F9222396B533009DE50B /* UIViewController.swift */,
+				C659F9232396B533009DE50B /* UIImageView.swift */,
+				C659F9252396B533009DE50B /* UICollectionViewCell.swift */,
+				C659F9262396B533009DE50B /* UIStoryboard.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		C659F93E2396F8A0009DE50B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C659F93F2396F8B0009DE50B /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		C659F93F2396F8B0009DE50B /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				C659F9422396FAF8009DE50B /* SFProRoundedRegular.ttf */,
+				C659F9442396FC2D009DE50B /* SFProRoundedBold.ttf */,
+				C659F9462396FCFC009DE50B /* SFProRoundedSemibold.ttf */,
+				C659F9402396F8C9009DE50B /* SFProRoundedHeavy.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		EF6C7AD22395450F00AA51BC = {
@@ -118,7 +211,11 @@
 			children = (
 				9541B09A2396AE060084A0C0 /* Views */,
 				EF6C7ADE2395450F00AA51BC /* AppDelegate.swift */,
-				EF6C7AE22395450F00AA51BC /* ViewController.swift */,
+				C659F9122396B44F009DE50B /* AppCoordinator.swift */,
+				C659F9192396B533009DE50B /* Extensions */,
+				C659F9112396B3F4009DE50B /* Services */,
+				C659F9142396B4C0009DE50B /* Controllers */,
+				C659F93E2396F8A0009DE50B /* Resources */,
 				EF6C7AE42395450F00AA51BC /* Main.storyboard */,
 				EF6C7AE72395451000AA51BC /* Assets.xcassets */,
 				EF6C7AE92395451000AA51BC /* LaunchScreen.storyboard */,
@@ -199,7 +296,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9541B0A52396B52C0084A0C0 /* HospitalServiceTableViewCell.xib in Resources */,
+				C659F9432396FAFE009DE50B /* SFProRoundedRegular.ttf in Resources */,
 				EF6C7AEB2395451000AA51BC /* LaunchScreen.storyboard in Resources */,
+				C659F9412396F98D009DE50B /* SFProRoundedHeavy.ttf in Resources */,
 				EF6C7AE82395451000AA51BC /* Assets.xcassets in Resources */,
 				EF6C7AE62395450F00AA51BC /* Main.storyboard in Resources */,
 				9541B09F2396AF900084A0C0 /* ServiceTypeTableViewCell.xib in Resources */,
@@ -259,6 +358,20 @@
 				9541B0A42396B52C0084A0C0 /* HospitalServiceTableViewCell.swift in Sources */,
 				EF6C7AE32395450F00AA51BC /* ViewController.swift in Sources */,
 				9541B0A9239708130084A0C0 /* CALayer.swift in Sources */,
+				C659F9132396B44F009DE50B /* AppCoordinator.swift in Sources */,
+				C659F9342396B533009DE50B /* UICollectionViewCell.swift in Sources */,
+				C659F9372396B533009DE50B /* NSObject.swift in Sources */,
+				C659F9312396B533009DE50B /* UIViewController.swift in Sources */,
+				C659F9352396B533009DE50B /* UIStoryboard.swift in Sources */,
+				C659F9322396B533009DE50B /* UIImageView.swift in Sources */,
+				C659F92A2396B533009DE50B /* Date.swift in Sources */,
+				C659F9162396B4EC009DE50B /* ServiceHolder.swift in Sources */,
+				C659F92F2396B533009DE50B /* UITableViewCell.swift in Sources */,
+				C659F93D2396F6F7009DE50B /* MainViewController.swift in Sources */,
+				C659F92E2396B533009DE50B /* UITableView.swift in Sources */,
+				C659F93A2396B57C009DE50B /* MainCoordinator.swift in Sources */,
+				C659F93C2396B5A2009DE50B /* MainViewModel.swift in Sources */,
+				C659F92D2396B533009DE50B /* UICollectionView.swift in Sources */,
 				EF6C7ADF2395450F00AA51BC /* AppDelegate.swift in Sources */,
 				9541B0A7239707920084A0C0 /* Style.swift in Sources */,
 			);
