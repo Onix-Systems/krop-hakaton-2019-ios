@@ -42,7 +42,7 @@ final class ListViewModel: ListViewModelType {
     
     var serviceDetailsModels = [ServiceDetailsModel(serviceTypeName: "УЗД", serviceDetailsName: "черевної порожнини"), ServiceDetailsModel(serviceTypeName: "УЗД", serviceDetailsName: "нирок"), ServiceDetailsModel(serviceTypeName: "УЗД", serviceDetailsName: "щитовидної залози"), ServiceDetailsModel(serviceTypeName: "", serviceDetailsName: "Ехокардіографія"), ServiceDetailsModel(serviceTypeName: "", serviceDetailsName: "Нейросонографiя"), ServiceDetailsModel(serviceTypeName: "УЗД", serviceDetailsName: "сечо-статевої системи")]
     
-    var hospitalModels: [HospitalModel] = [HospitalModel(title: "Комунальне некомерційне підприємство \"Клінічна дитяча міська поліклініка” Міської ради міста Кропивницького\"", address: "Вул. Шевченка, 36", schedule: "Пн-Пт 08:00 - 16:00"), HospitalModel(title: "Комунальний заклад \"Кіровоградська міська лікарня швидкої медичної допомоги\"", address: "Вул. Короленко, 56", schedule: "Пн-Нд 00:00 - 24:00")]
+    var hospitalModels: [HospitalModel] = [HospitalModel(title: "Комунальне некомерційне підприємство \"Клінічна дитяча міська поліклініка” Міської ради міста Кропивницького\"", address: "Вул. Шевченка, 36", schedule: "Пн-Пт 08:00 - 16:00"), HospitalModel(title: "Комунальний заклад \"Кіровоградська міська лікарня швидкої медичної допомоги\"", address: "Вул. Короленко, 56", schedule: "Пн-Нд 00:00 - 24:00"), HospitalModel(title: "Назва в одну строку", address: "Вул. Адресова, 1", schedule: "Пн-Пт 08:00 - 18:00")]
     
     init(_ coordinator: ListCoordinatorType, serviceHolder: ServiceHolder, screenType: ListScreenType = .serviceDetails, screenTitle: String) {
         self.coordinator = coordinator

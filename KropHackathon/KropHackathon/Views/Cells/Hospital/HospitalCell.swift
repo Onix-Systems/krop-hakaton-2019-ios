@@ -18,7 +18,6 @@ class HospitalCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
 
         wrapperView.layer.cornerRadius = Style.Radius.defaultRadius
         wrapperView.layer.borderWidth = 0.5
@@ -27,9 +26,9 @@ class HospitalCell: UITableViewCell {
     }
     
     func configure(model: HospitalModel) {
-        hospitalNameLabel.text = model.title //"Комунальне некомерційне підприємство “Клінічна дитяча міська поліклініка” Міської ради міста Кропивницького"
-        locationLabel.text = model.address //"Вул. Шевченка, 36"
-        workTimeLabel.text = model.schedule //"Пн-Пт 08:00 - 16:00"
+        hospitalNameLabel.text = model.title
+        locationLabel.text = model.address
+        workTimeLabel.text = model.schedule
     }
     
 }
