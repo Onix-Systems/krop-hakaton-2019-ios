@@ -18,7 +18,7 @@ protocol HospitalDetailsCoordinatorType {
 
 final class HospitalDetailsCoordinator: HospitalDetailsCoordinatorType {
     
-    private weak var controller: HospitalDetailesController? = Storyboard.list.instantiateViewController()
+    private weak var controller: HospitalDetailesController? = Storyboard.hospital.instantiateViewController()
     private let navigationController: UINavigationController?
     private var serviceHolder: ServiceHolder!
     
