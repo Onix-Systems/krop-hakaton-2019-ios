@@ -21,7 +21,7 @@ final class ListViewController: UIViewController {
     
     private func configure() {
         configureNavigationBar()
-//        tableView.register([ServiceTableViewCell.className])
+        tableView.register([ServiceTableViewCell.className])
         tableView.setDataSource(self, delegate: self)
         
         tableView.reloadData()
@@ -40,6 +40,12 @@ final class ListViewController: UIViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: btn)
 
 //        navigationController?.title = "Ультразвуковi дослiдження"
+        
+        for family in UIFont.familyNames.sorted() {
+            let names = UIFont.fontNames(forFamilyName: family)
+            print("Family: \(family) Font names: \(names)")
+        }
+
 //        let titleColor = UIColor(red: 0.01, green: 0.10, blue: 0.19, alpha: 1.0)
 //        let titleFont = UIFont.sfRoundedBold(25)
 //        let textAttributes = [NSAttributedString.Key.foregroundColor: titleColor, NSAttributedString.Key.font: titleFont]
@@ -62,16 +68,16 @@ extension ListViewController: UITableViewDelegate {
 
 extension ListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3 //viewModel.serviceModels.count
+        return viewModel.serviceModels.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//            guard let cell: ServiceTableViewCell = tableView.dequeCell(for: indexPath) else {
-//                return UITableViewCell()
-//
-//        }
-//        cell.configure(name: "viewModel.serviceModels[\(indexPath.row)].name")
-        return UITableViewCell() //cell
+        guard let cell: ServiceTableViewCell = tableView.dequeCell(for: indexPath) else {
+            print("can't find cell")
+            return UITableViewCell()
+        }
+        cell.configure(name: viewModel.serviceModels[indexPath.row].name)
+        return cell
     }
     
     

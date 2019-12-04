@@ -4,11 +4,11 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string>SFProRoundedHeavy.ttf</string>
-		<string>SFProRoundedRegular.ttf</string>
-		<string>SFProRoundedSemibold.ttf</string>
-		<string>SFProRoundedBold.ttf</string>
-		<string>SFProRoundedUltralight.ttf</string>
+		<string>SF-Pro-Rounded-Heavy.otf</string>
+		<string>SF-Pro-Rounded-Regular.otf</string>
+		<string>SF-Pro-Rounded-Semibold.otf</string>
+		<string>SF-Pro-Rounded-Bold.otf</string>
+		<string>SF-Pro-Rounded-Ultralight.otf</string>
 	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>

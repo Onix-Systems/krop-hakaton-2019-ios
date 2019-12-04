@@ -29,19 +29,19 @@
 		C659F93A2396B57C009DE50B /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C659F9392396B57C009DE50B /* MainCoordinator.swift */; };
 		C659F93C2396B5A2009DE50B /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C659F93B2396B5A2009DE50B /* MainViewModel.swift */; };
 		C659F93D2396F6F7009DE50B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6C7AE22395450F00AA51BC /* MainViewController.swift */; };
-		C659F9412396F98D009DE50B /* SFProRoundedHeavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C659F9402396F8C9009DE50B /* SFProRoundedHeavy.ttf */; };
-		C659F9432396FAFE009DE50B /* SFProRoundedRegular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C659F9422396FAF8009DE50B /* SFProRoundedRegular.ttf */; };
 		E1E9F8345ABA826B38B7F327 /* Pods_KropHackathon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6EA3ABF16065DF238874777 /* Pods_KropHackathon.framework */; };
 		EF4D8C752397A8EC003CA1BF /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4D8C742397A8EC003CA1BF /* ListViewController.swift */; };
 		EF4D8C772397AB3B003CA1BF /* ListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4D8C762397AB3B003CA1BF /* ListCoordinator.swift */; };
 		EF4D8C792397AB94003CA1BF /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4D8C782397AB94003CA1BF /* ListViewModel.swift */; };
 		EF4D8C7B2397AC15003CA1BF /* List.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF4D8C7A2397AC15003CA1BF /* List.storyboard */; };
 		EF4D8C7F2397B930003CA1BF /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4D8C7E2397B930003CA1BF /* UIFont.swift */; };
-		EF4D8C812397B9E5003CA1BF /* SFProRoundedUltralight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EF4D8C802397B9E1003CA1BF /* SFProRoundedUltralight.ttf */; };
-		EF4D8C822397BAC8003CA1BF /* SFProRoundedBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C659F9442396FC2D009DE50B /* SFProRoundedBold.ttf */; };
-		EF4D8C832397BACB003CA1BF /* SFProRoundedSemibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C659F9462396FCFC009DE50B /* SFProRoundedSemibold.ttf */; };
 		EF4D8C862397C632003CA1BF /* ServiceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4D8C842397C632003CA1BF /* ServiceTableViewCell.swift */; };
 		EF4D8C872397C632003CA1BF /* ServiceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF4D8C852397C632003CA1BF /* ServiceTableViewCell.xib */; };
+		EF4D8C8F2397DD77003CA1BF /* SF-Pro-Rounded-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = EF4D8C8A2397DD77003CA1BF /* SF-Pro-Rounded-Bold.otf */; };
+		EF4D8C902397DD77003CA1BF /* SF-Pro-Rounded-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = EF4D8C8B2397DD77003CA1BF /* SF-Pro-Rounded-Heavy.otf */; };
+		EF4D8C912397DD77003CA1BF /* SF-Pro-Rounded-Ultralight.otf in Resources */ = {isa = PBXBuildFile; fileRef = EF4D8C8C2397DD77003CA1BF /* SF-Pro-Rounded-Ultralight.otf */; };
+		EF4D8C922397DD77003CA1BF /* SF-Pro-Rounded-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = EF4D8C8D2397DD77003CA1BF /* SF-Pro-Rounded-Semibold.otf */; };
+		EF4D8C932397DD77003CA1BF /* SF-Pro-Rounded-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = EF4D8C8E2397DD77003CA1BF /* SF-Pro-Rounded-Regular.otf */; };
 		EF6C7ADF2395450F00AA51BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6C7ADE2395450F00AA51BC /* AppDelegate.swift */; };
 		EF6C7AE62395450F00AA51BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF6C7AE42395450F00AA51BC /* Main.storyboard */; };
 		EF6C7AE82395451000AA51BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF6C7AE72395451000AA51BC /* Assets.xcassets */; };
@@ -72,19 +72,19 @@
 		C659F9282396B533009DE50B /* NSObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSObject.swift; sourceTree = "<group>"; };
 		C659F9392396B57C009DE50B /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		C659F93B2396B5A2009DE50B /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
-		C659F9402396F8C9009DE50B /* SFProRoundedHeavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SFProRoundedHeavy.ttf; sourceTree = "<group>"; };
-		C659F9422396FAF8009DE50B /* SFProRoundedRegular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SFProRoundedRegular.ttf; sourceTree = "<group>"; };
-		C659F9442396FC2D009DE50B /* SFProRoundedBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SFProRoundedBold.ttf; sourceTree = "<group>"; };
-		C659F9462396FCFC009DE50B /* SFProRoundedSemibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SFProRoundedSemibold.ttf; sourceTree = "<group>"; };
 		E6EA3ABF16065DF238874777 /* Pods_KropHackathon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KropHackathon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF4D8C742397A8EC003CA1BF /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		EF4D8C762397AB3B003CA1BF /* ListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCoordinator.swift; sourceTree = "<group>"; };
 		EF4D8C782397AB94003CA1BF /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		EF4D8C7A2397AC15003CA1BF /* List.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = List.storyboard; sourceTree = "<group>"; };
 		EF4D8C7E2397B930003CA1BF /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
-		EF4D8C802397B9E1003CA1BF /* SFProRoundedUltralight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SFProRoundedUltralight.ttf; sourceTree = "<group>"; };
 		EF4D8C842397C632003CA1BF /* ServiceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceTableViewCell.swift; sourceTree = "<group>"; };
 		EF4D8C852397C632003CA1BF /* ServiceTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ServiceTableViewCell.xib; sourceTree = "<group>"; };
+		EF4D8C8A2397DD77003CA1BF /* SF-Pro-Rounded-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Bold.otf"; sourceTree = "<group>"; };
+		EF4D8C8B2397DD77003CA1BF /* SF-Pro-Rounded-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Heavy.otf"; sourceTree = "<group>"; };
+		EF4D8C8C2397DD77003CA1BF /* SF-Pro-Rounded-Ultralight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Ultralight.otf"; sourceTree = "<group>"; };
+		EF4D8C8D2397DD77003CA1BF /* SF-Pro-Rounded-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Semibold.otf"; sourceTree = "<group>"; };
+		EF4D8C8E2397DD77003CA1BF /* SF-Pro-Rounded-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Regular.otf"; sourceTree = "<group>"; };
 		EF6C7ADB2395450F00AA51BC /* KropHackathon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KropHackathon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF6C7ADE2395450F00AA51BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EF6C7AE22395450F00AA51BC /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -216,11 +216,11 @@
 		C659F93F2396F8B0009DE50B /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				EF4D8C802397B9E1003CA1BF /* SFProRoundedUltralight.ttf */,
-				C659F9422396FAF8009DE50B /* SFProRoundedRegular.ttf */,
-				C659F9442396FC2D009DE50B /* SFProRoundedBold.ttf */,
-				C659F9462396FCFC009DE50B /* SFProRoundedSemibold.ttf */,
-				C659F9402396F8C9009DE50B /* SFProRoundedHeavy.ttf */,
+				EF4D8C8A2397DD77003CA1BF /* SF-Pro-Rounded-Bold.otf */,
+				EF4D8C8B2397DD77003CA1BF /* SF-Pro-Rounded-Heavy.otf */,
+				EF4D8C8E2397DD77003CA1BF /* SF-Pro-Rounded-Regular.otf */,
+				EF4D8C8D2397DD77003CA1BF /* SF-Pro-Rounded-Semibold.otf */,
+				EF4D8C8C2397DD77003CA1BF /* SF-Pro-Rounded-Ultralight.otf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -351,17 +351,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EF4D8C822397BAC8003CA1BF /* SFProRoundedBold.ttf in Resources */,
-				EF4D8C832397BACB003CA1BF /* SFProRoundedSemibold.ttf in Resources */,
 				95E7738D2397124F00F05169 /* ServiceCell.xib in Resources */,
-				C659F9432396FAFE009DE50B /* SFProRoundedRegular.ttf in Resources */,
+				EF4D8C8F2397DD77003CA1BF /* SF-Pro-Rounded-Bold.otf in Resources */,
+				EF4D8C922397DD77003CA1BF /* SF-Pro-Rounded-Semibold.otf in Resources */,
 				EF6C7AEB2395451000AA51BC /* LaunchScreen.storyboard in Resources */,
-				C659F9412396F98D009DE50B /* SFProRoundedHeavy.ttf in Resources */,
-				EF4D8C812397B9E5003CA1BF /* SFProRoundedUltralight.ttf in Resources */,
 				954CAAE62397B586007A77C0 /* HospitalCell.xib in Resources */,
+				EF4D8C932397DD77003CA1BF /* SF-Pro-Rounded-Regular.otf in Resources */,
 				EF6C7AE82395451000AA51BC /* Assets.xcassets in Resources */,
+				EF4D8C902397DD77003CA1BF /* SF-Pro-Rounded-Heavy.otf in Resources */,
 				EF4D8C872397C632003CA1BF /* ServiceTableViewCell.xib in Resources */,
 				EF4D8C7B2397AC15003CA1BF /* List.storyboard in Resources */,
+				EF4D8C912397DD77003CA1BF /* SF-Pro-Rounded-Ultralight.otf in Resources */,
 				EF6C7AE62395450F00AA51BC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

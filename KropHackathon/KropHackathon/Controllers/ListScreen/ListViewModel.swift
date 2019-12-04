@@ -28,7 +28,6 @@ final class ListViewModel: ListViewModelType {
     var didLoadFailed: ((String) -> Void)?
     
     var serviceModels = [ServiceTypeModel.init(name: "Ультразвукові", image: ""), ServiceTypeModel.init(name: "Ренгенологічні", image: ""), ServiceTypeModel.init(name: "Функціональні", image: "")]
-
     
     init(_ coordinator: ListCoordinatorType, serviceHolder: ServiceHolder) {
         self.coordinator = coordinator
