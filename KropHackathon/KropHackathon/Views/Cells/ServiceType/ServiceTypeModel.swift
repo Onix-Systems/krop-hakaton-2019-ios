@@ -12,12 +12,10 @@ class ServiceTypeModel {
     
     var name: String
     var image: String
-    var arrayOfServices: [String]
     
-    init(name: String, image: String, arrayOfServices: [String]) {
+    init(name: String, image: String) {
         self.name = name
         self.image = image
-        self.arrayOfServices = arrayOfServices
     }
     
 }

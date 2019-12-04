@@ -9,12 +9,11 @@
 import Foundation
 import UIKit
 
-class ServiceCell: UITableViewCell, UICollectionViewDataSource {
+class ServiceCell: UITableViewCell {
     
     @IBOutlet weak var wrapperView: UIView!
     @IBOutlet weak var serviceTypeLabel: UILabel!
     @IBOutlet weak var serviceImageView: UIImageView!
-    @IBOutlet weak var servicesCollectionView: UICollectionView!
     
     var model: ServiceTypeModel!
     
@@ -34,15 +33,5 @@ class ServiceCell: UITableViewCell, UICollectionViewDataSource {
         
        self.serviceTypeLabel.text = model.name
         self.serviceImageView.image = UIImage(named: "redCross")
-        //self.servicesCollectionView.dataSource = self
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        return UICollectionViewCell()
     }
 }

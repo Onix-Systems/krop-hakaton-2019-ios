@@ -23,7 +23,7 @@ final class MainViewModel: MainViewModelType {
     var didLoadData: (() -> Void)?
     var didLoadFailed: ((String) -> Void)?
     
-    var serviceModels = [ServiceTypeModel.init(name: "Ультразвукові", image: "", arrayOfServices: []), ServiceTypeModel.init(name: "Ренгенологічні", image: "", arrayOfServices: []), ServiceTypeModel.init(name: "Функціональні", image: "", arrayOfServices: [])]
+    var serviceModels = [ServiceTypeModel.init(name: "Ультразвукові", image: ""), ServiceTypeModel.init(name: "Ренгенологічні", image: ""), ServiceTypeModel.init(name: "Функціональні", image: "")]
     
     init(_ coordinator: MainCoordinatorType, serviceHolder: ServiceHolder) {
         self.coordinator = coordinator
