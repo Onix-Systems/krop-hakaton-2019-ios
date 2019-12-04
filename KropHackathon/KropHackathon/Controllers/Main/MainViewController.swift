@@ -5,7 +5,7 @@
 //  Created by Tetiana Nieizviestna on 02.12.2019.
 //  Copyright © 2019 onix. All rights reserved.
 //
-import Foundation
+
 import UIKit
 
 final class MainViewController: UIViewController {
@@ -21,24 +21,26 @@ final class MainViewController: UIViewController {
     }
 
     private func configure() {
-//        searchBar.layer.borderColor = UIColor.gray.cgColor
-//        searchBar.layer.borderWidth = 1
+        tableView.reloadData()
     }
     
 }
 
 extension MainViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel.openList()
+    }
 }
 
 extension MainViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return 5
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        return UITableViewCell()
+        let cell = UITableViewCell()
+        cell.textLabel?.text = "Main screen item \(indexPath.row)"
+        return cell
     }
     
     

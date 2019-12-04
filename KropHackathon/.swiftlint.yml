@@ -14,7 +14,7 @@ opt_in_rules:
   - vertical_parameter_alignment
   - empty_count
   - array_init
-  - force_unwrapping
+#  - force_unwrapping
   - empty_parameters
   - closure_spacing
   - implicitly_unwrapped_optional

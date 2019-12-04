@@ -10,6 +10,7 @@ import UIKit
 
 protocol MainCoordinatorType {
     func start()
+    func openList()
 }
 
 final class MainCoordinator: MainCoordinatorType {
@@ -31,6 +32,11 @@ final class MainCoordinator: MainCoordinatorType {
         }
     }
         
+    func openList() {
+        let coordinator = ListCoordinator(navigationController: navigationController, serviceHolder: serviceHolder)
+        coordinator.start()
+    }
+    
     deinit {
         print("MainCoordinator - deinit")
     }
