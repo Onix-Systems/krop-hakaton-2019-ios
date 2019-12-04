@@ -15,8 +15,9 @@ final class HospitalDetailesController: UIViewController {
 
     @IBOutlet weak var lookOnMapButton: UIButton!
     @IBOutlet private weak var tableView: UITableView!
-
-    @IBOutlet weak var map: GMSMapView!
+    @IBOutlet weak var map: MapView!
+    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,11 +25,15 @@ final class HospitalDetailesController: UIViewController {
     }
     
     @IBAction func pushToMap(_ sender: Any) {
+        UrlOpenHelper.openDirections(to: viewModel.point)
+        
     }
-    
-    
-    
+
     private func configure() {
+        
+        map.customSetup(with: viewModel.point)
+        map.addMarker(coordinate: viewModel.point)
+        map.moveToLocation(location: CLLocation.init(latitude: 48.510942, longitude: 32.270891))
         configureNavigationBar()
         lookOnMapButton.layer.cornerRadius = 16.0
         lookOnMapButton.layer.borderWidth = 0.5

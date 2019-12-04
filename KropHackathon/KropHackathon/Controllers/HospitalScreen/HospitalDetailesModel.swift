@@ -7,17 +7,21 @@
 //
 
 import Foundation
+import CoreLocation
 
 protocol HospitalDetailesModelType {
     var didLoadData: (() -> Void)? { get set }
     var didLoadFailed: ((String) -> Void)? { get set }
     
+    var point: CLLocationCoordinate2D { get }
     var serviceDetailsModels: [ServiceDetailsModel] { get }
 
     func goBack()
 }
 
 final class HospitalDetailesModel: HospitalDetailesModelType {
+    var serviceDetailsModels: [ServiceDetailsModel] = []
+    
     
     private let coordinator: HospitalDetailsCoordinatorType
 //    private var mapService: MapServiceType
@@ -25,8 +29,7 @@ final class HospitalDetailesModel: HospitalDetailesModelType {
 
     var didLoadData: (() -> Void)?
     var didLoadFailed: ((String) -> Void)?
-    
-    var serviceDetailsModels = [ServiceDetailsModel(serviceTypeName: "УЗД", serviceDetailsName: "черевної порожнини"), ServiceDetailsModel(serviceTypeName: "УЗД", serviceDetailsName: "нирок"), ServiceDetailsModel(serviceTypeName: "УЗД", serviceDetailsName: "щитовидної залози"), ServiceDetailsModel(serviceTypeName: "", serviceDetailsName: "Ехокардіографія"), ServiceDetailsModel(serviceTypeName: "", serviceDetailsName: "Нейросонографiя"), ServiceDetailsModel(serviceTypeName: "УЗД", serviceDetailsName: "сечо-статевої системи")]
+    var point = CLLocationCoordinate2D.init(latitude: 48.510942, longitude: 32.270891)
     
     init(_ coordinator: HospitalDetailsCoordinatorType, serviceHolder: ServiceHolder) {
         self.coordinator = coordinator

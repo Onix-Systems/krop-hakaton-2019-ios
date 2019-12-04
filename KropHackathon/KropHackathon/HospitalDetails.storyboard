@@ -20,7 +20,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tll-co-7eH" customClass="GMSMapView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tll-co-7eH" customClass="MapView" customModule="KropHackathon">
                                 <rect key="frame" x="-1" y="44" width="415" height="269"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
@@ -59,7 +59,7 @@
                     </view>
                     <connections>
                         <outlet property="lookOnMapButton" destination="J71-Ym-ZyB" id="AEC-gG-2Ow"/>
-                        <outlet property="map" destination="tll-co-7eH" id="YR4-js-TPd"/>
+                        <outlet property="map" destination="tll-co-7eH" id="CMO-3U-kue"/>
                         <outlet property="tableView" destination="wlz-ss-tES" id="Ziq-5B-tKx"/>
                     </connections>
                 </viewController>
