@@ -13,7 +13,7 @@ protocol MainViewModelType {
     var didLoadFailed: ((String) -> Void)? { get set }
     var serviceModels: [ServiceTypeModel] { get }
 
-    func openList()
+    func openList(row: Int)
 }
 
 final class MainViewModel: MainViewModelType {
@@ -34,8 +34,8 @@ final class MainViewModel: MainViewModelType {
         
     }
     
-    func openList() {
-        coordinator.openList()
+    func openList(row: Int) {
+        coordinator.openList(model: serviceModels[row])
     }
         
 }

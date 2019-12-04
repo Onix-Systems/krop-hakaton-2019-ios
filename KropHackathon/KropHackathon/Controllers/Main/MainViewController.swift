@@ -20,7 +20,12 @@ final class MainViewController: UIViewController {
         configure()
         
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        configureNavigationBar()
+    }
+    
     private func configure() {
         tableView.register([ServiceCell.identifier])
         tableView.setDataSource(self, delegate: self)
@@ -28,11 +33,16 @@ final class MainViewController: UIViewController {
         
     }
     
+    private func configureNavigationBar() {
+        navigationController?.isNavigationBarHidden = true
+        navigationController?.navigationBar.isTranslucent = true
+
+    }
 }
 
 extension MainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        viewModel.openList()
+        viewModel.openList(row: indexPath.row)
     }
 }
 

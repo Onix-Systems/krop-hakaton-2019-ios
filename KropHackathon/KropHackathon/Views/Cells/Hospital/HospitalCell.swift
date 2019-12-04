@@ -18,7 +18,6 @@ class HospitalCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
 
         wrapperView.layer.cornerRadius = Style.Radius.defaultRadius
         wrapperView.layer.borderWidth = 0.5
@@ -26,12 +25,10 @@ class HospitalCell: UITableViewCell {
         wrapperView.layer.applySketchShadow(color: Style.Color.shadowColor, alpha: 0.14, xxx: 0, yyy: 4, blur: 12, spread: 0)
     }
     
-    func configure() {
-        hospitalNameLabel.text = "Комунальне некомерційне підприємство “Клінічна дитяча міська поліклініка” Міської ради міста Кропивницького"
-        locationLabel.text = "Вул. Шевченка, 36"
-        workTimeLabel.text = "Пн-Пт 08:00 - 16:00"
+    func configure(model: HospitalModel) {
+        hospitalNameLabel.text = model.title
+        locationLabel.text = model.address
+        workTimeLabel.text = model.schedule
     }
-    
-    
     
 }

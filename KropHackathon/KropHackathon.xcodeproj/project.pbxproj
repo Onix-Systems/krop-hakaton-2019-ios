@@ -47,6 +47,7 @@
 		EF4D8C922397DD77003CA1BF /* SF-Pro-Rounded-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = EF4D8C8D2397DD77003CA1BF /* SF-Pro-Rounded-Semibold.otf */; };
 		EF4D8C932397DD77003CA1BF /* SF-Pro-Rounded-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = EF4D8C8E2397DD77003CA1BF /* SF-Pro-Rounded-Regular.otf */; };
 		EF4D8C962397E350003CA1BF /* ServiceDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4D8C952397E350003CA1BF /* ServiceDetailsModel.swift */; };
+		EF4D8C982397ECCE003CA1BF /* HospitalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4D8C972397ECCE003CA1BF /* HospitalModel.swift */; };
 		EF6C7ADF2395450F00AA51BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6C7ADE2395450F00AA51BC /* AppDelegate.swift */; };
 		EF6C7AE62395450F00AA51BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF6C7AE42395450F00AA51BC /* Main.storyboard */; };
 		EF6C7AE82395451000AA51BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF6C7AE72395451000AA51BC /* Assets.xcassets */; };
@@ -95,6 +96,7 @@
 		EF4D8C8D2397DD77003CA1BF /* SF-Pro-Rounded-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Semibold.otf"; sourceTree = "<group>"; };
 		EF4D8C8E2397DD77003CA1BF /* SF-Pro-Rounded-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Regular.otf"; sourceTree = "<group>"; };
 		EF4D8C952397E350003CA1BF /* ServiceDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDetailsModel.swift; sourceTree = "<group>"; };
+		EF4D8C972397ECCE003CA1BF /* HospitalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HospitalModel.swift; sourceTree = "<group>"; };
 		EF6C7ADB2395450F00AA51BC /* KropHackathon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KropHackathon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF6C7ADE2395450F00AA51BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EF6C7AE22395450F00AA51BC /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -270,6 +272,7 @@
 			isa = PBXGroup;
 			children = (
 				EF4D8C952397E350003CA1BF /* ServiceDetailsModel.swift */,
+				EF4D8C972397ECCE003CA1BF /* HospitalModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -482,6 +485,7 @@
 				EF4D8C862397C632003CA1BF /* ServiceTableViewCell.swift in Sources */,
 				C659F9162396B4EC009DE50B /* ServiceHolder.swift in Sources */,
 				C659F92F2396B533009DE50B /* UITableViewCell.swift in Sources */,
+				EF4D8C982397ECCE003CA1BF /* HospitalModel.swift in Sources */,
 				C659F93D2396F6F7009DE50B /* MainViewController.swift in Sources */,
 				C659F92E2396B533009DE50B /* UITableView.swift in Sources */,
 				C659F93A2396B57C009DE50B /* MainCoordinator.swift in Sources */,
