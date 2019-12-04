@@ -19,19 +19,20 @@ class ServiceTableViewCell: UITableViewCell {
     
     func configure(name: String, _ special: String = "") {
         let font = UIFont.sfRoundedBold(17)
-        var attributes: [NSAttributedString.Key : Any]? = [NSAttributedString.Key.font: font,
+        var attributes: [NSAttributedString.Key: Any]? = [NSAttributedString.Key.font: font,
                           .foregroundColor: UIColor.black]
         
         let attributedName = NSAttributedString(string: name, attributes: attributes)
         
         attributes = [NSAttributedString.Key.font: font,
                       .foregroundColor: UIColor.lightGray]
-        
+        let space = NSAttributedString(string: " ", attributes: attributes)
         let attributedSpeck = NSAttributedString(string: special, attributes: attributes)
         
         let combination = NSMutableAttributedString()
         
         combination.append(attributedSpeck)
+        combination.append(space)
         combination.append(attributedName)
         nameLabel.attributedText = combination
         
