@@ -11,7 +11,8 @@ import Foundation
 protocol MainViewModelType {
     var didLoadData: (() -> Void)? { get set }
     var didLoadFailed: ((String) -> Void)? { get set }
-    
+    var serviceModels: [ServiceTypeModel] { get }
+
     func openList()
 }
 
@@ -23,6 +24,8 @@ final class MainViewModel: MainViewModelType {
 
     var didLoadData: (() -> Void)?
     var didLoadFailed: ((String) -> Void)?
+    
+    var serviceModels = [ServiceTypeModel.init(name: "Ультразвукові", image: ""), ServiceTypeModel.init(name: "Ренгенологічні", image: ""), ServiceTypeModel.init(name: "Функціональні", image: "")]
     
     init(_ coordinator: MainCoordinatorType, serviceHolder: ServiceHolder) {
         self.coordinator = coordinator

@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9541B0A7239707920084A0C0 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9541B0A6239707920084A0C0 /* Style.swift */; };
+		9541B0A9239708130084A0C0 /* CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9541B0A8239708130084A0C0 /* CALayer.swift */; };
+		954CAAE62397B586007A77C0 /* HospitalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 954CAAE52397B586007A77C0 /* HospitalCell.xib */; };
+		954CAAE82397B597007A77C0 /* HospitalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954CAAE72397B597007A77C0 /* HospitalCell.swift */; };
+		95E7738723970B1D00F05169 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E7738623970B1D00F05169 /* UIColor.swift */; };
+		95E7738923970BBE00F05169 /* ServiceTypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E7738823970BBE00F05169 /* ServiceTypeModel.swift */; };
+		95E7738B2397123300F05169 /* ServiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E7738A2397123300F05169 /* ServiceCell.swift */; };
+		95E7738D2397124F00F05169 /* ServiceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95E7738C2397124F00F05169 /* ServiceCell.xib */; };
 		C659F9132396B44F009DE50B /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C659F9122396B44F009DE50B /* AppCoordinator.swift */; };
 		C659F9162396B4EC009DE50B /* ServiceHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C659F9152396B4EC009DE50B /* ServiceHolder.swift */; };
 		C659F92A2396B533009DE50B /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = C659F91A2396B533009DE50B /* Date.swift */; };
@@ -28,7 +36,12 @@
 		EF4D8C772397AB3B003CA1BF /* ListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4D8C762397AB3B003CA1BF /* ListCoordinator.swift */; };
 		EF4D8C792397AB94003CA1BF /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4D8C782397AB94003CA1BF /* ListViewModel.swift */; };
 		EF4D8C7B2397AC15003CA1BF /* List.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF4D8C7A2397AC15003CA1BF /* List.storyboard */; };
-		EF4D8C7D2397B0EB003CA1BF /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4D8C7C2397B0EB003CA1BF /* Style.swift */; };
+		EF4D8C7F2397B930003CA1BF /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4D8C7E2397B930003CA1BF /* UIFont.swift */; };
+		EF4D8C812397B9E5003CA1BF /* SFProRoundedUltralight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EF4D8C802397B9E1003CA1BF /* SFProRoundedUltralight.ttf */; };
+		EF4D8C822397BAC8003CA1BF /* SFProRoundedBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C659F9442396FC2D009DE50B /* SFProRoundedBold.ttf */; };
+		EF4D8C832397BACB003CA1BF /* SFProRoundedSemibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C659F9462396FCFC009DE50B /* SFProRoundedSemibold.ttf */; };
+		EF4D8C862397C632003CA1BF /* ServiceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4D8C842397C632003CA1BF /* ServiceTableViewCell.swift */; };
+		EF4D8C872397C632003CA1BF /* ServiceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF4D8C852397C632003CA1BF /* ServiceTableViewCell.xib */; };
 		EF6C7ADF2395450F00AA51BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6C7ADE2395450F00AA51BC /* AppDelegate.swift */; };
 		EF6C7AE62395450F00AA51BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF6C7AE42395450F00AA51BC /* Main.storyboard */; };
 		EF6C7AE82395451000AA51BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF6C7AE72395451000AA51BC /* Assets.xcassets */; };
@@ -38,6 +51,14 @@
 /* Begin PBXFileReference section */
 		6C96965C529B59196D073CA5 /* Pods-KropHackathon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KropHackathon.debug.xcconfig"; path = "Target Support Files/Pods-KropHackathon/Pods-KropHackathon.debug.xcconfig"; sourceTree = "<group>"; };
 		72C9A0A53B930FB5B67DD84F /* Pods-KropHackathon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KropHackathon.release.xcconfig"; path = "Target Support Files/Pods-KropHackathon/Pods-KropHackathon.release.xcconfig"; sourceTree = "<group>"; };
+		9541B0A6239707920084A0C0 /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
+		9541B0A8239708130084A0C0 /* CALayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayer.swift; sourceTree = "<group>"; };
+		954CAAE52397B586007A77C0 /* HospitalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HospitalCell.xib; sourceTree = "<group>"; };
+		954CAAE72397B597007A77C0 /* HospitalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HospitalCell.swift; sourceTree = "<group>"; };
+		95E7738623970B1D00F05169 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		95E7738823970BBE00F05169 /* ServiceTypeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTypeModel.swift; sourceTree = "<group>"; };
+		95E7738A2397123300F05169 /* ServiceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCell.swift; sourceTree = "<group>"; };
+		95E7738C2397124F00F05169 /* ServiceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ServiceCell.xib; sourceTree = "<group>"; };
 		C659F9122396B44F009DE50B /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		C659F9152396B4EC009DE50B /* ServiceHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceHolder.swift; sourceTree = "<group>"; };
 		C659F91A2396B533009DE50B /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
@@ -60,7 +81,10 @@
 		EF4D8C762397AB3B003CA1BF /* ListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCoordinator.swift; sourceTree = "<group>"; };
 		EF4D8C782397AB94003CA1BF /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		EF4D8C7A2397AC15003CA1BF /* List.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = List.storyboard; sourceTree = "<group>"; };
-		EF4D8C7C2397B0EB003CA1BF /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
+		EF4D8C7E2397B930003CA1BF /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
+		EF4D8C802397B9E1003CA1BF /* SFProRoundedUltralight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SFProRoundedUltralight.ttf; sourceTree = "<group>"; };
+		EF4D8C842397C632003CA1BF /* ServiceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceTableViewCell.swift; sourceTree = "<group>"; };
+		EF4D8C852397C632003CA1BF /* ServiceTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ServiceTableViewCell.xib; sourceTree = "<group>"; };
 		EF6C7ADB2395450F00AA51BC /* KropHackathon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KropHackathon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF6C7ADE2395450F00AA51BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EF6C7AE22395450F00AA51BC /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +114,52 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		9541B09A2396AE060084A0C0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9541B09B2396AE670084A0C0 /* Cells */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9541B09B2396AE670084A0C0 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				954CAAE42397B569007A77C0 /* Hospital */,
+				9541B0A12396B4F10084A0C0 /* Service */,
+				9541B0A02396B4820084A0C0 /* ServiceType */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		9541B0A02396B4820084A0C0 /* ServiceType */ = {
+			isa = PBXGroup;
+			children = (
+				95E7738A2397123300F05169 /* ServiceCell.swift */,
+				95E7738C2397124F00F05169 /* ServiceCell.xib */,
+				95E7738823970BBE00F05169 /* ServiceTypeModel.swift */,
+			);
+			path = ServiceType;
+			sourceTree = "<group>";
+		};
+		9541B0A12396B4F10084A0C0 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				EF4D8C842397C632003CA1BF /* ServiceTableViewCell.swift */,
+				EF4D8C852397C632003CA1BF /* ServiceTableViewCell.xib */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		954CAAE42397B569007A77C0 /* Hospital */ = {
+			isa = PBXGroup;
+			children = (
+				954CAAE52397B586007A77C0 /* HospitalCell.xib */,
+				954CAAE72397B597007A77C0 /* HospitalCell.swift */,
+			);
+			path = Hospital;
+			sourceTree = "<group>";
+		};
 		C659F9112396B3F4009DE50B /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				C659F91B2396B533009DE50B /* UI */,
+				9541B0A6239707920084A0C0 /* Style.swift */,
 				C659F91A2396B533009DE50B /* Date.swift */,
 				C659F9282396B533009DE50B /* NSObject.swift */,
 			);
@@ -120,13 +191,16 @@
 		C659F91B2396B533009DE50B /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				9541B0A8239708130084A0C0 /* CALayer.swift */,
 				C659F91E2396B533009DE50B /* UICollectionView.swift */,
 				C659F91F2396B533009DE50B /* UITableView.swift */,
 				C659F9202396B533009DE50B /* UITableViewCell.swift */,
+				95E7738623970B1D00F05169 /* UIColor.swift */,
 				C659F9222396B533009DE50B /* UIViewController.swift */,
 				C659F9232396B533009DE50B /* UIImageView.swift */,
 				C659F9252396B533009DE50B /* UICollectionViewCell.swift */,
 				C659F9262396B533009DE50B /* UIStoryboard.swift */,
+				EF4D8C7E2397B930003CA1BF /* UIFont.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -142,6 +216,7 @@
 		C659F93F2396F8B0009DE50B /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				EF4D8C802397B9E1003CA1BF /* SFProRoundedUltralight.ttf */,
 				C659F9422396FAF8009DE50B /* SFProRoundedRegular.ttf */,
 				C659F9442396FC2D009DE50B /* SFProRoundedBold.ttf */,
 				C659F9462396FCFC009DE50B /* SFProRoundedSemibold.ttf */,
@@ -193,10 +268,10 @@
 			children = (
 				EF6C7ADE2395450F00AA51BC /* AppDelegate.swift */,
 				C659F9122396B44F009DE50B /* AppCoordinator.swift */,
-				EF4D8C7C2397B0EB003CA1BF /* Style.swift */,
 				C659F9192396B533009DE50B /* Extensions */,
 				C659F9112396B3F4009DE50B /* Services */,
 				C659F9142396B4C0009DE50B /* Controllers */,
+				9541B09A2396AE060084A0C0 /* Views */,
 				C659F93E2396F8A0009DE50B /* Resources */,
 				EF6C7AE42395450F00AA51BC /* Main.storyboard */,
 				EF4D8C7A2397AC15003CA1BF /* List.storyboard */,
@@ -276,10 +351,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF4D8C822397BAC8003CA1BF /* SFProRoundedBold.ttf in Resources */,
+				EF4D8C832397BACB003CA1BF /* SFProRoundedSemibold.ttf in Resources */,
+				95E7738D2397124F00F05169 /* ServiceCell.xib in Resources */,
 				C659F9432396FAFE009DE50B /* SFProRoundedRegular.ttf in Resources */,
 				EF6C7AEB2395451000AA51BC /* LaunchScreen.storyboard in Resources */,
 				C659F9412396F98D009DE50B /* SFProRoundedHeavy.ttf in Resources */,
+				EF4D8C812397B9E5003CA1BF /* SFProRoundedUltralight.ttf in Resources */,
+				954CAAE62397B586007A77C0 /* HospitalCell.xib in Resources */,
 				EF6C7AE82395451000AA51BC /* Assets.xcassets in Resources */,
+				EF4D8C872397C632003CA1BF /* ServiceTableViewCell.xib in Resources */,
 				EF4D8C7B2397AC15003CA1BF /* List.storyboard in Resources */,
 				EF6C7AE62395450F00AA51BC /* Main.storyboard in Resources */,
 			);
@@ -334,25 +415,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9541B0A9239708130084A0C0 /* CALayer.swift in Sources */,
 				C659F9132396B44F009DE50B /* AppCoordinator.swift in Sources */,
-				EF4D8C7D2397B0EB003CA1BF /* Style.swift in Sources */,
+				954CAAE82397B597007A77C0 /* HospitalCell.swift in Sources */,
 				C659F9342396B533009DE50B /* UICollectionViewCell.swift in Sources */,
 				C659F9372396B533009DE50B /* NSObject.swift in Sources */,
 				C659F9312396B533009DE50B /* UIViewController.swift in Sources */,
 				C659F9352396B533009DE50B /* UIStoryboard.swift in Sources */,
 				C659F9322396B533009DE50B /* UIImageView.swift in Sources */,
+				95E7738923970BBE00F05169 /* ServiceTypeModel.swift in Sources */,
+				95E7738723970B1D00F05169 /* UIColor.swift in Sources */,
 				C659F92A2396B533009DE50B /* Date.swift in Sources */,
+				EF4D8C862397C632003CA1BF /* ServiceTableViewCell.swift in Sources */,
 				C659F9162396B4EC009DE50B /* ServiceHolder.swift in Sources */,
 				C659F92F2396B533009DE50B /* UITableViewCell.swift in Sources */,
 				C659F93D2396F6F7009DE50B /* MainViewController.swift in Sources */,
 				C659F92E2396B533009DE50B /* UITableView.swift in Sources */,
 				C659F93A2396B57C009DE50B /* MainCoordinator.swift in Sources */,
 				EF4D8C772397AB3B003CA1BF /* ListCoordinator.swift in Sources */,
+				95E7738B2397123300F05169 /* ServiceCell.swift in Sources */,
 				C659F93C2396B5A2009DE50B /* MainViewModel.swift in Sources */,
 				EF4D8C792397AB94003CA1BF /* ListViewModel.swift in Sources */,
 				C659F92D2396B533009DE50B /* UICollectionView.swift in Sources */,
+				EF4D8C7F2397B930003CA1BF /* UIFont.swift in Sources */,
 				EF4D8C752397A8EC003CA1BF /* ListViewController.swift in Sources */,
 				EF6C7ADF2395450F00AA51BC /* AppDelegate.swift in Sources */,
+				9541B0A7239707920084A0C0 /* Style.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -498,7 +586,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5AF75H34W7;
+				DEVELOPMENT_TEAM = GJX986XEH7;
 				INFOPLIST_FILE = KropHackathon/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -518,7 +606,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5AF75H34W7;
+				DEVELOPMENT_TEAM = GJX986XEH7;
 				INFOPLIST_FILE = KropHackathon/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (

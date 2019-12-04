@@ -8,6 +8,7 @@
 		<string>SFProRoundedRegular.ttf</string>
 		<string>SFProRoundedSemibold.ttf</string>
 		<string>SFProRoundedBold.ttf</string>
+		<string>SFProRoundedUltralight.ttf</string>
 	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>

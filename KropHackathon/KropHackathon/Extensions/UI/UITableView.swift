@@ -42,3 +42,12 @@ extension UITableView {
         scrollToRow(at: IndexPath(item: 0, section: 0), at: .top, animated: animated)
     }
 }
+
+extension UITableView {
+    
+    func dequeCell<T: UITableViewCell>(for indexPath: IndexPath) -> T? {
+        guard let cell = self.dequeueReusableCell(withIdentifier: T.nibName, for: indexPath) as? T else { return nil }
+        return cell
+    }
+    
+}

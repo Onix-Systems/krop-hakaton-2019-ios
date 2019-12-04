@@ -10,6 +10,9 @@ import UIKit
 
 protocol ListCoordinatorType {
     func start()
+    
+    func openDetails()
+    func goBack()
 }
 
 final class ListCoordinator: ListCoordinatorType {
@@ -31,6 +34,16 @@ final class ListCoordinator: ListCoordinatorType {
         }
     }
         
+    func openDetails() {
+//        let coordinator = DetailsCoordinator(navigationController: navigationController, serviceHolder: serviceHolder)
+//        coordinator.start()
+        print("Coordinator: openDetails()")
+    }
+
+    func goBack() {
+        _ = navigationController?.popViewController(animated: true)
+    }
+
     deinit {
         print("ListCoordinator - deinit")
     }

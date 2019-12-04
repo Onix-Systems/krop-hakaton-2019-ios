@@ -21,6 +21,9 @@ final class ListViewController: UIViewController {
     
     private func configure() {
         configureNavigationBar()
+//        tableView.register([ServiceTableViewCell.className])
+        tableView.setDataSource(self, delegate: self)
+        
         tableView.reloadData()
     }
     
@@ -37,32 +40,38 @@ final class ListViewController: UIViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: btn)
 
 //        navigationController?.title = "Ультразвуковi дослiдження"
-        let titleColor = UIColor(red: 0.01, green: 0.10, blue: 0.19, alpha: 1.0)
-        let titleFont = UIFont(name: "SFProRoundedBold", size: 25.0)
-        let textAttributes = [NSAttributedString.Key.foregroundColor: titleColor, NSAttributedString.Key.font: titleFont]
-        navigationController?.navigationBar.titleTextAttributes = textAttributes as [NSAttributedString.Key: Any]
+//        let titleColor = UIColor(red: 0.01, green: 0.10, blue: 0.19, alpha: 1.0)
+//        let titleFont = UIFont.sfRoundedBold(25)
+//        let textAttributes = [NSAttributedString.Key.foregroundColor: titleColor, NSAttributedString.Key.font: titleFont]
+//        navigationController?.navigationBar.titleTextAttributes = textAttributes as [NSAttributedString.Key: Any]
 
     }
     
     @objc
     func backBtnClicked() {
-        print("backBtn clicked")
+        viewModel.goBack()
+//        print("backBtn clicked")
     }
 }
 
 extension ListViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel.openDetails()
+    }
 }
 
 extension ListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 3 //viewModel.serviceModels.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = "List \(indexPath.row)"
-        return cell
+//            guard let cell: ServiceTableViewCell = tableView.dequeCell(for: indexPath) else {
+//                return UITableViewCell()
+//
+//        }
+//        cell.configure(name: "viewModel.serviceModels[\(indexPath.row)].name")
+        return UITableViewCell() //cell
     }
     
     

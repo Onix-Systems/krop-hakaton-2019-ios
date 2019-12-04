@@ -11,6 +11,11 @@ import Foundation
 protocol ListViewModelType {
     var didLoadData: (() -> Void)? { get set }
     var didLoadFailed: ((String) -> Void)? { get set }
+    
+    var serviceModels: [ServiceTypeModel] { get }
+
+    func openDetails()
+    func goBack()
 }
 
 final class ListViewModel: ListViewModelType {
@@ -22,6 +27,9 @@ final class ListViewModel: ListViewModelType {
     var didLoadData: (() -> Void)?
     var didLoadFailed: ((String) -> Void)?
     
+    var serviceModels = [ServiceTypeModel.init(name: "Ультразвукові", image: ""), ServiceTypeModel.init(name: "Ренгенологічні", image: ""), ServiceTypeModel.init(name: "Функціональні", image: "")]
+
+    
     init(_ coordinator: ListCoordinatorType, serviceHolder: ServiceHolder) {
         self.coordinator = coordinator
 //        mapService = serviceHolder.get(by: MapServiceType.self)
@@ -29,4 +37,13 @@ final class ListViewModel: ListViewModelType {
         
     }
         
+    func openDetails() {
+        coordinator.openDetails()
+    }
+    
+    func goBack() {
+        coordinator.goBack()
+
+    }
+
 }
