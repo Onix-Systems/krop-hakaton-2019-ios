@@ -21,7 +21,7 @@
         <tableViewCell multipleTouchEnabled="YES" contentMode="scaleToFill" selectionStyle="none" showsReorderControl="YES" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="205" id="xF5-ff-v0l" customClass="HospitalCell" customModule="KropHackathon" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="428" height="205"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xF5-ff-v0l" id="bf3-uo-vYa">
+            <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xF5-ff-v0l" id="bf3-uo-vYa">
                 <rect key="frame" x="0.0" y="0.0" width="397" height="205"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
