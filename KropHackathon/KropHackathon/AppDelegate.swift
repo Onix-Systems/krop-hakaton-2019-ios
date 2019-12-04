@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GoogleMaps
 
 @UIApplicationMain
  class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,6 +21,7 @@ import UIKit
         appCoordinator = AppCoordinator(window: window)
         appCoordinator?.start()
 
+        GMSServices.provideAPIKey("AIzaSyCAP2LU5feqcYlzFpix9QTGtKV0eAuC5hc")
         return true
     }
 

@@ -7,5 +7,7 @@ target 'KropHackathon' do
 
   # Pods for KropHackathon
   pod 'SwiftLint'
+  pod 'GoogleMaps'
+  pod 'GooglePlaces'
   
 end
