@@ -39,18 +39,12 @@ final class ListViewController: UIViewController {
         btn.setImage(Style.Images.backIcon, for: .normal)
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: btn)
 
-//        navigationController?.title = "Ультразвуковi дослiдження"
+        let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: view.frame.width - 50, height: 50))
+        titleLabel.textColor = UIColor(red: 0.01, green: 0.10, blue: 0.19, alpha: 1.0)
+        titleLabel.font = UIFont.sfRoundedBold(17)
+        titleLabel.text = "Ультразвуковi дослiдження"
+        navigationItem.titleView = titleLabel
         
-        for family in UIFont.familyNames.sorted() {
-            let names = UIFont.fontNames(forFamilyName: family)
-            print("Family: \(family) Font names: \(names)")
-        }
-
-//        let titleColor = UIColor(red: 0.01, green: 0.10, blue: 0.19, alpha: 1.0)
-//        let titleFont = UIFont.sfRoundedBold(25)
-//        let textAttributes = [NSAttributedString.Key.foregroundColor: titleColor, NSAttributedString.Key.font: titleFont]
-//        navigationController?.navigationBar.titleTextAttributes = textAttributes as [NSAttributedString.Key: Any]
-
     }
     
     @objc
@@ -68,7 +62,7 @@ extension ListViewController: UITableViewDelegate {
 
 extension ListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.serviceModels.count
+        return viewModel.serviceDetailsModels.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -76,7 +70,7 @@ extension ListViewController: UITableViewDataSource {
             print("can't find cell")
             return UITableViewCell()
         }
-        cell.configure(name: viewModel.serviceModels[indexPath.row].name)
+        cell.configure(name: viewModel.serviceDetailsModels[indexPath.row].serviceDetailsName, viewModel.serviceDetailsModels[indexPath.row].serviceTypeName)
         return cell
     }
     

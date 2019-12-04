@@ -12,7 +12,7 @@ protocol ListViewModelType {
     var didLoadData: (() -> Void)? { get set }
     var didLoadFailed: ((String) -> Void)? { get set }
     
-    var serviceModels: [ServiceTypeModel] { get }
+    var serviceDetailsModels: [ServiceDetailsModel] { get }
 
     func openDetails()
     func goBack()
@@ -27,7 +27,7 @@ final class ListViewModel: ListViewModelType {
     var didLoadData: (() -> Void)?
     var didLoadFailed: ((String) -> Void)?
     
-    var serviceModels = [ServiceTypeModel.init(name: "Ультразвукові", image: ""), ServiceTypeModel.init(name: "Ренгенологічні", image: ""), ServiceTypeModel.init(name: "Функціональні", image: "")]
+    var serviceDetailsModels = [ServiceDetailsModel(serviceTypeName: "УЗД", serviceDetailsName: "черевної порожнини"), ServiceDetailsModel(serviceTypeName: "УЗД", serviceDetailsName: "нирок"), ServiceDetailsModel(serviceTypeName: "УЗД", serviceDetailsName: "щитовидної залози"), ServiceDetailsModel(serviceTypeName: "", serviceDetailsName: "Ехокардіографія"), ServiceDetailsModel(serviceTypeName: "", serviceDetailsName: "Нейросонографiя"), ServiceDetailsModel(serviceTypeName: "УЗД", serviceDetailsName: "сечо-статевої системи")]
     
     init(_ coordinator: ListCoordinatorType, serviceHolder: ServiceHolder) {
         self.coordinator = coordinator

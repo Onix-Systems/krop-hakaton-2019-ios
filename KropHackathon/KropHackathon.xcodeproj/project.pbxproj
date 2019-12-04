@@ -42,6 +42,7 @@
 		EF4D8C912397DD77003CA1BF /* SF-Pro-Rounded-Ultralight.otf in Resources */ = {isa = PBXBuildFile; fileRef = EF4D8C8C2397DD77003CA1BF /* SF-Pro-Rounded-Ultralight.otf */; };
 		EF4D8C922397DD77003CA1BF /* SF-Pro-Rounded-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = EF4D8C8D2397DD77003CA1BF /* SF-Pro-Rounded-Semibold.otf */; };
 		EF4D8C932397DD77003CA1BF /* SF-Pro-Rounded-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = EF4D8C8E2397DD77003CA1BF /* SF-Pro-Rounded-Regular.otf */; };
+		EF4D8C962397E350003CA1BF /* ServiceDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4D8C952397E350003CA1BF /* ServiceDetailsModel.swift */; };
 		EF6C7ADF2395450F00AA51BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6C7ADE2395450F00AA51BC /* AppDelegate.swift */; };
 		EF6C7AE62395450F00AA51BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF6C7AE42395450F00AA51BC /* Main.storyboard */; };
 		EF6C7AE82395451000AA51BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF6C7AE72395451000AA51BC /* Assets.xcassets */; };
@@ -85,6 +86,7 @@
 		EF4D8C8C2397DD77003CA1BF /* SF-Pro-Rounded-Ultralight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Ultralight.otf"; sourceTree = "<group>"; };
 		EF4D8C8D2397DD77003CA1BF /* SF-Pro-Rounded-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Semibold.otf"; sourceTree = "<group>"; };
 		EF4D8C8E2397DD77003CA1BF /* SF-Pro-Rounded-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Regular.otf"; sourceTree = "<group>"; };
+		EF4D8C952397E350003CA1BF /* ServiceDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDetailsModel.swift; sourceTree = "<group>"; };
 		EF6C7ADB2395450F00AA51BC /* KropHackathon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KropHackathon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF6C7ADE2395450F00AA51BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EF6C7AE22395450F00AA51BC /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -245,6 +247,14 @@
 			path = ListScreen;
 			sourceTree = "<group>";
 		};
+		EF4D8C942397E332003CA1BF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EF4D8C952397E350003CA1BF /* ServiceDetailsModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		EF6C7AD22395450F00AA51BC = {
 			isa = PBXGroup;
 			children = (
@@ -270,6 +280,7 @@
 				C659F9122396B44F009DE50B /* AppCoordinator.swift */,
 				C659F9192396B533009DE50B /* Extensions */,
 				C659F9112396B3F4009DE50B /* Services */,
+				EF4D8C942397E332003CA1BF /* Models */,
 				C659F9142396B4C0009DE50B /* Controllers */,
 				9541B09A2396AE060084A0C0 /* Views */,
 				C659F93E2396F8A0009DE50B /* Resources */,
@@ -415,6 +426,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF4D8C962397E350003CA1BF /* ServiceDetailsModel.swift in Sources */,
 				9541B0A9239708130084A0C0 /* CALayer.swift in Sources */,
 				C659F9132396B44F009DE50B /* AppCoordinator.swift in Sources */,
 				954CAAE82397B597007A77C0 /* HospitalCell.swift in Sources */,
