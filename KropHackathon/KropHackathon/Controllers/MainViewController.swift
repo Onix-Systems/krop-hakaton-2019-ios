@@ -21,8 +21,8 @@ final class MainViewController: UIViewController {
     }
 
     private func configure() {
-        searchBar.layer.borderColor = UIColor.gray.cgColor
-        
+//        searchBar.layer.borderColor = UIColor.gray.cgColor
+//        searchBar.layer.borderWidth = 1
     }
     
 }
