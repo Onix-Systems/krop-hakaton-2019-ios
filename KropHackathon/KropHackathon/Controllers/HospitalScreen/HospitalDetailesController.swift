@@ -30,10 +30,10 @@ final class HospitalDetailesController: UIViewController {
     
     private func configure() {
         configureNavigationBar()
-        lookOnMapButton.layer.cornerRadius = Style.Radius.defaultRadius
+        lookOnMapButton.layer.cornerRadius = 16.0
         lookOnMapButton.layer.borderWidth = 0.5
         lookOnMapButton.layer.borderColor = Style.Color.borderColor.cgColor
-        lookOnMapButton.layer.applySketchShadow(color: Style.Color.shadowColor, alpha: 0.14, xxx: 0, yyy: 4, blur: 12, spread: 0)
+    lookOnMapButton.layer.applySketchShadow(color: Style.Color.shadowColor, alpha: 0.14, xxx: 0, yyy: 4, blur: 12, spread: 0)
     tableView.register([ServiceTableViewCell.className])
         tableView.setDataSource(self, delegate: self)
         
