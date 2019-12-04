@@ -10,7 +10,7 @@ import UIKit
 
 protocol MainCoordinatorType {
     func start()
-    func openList()
+    func openList(model: ServiceTypeModel)
 }
 
 final class MainCoordinator: MainCoordinatorType {
@@ -24,6 +24,9 @@ final class MainCoordinator: MainCoordinatorType {
         self.navigationController?.navigationBar.isTranslucent = true
         self.serviceHolder = serviceHolder
         controller?.viewModel = MainViewModel(self, serviceHolder: self.serviceHolder)
+        navigationController?.isNavigationBarHidden = true
+        navigationController?.navigationBar.isTranslucent = true
+
     }
     
     func start() {
@@ -32,8 +35,8 @@ final class MainCoordinator: MainCoordinatorType {
         }
     }
         
-    func openList() {
-        let coordinator = ListCoordinator(navigationController: navigationController, serviceHolder: serviceHolder)
+    func openList(model: ServiceTypeModel) {
+        let coordinator = ListCoordinator(navigationController: navigationController, serviceHolder: serviceHolder, screenTitle: model.name)
         coordinator.start()
     }
     

@@ -11,6 +11,7 @@ import UIKit
 protocol ListCoordinatorType {
     func start()
     
+    func openHospitals(model: ServiceDetailsModel)
     func openDetails()
     func goBack()
 }
@@ -21,11 +22,12 @@ final class ListCoordinator: ListCoordinatorType {
     private let navigationController: UINavigationController?
     private var serviceHolder: ServiceHolder!
     
-    init(navigationController: UINavigationController?, serviceHolder: ServiceHolder) {
+    init(navigationController: UINavigationController?, serviceHolder: ServiceHolder, screenType: ListScreenType = .serviceDetails, screenTitle: String) {
         self.navigationController = navigationController
         self.navigationController?.navigationBar.isTranslucent = true
         self.serviceHolder = serviceHolder
-        controller?.viewModel = ListViewModel(self, serviceHolder: self.serviceHolder)
+        
+        controller?.viewModel = ListViewModel(self, serviceHolder: self.serviceHolder, screenType: screenType, screenTitle: screenTitle)
     }
     
     func start() {
@@ -33,7 +35,12 @@ final class ListCoordinator: ListCoordinatorType {
             navigationController?.pushViewController(controller, animated: true)
         }
     }
-        
+    
+    func openHospitals(model: ServiceDetailsModel) {
+        let coordinator = ListCoordinator(navigationController: navigationController, serviceHolder: serviceHolder, screenType: .hospitals, screenTitle: "\(model.serviceTypeName) \(model.serviceDetailsName)")
+        coordinator.start()
+    }
+    
     func openDetails() {
 //        let coordinator = DetailsCoordinator(navigationController: navigationController, serviceHolder: serviceHolder)
 //        coordinator.start()

@@ -8,12 +8,22 @@
 
 import Foundation
 
+enum ListScreenType {
+    case serviceDetails
+    case hospitals
+}
+
 protocol ListViewModelType {
     var didLoadData: (() -> Void)? { get set }
     var didLoadFailed: ((String) -> Void)? { get set }
     
-    var serviceDetailsModels: [ServiceDetailsModel] { get }
+    var screenType: ListScreenType { get set }
+    var screenTitle: String { get set }
 
+    var serviceDetailsModels: [ServiceDetailsModel] { get }
+    var hospitalModels: [HospitalModel] { get }
+
+    func openHospitals(row: Int)
     func openDetails()
     func goBack()
 }
@@ -27,13 +37,24 @@ final class ListViewModel: ListViewModelType {
     var didLoadData: (() -> Void)?
     var didLoadFailed: ((String) -> Void)?
     
+    var screenType: ListScreenType
+    var screenTitle: String
+    
     var serviceDetailsModels = [ServiceDetailsModel(serviceTypeName: "УЗД", serviceDetailsName: "черевної порожнини"), ServiceDetailsModel(serviceTypeName: "УЗД", serviceDetailsName: "нирок"), ServiceDetailsModel(serviceTypeName: "УЗД", serviceDetailsName: "щитовидної залози"), ServiceDetailsModel(serviceTypeName: "", serviceDetailsName: "Ехокардіографія"), ServiceDetailsModel(serviceTypeName: "", serviceDetailsName: "Нейросонографiя"), ServiceDetailsModel(serviceTypeName: "УЗД", serviceDetailsName: "сечо-статевої системи")]
     
-    init(_ coordinator: ListCoordinatorType, serviceHolder: ServiceHolder) {
+    var hospitalModels: [HospitalModel] = [HospitalModel(title: "Комунальне некомерційне підприємство \"Клінічна дитяча міська поліклініка” Міської ради міста Кропивницького\"", address: "Вул. Шевченка, 36", schedule: "Пн-Пт 08:00 - 16:00"), HospitalModel(title: "Комунальний заклад \"Кіровоградська міська лікарня швидкої медичної допомоги\"", address: "Вул. Короленко, 56", schedule: "Пн-Нд 00:00 - 24:00")]
+    
+    init(_ coordinator: ListCoordinatorType, serviceHolder: ServiceHolder, screenType: ListScreenType = .serviceDetails, screenTitle: String) {
         self.coordinator = coordinator
 //        mapService = serviceHolder.get(by: MapServiceType.self)
 //        medicalService = serviceHolder.get(by: MedicalServiceType.self)
         
+        self.screenType = screenType
+        self.screenTitle = screenTitle
+    }
+    
+    func openHospitals(row: Int) {
+        coordinator.openHospitals(model: serviceDetailsModels[row])
     }
         
     func openDetails() {
@@ -42,7 +63,6 @@ final class ListViewModel: ListViewModelType {
     
     func goBack() {
         coordinator.goBack()
-
     }
 
 }
