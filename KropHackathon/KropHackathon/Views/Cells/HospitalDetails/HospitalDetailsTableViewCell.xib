@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -60,23 +60,45 @@
                             <constraint firstItem="XmT-9L-cxn" firstAttribute="leading" secondItem="lY4-OA-7xx" secondAttribute="leading" constant="5" id="u6d-Yx-3Vs"/>
                         </constraints>
                     </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kq4-NT-Tzi" userLabel="TopSeparator">
+                        <rect key="frame" x="0.0" y="0.0" width="411" height="1"/>
+                        <color key="backgroundColor" red="0.89803921568627454" green="0.90980392156862744" blue="0.91764705882352937" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="6Cy-F6-7SG"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Yc-aX-rvI" userLabel="BottomSeparator">
+                        <rect key="frame" x="0.0" y="88" width="411" height="1"/>
+                        <color key="backgroundColor" red="0.89803921568627454" green="0.90980392156862744" blue="0.91764705882352937" alpha="1" colorSpace="deviceRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="CAp-J3-BWf"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="trailing" secondItem="kq4-NT-Tzi" secondAttribute="trailing" id="5Ar-yD-GBv"/>
                     <constraint firstAttribute="trailing" secondItem="lY4-OA-7xx" secondAttribute="trailing" constant="10" id="Krk-Wn-jLb"/>
                     <constraint firstItem="lY4-OA-7xx" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="bottom" constant="-10" id="MVe-K2-iYp"/>
+                    <constraint firstAttribute="trailing" secondItem="7Yc-aX-rvI" secondAttribute="trailing" id="NXz-fq-6BR"/>
                     <constraint firstItem="pgx-mV-y3y" firstAttribute="centerY" secondItem="lY4-OA-7xx" secondAttribute="centerY" id="SWn-OH-87p"/>
+                    <constraint firstItem="kq4-NT-Tzi" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="UIk-5S-4aN"/>
+                    <constraint firstItem="kq4-NT-Tzi" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="jEx-bp-OP8"/>
                     <constraint firstItem="lY4-OA-7xx" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="lsE-Lf-wbe"/>
                     <constraint firstItem="pgx-mV-y3y" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="oJt-tF-pzt"/>
+                    <constraint firstItem="7Yc-aX-rvI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="pqW-We-N4Q"/>
+                    <constraint firstAttribute="bottom" secondItem="7Yc-aX-rvI" secondAttribute="bottom" id="rCd-dD-fc1"/>
                     <constraint firstItem="lY4-OA-7xx" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="tQR-XB-pv4"/>
                     <constraint firstItem="lY4-OA-7xx" firstAttribute="leading" secondItem="pgx-mV-y3y" secondAttribute="trailing" constant="10" id="uZ7-eq-Mw0"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="bottomSeparatorView" destination="7Yc-aX-rvI" id="aD3-Ep-8ou"/>
                 <outlet property="imageWidthConstraint" destination="Ub1-DV-9II" id="4wX-lR-UFA"/>
                 <outlet property="infoLabel" destination="ZCM-tI-sl3" id="vrT-M7-2PE"/>
                 <outlet property="infoTypeIcon" destination="pgx-mV-y3y" id="REM-of-sDQ"/>
                 <outlet property="infoTypeLabel" destination="XmT-9L-cxn" id="LEE-Gb-eo9"/>
+                <outlet property="topSeparatorView" destination="kq4-NT-Tzi" id="hE5-q3-T1e"/>
             </connections>
             <point key="canvasLocation" x="200.72463768115944" y="124.21875"/>
         </tableViewCell>

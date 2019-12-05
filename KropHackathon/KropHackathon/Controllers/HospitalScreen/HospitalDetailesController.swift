@@ -30,36 +30,42 @@ final class HospitalDetailesController: UIViewController {
     }
     
     private func configure() {
-        
+        configureMap()
+        configureNavigationBar()
+        configureOpenMapBtn()
+        configureTableView()
+    }
+    
+    private func configureMap() {
         map.customSetup(with: viewModel.point)
         map.addMarker(coordinate: viewModel.point)
         map.moveToLocation(location: CLLocation.init(latitude: 48.510942, longitude: 32.270891))
-        configureNavigationBar()
-        lookOnMapButton.layer.cornerRadius = 16.0
-        lookOnMapButton.layer.borderWidth = 0.5
-        lookOnMapButton.layer.borderColor = Style.Color.borderColor.cgColor
-        lookOnMapButton.layer.applySketchShadow(color: Style.Color.shadowColor, alpha: 0.14, xxx: 0, yyy: 4, blur: 12, spread: 0)
-        
-        tableView.register([HospitalDetailsTableViewCell.className, TitleTableViewCell.className])
-        tableView.setDataSource(self)
-        
-        tableView.reloadData()
     }
     
     private func configureNavigationBar() {
         navigationController?.isNavigationBarHidden = true
         navigationController?.navigationBar.isTranslucent = true
-                
+    }
+    
+    private func configureOpenMapBtn() {
+        lookOnMapButton.layer.cornerRadius = 16.0
+        lookOnMapButton.layer.borderWidth = 0.5
+        lookOnMapButton.layer.borderColor = Style.Color.borderColor.cgColor
+        lookOnMapButton.layer.applySketchShadow(color: Style.Color.shadowColor, alpha: 0.14, xxx: 0, yyy: 4, blur: 12, spread: 0)
+    }
+    
+    private func configureTableView() {
+        tableView.register([HospitalDetailsTableViewCell.className, TitleTableViewCell.className])
+        tableView.setDataSource(self)
+        tableView.layer.cornerRadius = 10
+        tableView.reloadData()
+        tableView.layer.applySketchShadow(color: Style.Color.shadowColor, alpha: 0.3, xxx: 0, yyy: -8, blur: 8, spread: 0)
     }
     
     @IBAction func closeBtnClicked(_ sender: UIButton) {
         viewModel.goBack()
     }
     
-    @objc
-    func backBtnClicked() {
-        viewModel.goBack()
-    }
 }
 
 extension HospitalDetailesController: UITableViewDataSource {

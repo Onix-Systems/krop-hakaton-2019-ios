@@ -41,6 +41,8 @@ final class HospitalDetailsTableViewCell: UITableViewCell {
     
     @IBOutlet private weak var imageWidthConstraint: NSLayoutConstraint!
     
+    @IBOutlet private weak var topSeparatorView: UIView!
+    @IBOutlet private weak var bottomSeparatorView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -60,7 +62,9 @@ final class HospitalDetailsTableViewCell: UITableViewCell {
         case .none:
             break
         }
-        
+        topSeparatorView.isHidden = model.infoType != .none
+        bottomSeparatorView.isHidden = model.infoType != .none
+
         infoTypeLabel.text = model.infoTypeStr
         infoLabel.text = model.info
         
