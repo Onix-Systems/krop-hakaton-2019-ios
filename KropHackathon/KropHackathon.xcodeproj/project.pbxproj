@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -19,6 +19,8 @@
 		95E7738923970BBE00F05169 /* ServiceTypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E7738823970BBE00F05169 /* ServiceTypeModel.swift */; };
 		95E7738B2397123300F05169 /* ServiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E7738A2397123300F05169 /* ServiceCell.swift */; };
 		95E7738D2397124F00F05169 /* ServiceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95E7738C2397124F00F05169 /* ServiceCell.xib */; };
+		95EB52F423994D7A00A6BD26 /* SearchResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EB52F323994D7A00A6BD26 /* SearchResultView.swift */; };
+		95EB52F623994D8F00A6BD26 /* SearchResultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95EB52F523994D8F00A6BD26 /* SearchResultView.xib */; };
 		C659F9132396B44F009DE50B /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C659F9122396B44F009DE50B /* AppCoordinator.swift */; };
 		C659F9162396B4EC009DE50B /* ServiceHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C659F9152396B4EC009DE50B /* ServiceHolder.swift */; };
 		C659F92A2396B533009DE50B /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = C659F91A2396B533009DE50B /* Date.swift */; };
@@ -69,6 +71,8 @@
 		95E7738823970BBE00F05169 /* ServiceTypeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTypeModel.swift; sourceTree = "<group>"; };
 		95E7738A2397123300F05169 /* ServiceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCell.swift; sourceTree = "<group>"; };
 		95E7738C2397124F00F05169 /* ServiceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ServiceCell.xib; sourceTree = "<group>"; };
+		95EB52F323994D7A00A6BD26 /* SearchResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultView.swift; sourceTree = "<group>"; };
+		95EB52F523994D8F00A6BD26 /* SearchResultView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultView.xib; sourceTree = "<group>"; };
 		C659F9122396B44F009DE50B /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		C659F9152396B4EC009DE50B /* ServiceHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceHolder.swift; sourceTree = "<group>"; };
 		C659F91A2396B533009DE50B /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
@@ -129,6 +133,7 @@
 		9541B09A2396AE060084A0C0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				95EB52F723994D9800A6BD26 /* SearchResult */,
 				9541B09B2396AE670084A0C0 /* Cells */,
 			);
 			path = Views;
@@ -180,6 +185,15 @@
 				954CAAF22397EC5A007A77C0 /* HospitalDetailesModel.swift */,
 			);
 			path = HospitalScreen;
+			sourceTree = "<group>";
+		};
+		95EB52F723994D9800A6BD26 /* SearchResult */ = {
+			isa = PBXGroup;
+			children = (
+				95EB52F323994D7A00A6BD26 /* SearchResultView.swift */,
+				95EB52F523994D8F00A6BD26 /* SearchResultView.xib */,
+			);
+			path = SearchResult;
 			sourceTree = "<group>";
 		};
 		C659F9112396B3F4009DE50B /* Services */ = {
@@ -391,6 +405,7 @@
 				EF4D8C922397DD77003CA1BF /* SF-Pro-Rounded-Semibold.otf in Resources */,
 				EF6C7AEB2395451000AA51BC /* LaunchScreen.storyboard in Resources */,
 				954CAAE62397B586007A77C0 /* HospitalCell.xib in Resources */,
+				95EB52F623994D8F00A6BD26 /* SearchResultView.xib in Resources */,
 				EF4D8C932397DD77003CA1BF /* SF-Pro-Rounded-Regular.otf in Resources */,
 				EF6C7AE82395451000AA51BC /* Assets.xcassets in Resources */,
 				EF4D8C902397DD77003CA1BF /* SF-Pro-Rounded-Heavy.otf in Resources */,
@@ -469,6 +484,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF4D8C962397E350003CA1BF /* ServiceDetailsModel.swift in Sources */,
+				95EB52F423994D7A00A6BD26 /* SearchResultView.swift in Sources */,
 				9541B0A9239708130084A0C0 /* CALayer.swift in Sources */,
 				954CAAF32397EC5A007A77C0 /* HospitalDetailesModel.swift in Sources */,
 				C659F9132396B44F009DE50B /* AppCoordinator.swift in Sources */,
