@@ -98,21 +98,3 @@ extension MainViewController: UISearchBarDelegate {
     }
     
 }
-
-
-class SearchHelper: UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return model.searchModel.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
-    }
-    
-    var model: MainViewModel!
-    
-    init(model: MainViewModel) {
-        self.model = model
-    }
-}
