@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,10 @@
 		954CAAF12397EC47007A77C0 /* HospitalDetailsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954CAAF02397EC47007A77C0 /* HospitalDetailsCoordinator.swift */; };
 		954CAAF32397EC5A007A77C0 /* HospitalDetailesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954CAAF22397EC5A007A77C0 /* HospitalDetailesModel.swift */; };
 		954CAAF52397ECE9007A77C0 /* HospitalDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 954CAAF42397ECE9007A77C0 /* HospitalDetails.storyboard */; };
+		954CAAFC23984740007A77C0 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954CAAFB23984740007A77C0 /* MapView.swift */; };
+		954CAAFE23984747007A77C0 /* MapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 954CAAFD23984747007A77C0 /* MapView.xib */; };
+		954CAB00239847B4007A77C0 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954CAAFF239847B4007A77C0 /* UIView.swift */; };
+		954CAB0223984DE4007A77C0 /* UrlHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954CAB0123984DE4007A77C0 /* UrlHelper.swift */; };
 		95E7738723970B1D00F05169 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E7738623970B1D00F05169 /* UIColor.swift */; };
 		95E7738923970BBE00F05169 /* ServiceTypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E7738823970BBE00F05169 /* ServiceTypeModel.swift */; };
 		95E7738B2397123300F05169 /* ServiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E7738A2397123300F05169 /* ServiceCell.swift */; };
@@ -48,6 +52,11 @@
 		EF4D8C932397DD77003CA1BF /* SF-Pro-Rounded-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = EF4D8C8E2397DD77003CA1BF /* SF-Pro-Rounded-Regular.otf */; };
 		EF4D8C962397E350003CA1BF /* ServiceDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4D8C952397E350003CA1BF /* ServiceDetailsModel.swift */; };
 		EF4D8C982397ECCE003CA1BF /* HospitalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4D8C972397ECCE003CA1BF /* HospitalModel.swift */; };
+		EF4D8C9C239907D3003CA1BF /* HospitalDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4D8C9A239907D3003CA1BF /* HospitalDetailsTableViewCell.swift */; };
+		EF4D8C9D239907D3003CA1BF /* HospitalDetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF4D8C9B239907D3003CA1BF /* HospitalDetailsTableViewCell.xib */; };
+		EF4D8C9F239926DC003CA1BF /* HospitalInfoDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4D8C9E239926DC003CA1BF /* HospitalInfoDetailModel.swift */; };
+		EF4D8CA223992B54003CA1BF /* TitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4D8CA023992B54003CA1BF /* TitleTableViewCell.swift */; };
+		EF4D8CA323992B54003CA1BF /* TitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF4D8CA123992B54003CA1BF /* TitleTableViewCell.xib */; };
 		EF6C7ADF2395450F00AA51BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6C7ADE2395450F00AA51BC /* AppDelegate.swift */; };
 		EF6C7AE62395450F00AA51BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF6C7AE42395450F00AA51BC /* Main.storyboard */; };
 		EF6C7AE82395451000AA51BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF6C7AE72395451000AA51BC /* Assets.xcassets */; };
@@ -65,6 +74,10 @@
 		954CAAF02397EC47007A77C0 /* HospitalDetailsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HospitalDetailsCoordinator.swift; sourceTree = "<group>"; };
 		954CAAF22397EC5A007A77C0 /* HospitalDetailesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HospitalDetailesModel.swift; sourceTree = "<group>"; };
 		954CAAF42397ECE9007A77C0 /* HospitalDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HospitalDetails.storyboard; sourceTree = "<group>"; };
+		954CAAFB23984740007A77C0 /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		954CAAFD23984747007A77C0 /* MapView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapView.xib; sourceTree = "<group>"; };
+		954CAAFF239847B4007A77C0 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		954CAB0123984DE4007A77C0 /* UrlHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlHelper.swift; sourceTree = "<group>"; };
 		95E7738623970B1D00F05169 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		95E7738823970BBE00F05169 /* ServiceTypeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTypeModel.swift; sourceTree = "<group>"; };
 		95E7738A2397123300F05169 /* ServiceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCell.swift; sourceTree = "<group>"; };
@@ -97,6 +110,11 @@
 		EF4D8C8E2397DD77003CA1BF /* SF-Pro-Rounded-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Regular.otf"; sourceTree = "<group>"; };
 		EF4D8C952397E350003CA1BF /* ServiceDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDetailsModel.swift; sourceTree = "<group>"; };
 		EF4D8C972397ECCE003CA1BF /* HospitalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HospitalModel.swift; sourceTree = "<group>"; };
+		EF4D8C9A239907D3003CA1BF /* HospitalDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HospitalDetailsTableViewCell.swift; sourceTree = "<group>"; };
+		EF4D8C9B239907D3003CA1BF /* HospitalDetailsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HospitalDetailsTableViewCell.xib; sourceTree = "<group>"; };
+		EF4D8C9E239926DC003CA1BF /* HospitalInfoDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HospitalInfoDetailModel.swift; sourceTree = "<group>"; };
+		EF4D8CA023992B54003CA1BF /* TitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTableViewCell.swift; sourceTree = "<group>"; };
+		EF4D8CA123992B54003CA1BF /* TitleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitleTableViewCell.xib; sourceTree = "<group>"; };
 		EF6C7ADB2395450F00AA51BC /* KropHackathon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KropHackathon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF6C7ADE2395450F00AA51BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EF6C7AE22395450F00AA51BC /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -129,6 +147,8 @@
 		9541B09A2396AE060084A0C0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				954CAAFD23984747007A77C0 /* MapView.xib */,
+				954CAAFB23984740007A77C0 /* MapView.swift */,
 				9541B09B2396AE670084A0C0 /* Cells */,
 			);
 			path = Views;
@@ -137,6 +157,7 @@
 		9541B09B2396AE670084A0C0 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				EF4D8C99239906DE003CA1BF /* HospitalDetails */,
 				954CAAE42397B569007A77C0 /* Hospital */,
 				9541B0A12396B4F10084A0C0 /* Service */,
 				9541B0A02396B4820084A0C0 /* ServiceType */,
@@ -205,6 +226,7 @@
 			children = (
 				C659F91B2396B533009DE50B /* UI */,
 				9541B0A6239707920084A0C0 /* Style.swift */,
+				954CAB0123984DE4007A77C0 /* UrlHelper.swift */,
 				C659F91A2396B533009DE50B /* Date.swift */,
 				C659F9282396B533009DE50B /* NSObject.swift */,
 			);
@@ -219,6 +241,7 @@
 				C659F91F2396B533009DE50B /* UITableView.swift */,
 				C659F9202396B533009DE50B /* UITableViewCell.swift */,
 				95E7738623970B1D00F05169 /* UIColor.swift */,
+				954CAAFF239847B4007A77C0 /* UIView.swift */,
 				C659F9222396B533009DE50B /* UIViewController.swift */,
 				C659F9232396B533009DE50B /* UIImageView.swift */,
 				C659F9252396B533009DE50B /* UICollectionViewCell.swift */,
@@ -273,8 +296,20 @@
 			children = (
 				EF4D8C952397E350003CA1BF /* ServiceDetailsModel.swift */,
 				EF4D8C972397ECCE003CA1BF /* HospitalModel.swift */,
+				EF4D8C9E239926DC003CA1BF /* HospitalInfoDetailModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		EF4D8C99239906DE003CA1BF /* HospitalDetails */ = {
+			isa = PBXGroup;
+			children = (
+				EF4D8C9A239907D3003CA1BF /* HospitalDetailsTableViewCell.swift */,
+				EF4D8C9B239907D3003CA1BF /* HospitalDetailsTableViewCell.xib */,
+				EF4D8CA023992B54003CA1BF /* TitleTableViewCell.swift */,
+				EF4D8CA123992B54003CA1BF /* TitleTableViewCell.xib */,
+			);
+			path = HospitalDetails;
 			sourceTree = "<group>";
 		};
 		EF6C7AD22395450F00AA51BC = {
@@ -391,14 +426,17 @@
 				EF4D8C922397DD77003CA1BF /* SF-Pro-Rounded-Semibold.otf in Resources */,
 				EF6C7AEB2395451000AA51BC /* LaunchScreen.storyboard in Resources */,
 				954CAAE62397B586007A77C0 /* HospitalCell.xib in Resources */,
+				EF4D8C9D239907D3003CA1BF /* HospitalDetailsTableViewCell.xib in Resources */,
 				EF4D8C932397DD77003CA1BF /* SF-Pro-Rounded-Regular.otf in Resources */,
 				EF6C7AE82395451000AA51BC /* Assets.xcassets in Resources */,
 				EF4D8C902397DD77003CA1BF /* SF-Pro-Rounded-Heavy.otf in Resources */,
 				954CAAF52397ECE9007A77C0 /* HospitalDetails.storyboard in Resources */,
 				EF4D8C872397C632003CA1BF /* ServiceTableViewCell.xib in Resources */,
 				EF4D8C7B2397AC15003CA1BF /* List.storyboard in Resources */,
+				EF4D8CA323992B54003CA1BF /* TitleTableViewCell.xib in Resources */,
 				EF4D8C912397DD77003CA1BF /* SF-Pro-Rounded-Ultralight.otf in Resources */,
 				EF6C7AE62395450F00AA51BC /* Main.storyboard in Resources */,
+				954CAAFE23984747007A77C0 /* MapView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,6 +507,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF4D8C962397E350003CA1BF /* ServiceDetailsModel.swift in Sources */,
+				954CAAFC23984740007A77C0 /* MapView.swift in Sources */,
 				9541B0A9239708130084A0C0 /* CALayer.swift in Sources */,
 				954CAAF32397EC5A007A77C0 /* HospitalDetailesModel.swift in Sources */,
 				C659F9132396B44F009DE50B /* AppCoordinator.swift in Sources */,
@@ -479,7 +518,9 @@
 				C659F9352396B533009DE50B /* UIStoryboard.swift in Sources */,
 				C659F9322396B533009DE50B /* UIImageView.swift in Sources */,
 				95E7738923970BBE00F05169 /* ServiceTypeModel.swift in Sources */,
+				EF4D8C9F239926DC003CA1BF /* HospitalInfoDetailModel.swift in Sources */,
 				95E7738723970B1D00F05169 /* UIColor.swift in Sources */,
+				954CAB00239847B4007A77C0 /* UIView.swift in Sources */,
 				C659F92A2396B533009DE50B /* Date.swift in Sources */,
 				954CAAEF2397EC20007A77C0 /* HospitalDetailesController.swift in Sources */,
 				EF4D8C862397C632003CA1BF /* ServiceTableViewCell.swift in Sources */,
@@ -487,8 +528,10 @@
 				C659F92F2396B533009DE50B /* UITableViewCell.swift in Sources */,
 				EF4D8C982397ECCE003CA1BF /* HospitalModel.swift in Sources */,
 				C659F93D2396F6F7009DE50B /* MainViewController.swift in Sources */,
+				954CAB0223984DE4007A77C0 /* UrlHelper.swift in Sources */,
 				C659F92E2396B533009DE50B /* UITableView.swift in Sources */,
 				C659F93A2396B57C009DE50B /* MainCoordinator.swift in Sources */,
+				EF4D8C9C239907D3003CA1BF /* HospitalDetailsTableViewCell.swift in Sources */,
 				EF4D8C772397AB3B003CA1BF /* ListCoordinator.swift in Sources */,
 				954CAAF12397EC47007A77C0 /* HospitalDetailsCoordinator.swift in Sources */,
 				95E7738B2397123300F05169 /* ServiceCell.swift in Sources */,
@@ -498,6 +541,7 @@
 				EF4D8C7F2397B930003CA1BF /* UIFont.swift in Sources */,
 				EF4D8C752397A8EC003CA1BF /* ListViewController.swift in Sources */,
 				EF6C7ADF2395450F00AA51BC /* AppDelegate.swift in Sources */,
+				EF4D8CA223992B54003CA1BF /* TitleTableViewCell.swift in Sources */,
 				9541B0A7239707920084A0C0 /* Style.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
