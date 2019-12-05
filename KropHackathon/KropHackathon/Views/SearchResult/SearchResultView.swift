@@ -13,10 +13,13 @@ class SearchResultView: UIView {
     @IBOutlet private weak var tableView: UITableView!
     
     var models: [HospitalModel] = []
+    var didSelected: ((Int) -> Void)?
+    var didDrag: ( () -> Void)?
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.nibSetup()
+        
     }
     
     override init(frame: CGRect) {
@@ -24,15 +27,12 @@ class SearchResultView: UIView {
         self.nibSetup()
     }
     
-    func configure(_ models: [HospitalModel]) {
+    func update(_ models: [HospitalModel]) {
         self.models = models
-        
-    }
-
-    func show(_ state: Bool) {
-        self.tableView.isHidden = state
-    }
-    
+        tableView.register([HospitalCell.identifier])
+        tableView.setDataSource(self, delegate: self)
+        self.tableView.reloadData()
+    }    
 }
 
 extension SearchResultView: UITableViewDataSource {
@@ -41,12 +41,20 @@ extension SearchResultView: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        guard let cell: HospitalCell = tableView.dequeCell(for: indexPath) else {
+            print("can't find cell")
+            return UITableViewCell()
+        }
+        cell.configure(model: models[indexPath.row])
+        return cell
     }
     
     
 }
 
 extension SearchResultView: UITableViewDelegate {
+   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+        self.didSelected?(indexPath.row)
+    }
     
 }

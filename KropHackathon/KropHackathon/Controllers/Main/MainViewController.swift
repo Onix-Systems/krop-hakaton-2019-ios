@@ -14,13 +14,21 @@ final class MainViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet private weak var searchBar: UISearchBar!
     @IBOutlet private weak var tableView: UITableView!
-    @IBOutlet weak var searchTableView: UITableView!
     
+    @IBOutlet weak var searchResult: SearchResultView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         configure()
         
+        searchResult.didSelected = { [weak self] row in
+            self?.viewModel.openDetails()
+        }
+        
+        searchResult.didDrag = {
+            self.searchBar.endEditing(true)
+        }
+        UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self]).isEnabled = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -30,13 +38,21 @@ final class MainViewController: UIViewController {
     
     private func configure() {
     tableView.register([ServiceCell.identifier])
-        searchTableView.register([HospitalCell.identifier])
         tableView.setDataSource(self, delegate: self)
-    //searchTableView.dataSource = SearchHelper()
         tableView.reloadData()
         
         searchBar.delegate = self
-        
+        //searchBar.isUserInteractionEnabled = true //UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self]).isEnabled = true
+//            let tap = UITapGestureRecognizer(target: self, action: "dismiss")
+//
+//
+//        searchResult.view.addGestureRecognizer(tap)
+        }
+    
+
+
+    @objc func dismiss() {
+        searchBar.endEditing(true)
     }
     
     private func configureNavigationBar() {
@@ -76,24 +92,37 @@ extension MainViewController: UISearchBarDelegate {
        
     }
     
+    func cancel() {
+        searchBar.setShowsCancelButton(true, animated: true)
+    }
     
     func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
          configureSearchMode(true)
+        searchBar.setShowsCancelButton(true, animated: true)
         return true
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-       
+       searchResult.update(viewModel.searchModel)
     }
     
     func configureSearchMode(_ state: Bool) {
         searchBar.showsCancelButton = true
-        searchTableView.isHidden = !state
+        searchResult.isHidden = !state
         tableView.isHidden = state
         titleLabel.isHidden = state
     }
     
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        
+        configureSearchMode(false)
+        searchBar.endEditing(true)
+        searchBar.text = ""
+    }
+    
+    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchResult.update(viewModel.searchModel)
         searchBar.endEditing(true)
     }
     
