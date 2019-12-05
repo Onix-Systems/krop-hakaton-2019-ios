@@ -11,8 +11,10 @@ import UIKit
 final class MainViewController: UIViewController {
     var viewModel: MainViewModelType!
 
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet private weak var searchBar: UISearchBar!
     @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet weak var searchTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,9 +29,13 @@ final class MainViewController: UIViewController {
     }
     
     private func configure() {
-        tableView.register([ServiceCell.identifier])
+    tableView.register([ServiceCell.identifier])
+        searchTableView.register([HospitalCell.identifier])
         tableView.setDataSource(self, delegate: self)
+    //searchTableView.dataSource = SearchHelper()
         tableView.reloadData()
+        
+        searchBar.delegate = self
         
     }
     
@@ -62,6 +68,35 @@ extension MainViewController: UITableViewDataSource {
         
         return cell
     }
+}
+
+extension MainViewController: UISearchBarDelegate {
     
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+       
+    }
+    
+    
+    func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
+         configureSearchMode(true)
+        return true
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+       
+    }
+    
+    func configureSearchMode(_ state: Bool) {
+        searchBar.showsCancelButton = true
+        searchTableView.isHidden = !state
+        tableView.isHidden = state
+        titleLabel.isHidden = state
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.endEditing(true)
+    }
     
 }
+
+

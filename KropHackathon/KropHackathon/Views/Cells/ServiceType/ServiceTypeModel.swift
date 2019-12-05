@@ -7,15 +7,20 @@
 //
 
 import Foundation
+import UIKit
 
 class ServiceTypeModel {
     
     var name: String
     var image: String
+    var backColor: UIColor
+    var servises: [String]
     
-    init(name: String, image: String) {
+    init(name: String, image: String, backColor: UIColor, services: [String]) {
         self.name = name
         self.image = image
+        self.backColor = backColor
+        self.servises = services
     }
     
 }

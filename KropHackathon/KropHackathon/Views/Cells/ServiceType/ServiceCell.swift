@@ -11,6 +11,7 @@ import UIKit
 
 class ServiceCell: UITableViewCell {
     
+    @IBOutlet weak var servicesLabel: UILabel!
     @IBOutlet weak var wrapperView: UIView!
     @IBOutlet weak var serviceTypeLabel: UILabel!
     @IBOutlet weak var serviceImageView: UIImageView!
@@ -30,8 +31,18 @@ class ServiceCell: UITableViewCell {
     
     func configure(_ model: ServiceTypeModel) {
         self.model = model
-        
+        self.wrapperView.backgroundColor = model.backColor
+        var i = 0
+        let servises = model.servises.prefix(while: { (element) -> Bool in
+            i += 1 + element.count
+            if i <= 60 {
+                return true
+            } else {
+                return false
+            }
+        }).joined(separator: " | ")
+        self.servicesLabel.text = servises + " | інше(+30)"
        self.serviceTypeLabel.text = model.name
-        self.serviceImageView.image = UIImage(named: "redCross")
+        self.serviceImageView.image = UIImage(named: model.image) ?? UIImage(named: "redCross")
     }
 }
