@@ -12,7 +12,6 @@ import UIKit
 protocol HospitalDetailsCoordinatorType {
     func start()
     
-    func openMap()
     func goBack()
 }
 
@@ -33,12 +32,6 @@ final class HospitalDetailsCoordinator: HospitalDetailsCoordinatorType {
         if let controller = controller {
             navigationController?.pushViewController(controller, animated: true)
         }
-    }
-        
-    func openMap() {
-//        let coordinator = DetailsCoordinator(navigationController: navigationController, serviceHolder: serviceHolder)
-//        coordinator.start()
-        print("Coordinator: openMap()")
     }
 
     func goBack() {

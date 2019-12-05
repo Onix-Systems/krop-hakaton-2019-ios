@@ -12,12 +12,12 @@ import GoogleMaps
 
 final class HospitalDetailesController: UIViewController {
     var viewModel: HospitalDetailesModelType!
-
+    
     @IBOutlet weak var lookOnMapButton: UIButton!
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet weak var map: MapView!
     
-   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -28,7 +28,7 @@ final class HospitalDetailesController: UIViewController {
         UrlOpenHelper.openDirections(to: viewModel.point)
         
     }
-
+    
     private func configure() {
         
         map.customSetup(with: viewModel.point)
@@ -38,8 +38,9 @@ final class HospitalDetailesController: UIViewController {
         lookOnMapButton.layer.cornerRadius = 16.0
         lookOnMapButton.layer.borderWidth = 0.5
         lookOnMapButton.layer.borderColor = Style.Color.borderColor.cgColor
-    lookOnMapButton.layer.applySketchShadow(color: Style.Color.shadowColor, alpha: 0.14, xxx: 0, yyy: 4, blur: 12, spread: 0)
-    tableView.register([ServiceTableViewCell.className])
+        lookOnMapButton.layer.applySketchShadow(color: Style.Color.shadowColor, alpha: 0.14, xxx: 0, yyy: 4, blur: 12, spread: 0)
+        
+        tableView.register([HospitalDetailsTableViewCell.className, TitleTableViewCell.className])
         tableView.setDataSource(self, delegate: self)
         
         tableView.reloadData()
@@ -56,7 +57,7 @@ final class HospitalDetailesController: UIViewController {
         btn.addTarget(self, action: #selector(backBtnClicked), for: .touchUpInside)
         btn.setImage(Style.Images.backIcon, for: .normal)
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: btn)
-
+        
         let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: view.frame.width - 50, height: 50))
         titleLabel.textColor = UIColor(red: 0.01, green: 0.10, blue: 0.19, alpha: 1.0)
         titleLabel.font = UIFont.sfRoundedBold(17)
@@ -68,28 +69,33 @@ final class HospitalDetailesController: UIViewController {
     @objc
     func backBtnClicked() {
         viewModel.goBack()
-//        print("backBtn clicked")
+        //        print("backBtn clicked")
     }
 }
 
-extension HospitalDetailesController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //viewModel.openDetails()
-    }
-}
-
-extension HospitalDetailesController: UITableViewDataSource {
+extension HospitalDetailesController: UITableViewDataSource, UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.serviceDetailsModels.count
+        return viewModel.hospitalInfoDetailModels.count + 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell: ServiceTableViewCell = tableView.dequeCell(for: indexPath) else {
+        if indexPath.row == 0 {
+            guard let cell: TitleTableViewCell = tableView.dequeCell(for: indexPath) else {
             print("can't find cell")
             return UITableViewCell()
+            }
+            cell.configure(title: viewModel.title)
+            return cell
+            
+        } else {
+            guard let cell: HospitalDetailsTableViewCell = tableView.dequeCell(for: indexPath) else {
+                print("can't find cell")
+                return UITableViewCell()
+            }
+            cell.configure(model: viewModel.hospitalInfoDetailModels[indexPath.row - 1])
+            return cell
         }
-        cell.configure(name: viewModel.serviceDetailsModels[indexPath.row].serviceDetailsName, viewModel.serviceDetailsModels[indexPath.row].serviceTypeName)
-        return cell
     }
     
     
