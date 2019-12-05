@@ -21,6 +21,11 @@ final class ListViewController: UIViewController {
     
     private func configure() {
         configureNavigationBar()
+
+        self.view.backgroundColor = Style.Color.uziPink
+        tableView.layer.cornerRadius = Style.Radius.defaultRadius
+        tableView.layer.borderWidth = 0.5
+        tableView.layer.borderColor = Style.Color.borderColor.cgColor
         tableView.register([ServiceTableViewCell.className, HospitalCell.className])
         tableView.setDataSource(self, delegate: self)
         
@@ -31,6 +36,11 @@ final class ListViewController: UIViewController {
         navigationController?.isNavigationBarHidden = false
         navigationController?.navigationBar.isTranslucent = false
 
+        navigationController?.navigationBar.barTintColor = Style.Color.uziPink
+
+    
+        navigationController?.navigationBar.shadowImage = UIImage()
+        
         let backBarButton = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
         navigationItem.backBarButtonItem = backBarButton
         
@@ -43,6 +53,7 @@ final class ListViewController: UIViewController {
         let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: view.frame.width - 50, height: 50))
         titleLabel.textColor = UIColor(red: 0.01, green: 0.10, blue: 0.19, alpha: 1.0)
         titleLabel.font = UIFont.sfRoundedBold(17)
+        titleLabel.textColor = .white
         titleLabel.text = viewModel.screenTitle //"Ультразвуковi дослiдження"
         navigationItem.titleView = titleLabel
         

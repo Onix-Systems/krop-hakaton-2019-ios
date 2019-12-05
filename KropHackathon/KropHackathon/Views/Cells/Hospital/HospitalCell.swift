@@ -18,11 +18,6 @@ class HospitalCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-
-        wrapperView.layer.cornerRadius = Style.Radius.defaultRadius
-        wrapperView.layer.borderWidth = 0.5
-        wrapperView.layer.borderColor = Style.Color.borderColor.cgColor
-        wrapperView.layer.applySketchShadow(color: Style.Color.shadowColor, alpha: 0.14, xxx: 0, yyy: 4, blur: 12, spread: 0)
     }
     
     func configure(model: HospitalModel) {
