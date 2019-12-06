@@ -42,9 +42,8 @@ final class ListCoordinator: ListCoordinatorType {
     }
     
     func openDetails() {
-//        let coordinator = DetailsCoordinator(navigationController: navigationController, serviceHolder: serviceHolder)
-//        coordinator.start()
-        print("Coordinator: openDetails()")
+        let coordinator = HospitalDetailsCoordinator(navigationController: navigationController, serviceHolder: serviceHolder)
+        coordinator.start()
     }
 
     func goBack() {

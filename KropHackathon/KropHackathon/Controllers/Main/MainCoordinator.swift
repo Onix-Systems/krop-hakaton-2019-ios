@@ -11,6 +11,7 @@ import UIKit
 protocol MainCoordinatorType {
     func start()
     func openList(model: ServiceTypeModel)
+    func openDetails()
 }
 
 final class MainCoordinator: MainCoordinatorType {
@@ -33,6 +34,11 @@ final class MainCoordinator: MainCoordinatorType {
         if let controller = controller {
             navigationController?.pushViewController(controller, animated: true)
         }
+    }
+    
+    func openDetails() {
+        let coordinator = HospitalDetailsCoordinator(navigationController: navigationController, serviceHolder: serviceHolder)
+        coordinator.start()
     }
         
     func openList(model: ServiceTypeModel) {

@@ -12,11 +12,12 @@ import GoogleMaps
 
 final class HospitalDetailesController: UIViewController {
     var viewModel: HospitalDetailesModelType!
-
-    @IBOutlet weak var lookOnMapButton: UIButton!
+    
+    @IBOutlet private weak var lookOnMapButton: UIButton!
     @IBOutlet private weak var tableView: UITableView!
-
-    @IBOutlet weak var map: GMSMapView!
+    @IBOutlet private weak var map: MapView!
+    @IBOutlet private weak var closeButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,67 +25,72 @@ final class HospitalDetailesController: UIViewController {
     }
     
     @IBAction func pushToMap(_ sender: Any) {
+        UrlOpenHelper.openDirections(to: viewModel.point)
+        
     }
     
-    
-    
     private func configure() {
+        configureMap()
         configureNavigationBar()
-        lookOnMapButton.layer.cornerRadius = Style.Radius.defaultRadius
-        lookOnMapButton.layer.borderWidth = 0.5
-        lookOnMapButton.layer.borderColor = Style.Color.borderColor.cgColor
-        lookOnMapButton.layer.applySketchShadow(color: Style.Color.shadowColor, alpha: 0.14, xxx: 0, yyy: 4, blur: 12, spread: 0)
-    tableView.register([ServiceTableViewCell.className])
-        tableView.setDataSource(self, delegate: self)
-        
-        tableView.reloadData()
+        configureOpenMapBtn()
+        configureTableView()
+    }
+    
+    private func configureMap() {
+        map.customSetup(with: viewModel.point)
+        map.addMarker(coordinate: viewModel.point)
+        map.moveToLocation(location: CLLocation.init(latitude: 48.510942, longitude: 32.270891))
     }
     
     private func configureNavigationBar() {
-        navigationController?.isNavigationBarHidden = false
-        
-        let backBarButton = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
-        navigationItem.backBarButtonItem = backBarButton
-        
-        let btn = UIButton(type: .custom)
-        btn.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
-        btn.addTarget(self, action: #selector(backBtnClicked), for: .touchUpInside)
-        btn.setImage(Style.Images.backIcon, for: .normal)
-        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: btn)
-
-        let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: view.frame.width - 50, height: 50))
-        titleLabel.textColor = UIColor(red: 0.01, green: 0.10, blue: 0.19, alpha: 1.0)
-        titleLabel.font = UIFont.sfRoundedBold(17)
-        titleLabel.text = "Ультразвуковi дослiдження"
-        navigationItem.titleView = titleLabel
-        
+        navigationController?.isNavigationBarHidden = true
+        navigationController?.navigationBar.isTranslucent = true
     }
     
-    @objc
-    func backBtnClicked() {
+    private func configureOpenMapBtn() {
+        lookOnMapButton.layer.cornerRadius = 16.0
+        lookOnMapButton.layer.borderWidth = 0.5
+        lookOnMapButton.layer.borderColor = Style.Color.borderColor.cgColor
+        lookOnMapButton.layer.applySketchShadow(color: Style.Color.shadowColor, alpha: 0.14, xxx: 0, yyy: 4, blur: 12, spread: 0)
+    }
+    
+    private func configureTableView() {
+        tableView.register([HospitalDetailsTableViewCell.className, TitleTableViewCell.className])
+        tableView.setDataSource(self)
+        tableView.layer.cornerRadius = 10
+        tableView.reloadData()
+        tableView.layer.applySketchShadow(color: Style.Color.shadowColor, alpha: 0.3, xxx: 0, yyy: -8, blur: 8, spread: 0)
+    }
+    
+    @IBAction func closeBtnClicked(_ sender: UIButton) {
         viewModel.goBack()
-//        print("backBtn clicked")
     }
-}
-
-extension HospitalDetailesController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //viewModel.openDetails()
-    }
+    
 }
 
 extension HospitalDetailesController: UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.serviceDetailsModels.count
+        return viewModel.hospitalInfoDetailModels.count + 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell: ServiceTableViewCell = tableView.dequeCell(for: indexPath) else {
+        if indexPath.row == 0 {
+            guard let cell: TitleTableViewCell = tableView.dequeCell(for: indexPath) else {
             print("can't find cell")
             return UITableViewCell()
+            }
+            cell.configure(title: viewModel.title)
+            return cell
+            
+        } else {
+            guard let cell: HospitalDetailsTableViewCell = tableView.dequeCell(for: indexPath) else {
+                print("can't find cell")
+                return UITableViewCell()
+            }
+            cell.configure(model: viewModel.hospitalInfoDetailModels[indexPath.row - 1])
+            return cell
         }
-        cell.configure(name: viewModel.serviceDetailsModels[indexPath.row].serviceDetailsName, viewModel.serviceDetailsModels[indexPath.row].serviceTypeName)
-        return cell
     }
     
     

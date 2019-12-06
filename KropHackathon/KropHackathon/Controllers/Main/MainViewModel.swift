@@ -15,6 +15,7 @@ protocol MainViewModelType {
     var searchModel: [HospitalModel] { get }
 
     func openList(row: Int)
+    func openDetails()
 }
 
 final class MainViewModel: MainViewModelType {
@@ -37,6 +38,10 @@ final class MainViewModel: MainViewModelType {
 //        mapService = serviceHolder.get(by: MapServiceType.self)
 //        medicalService = serviceHolder.get(by: MedicalServiceType.self)
         
+    }
+    
+    func openDetails() {
+        coordinator.openDetails()
     }
     
     func openList(row: Int) {
