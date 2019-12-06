@@ -21,13 +21,11 @@ final class MainCoordinator: MainCoordinatorType {
     private var serviceHolder: ServiceHolder!
     
     init(navigationController: UINavigationController?, serviceHolder: ServiceHolder) {
+        
         self.navigationController = navigationController
-        self.navigationController?.navigationBar.isTranslucent = true
+        
         self.serviceHolder = serviceHolder
         controller?.viewModel = MainViewModel(self, serviceHolder: self.serviceHolder)
-        navigationController?.isNavigationBarHidden = true
-        navigationController?.navigationBar.isTranslucent = true
-
     }
     
     func start() {
@@ -42,8 +40,9 @@ final class MainCoordinator: MainCoordinatorType {
     }
         
     func openList(model: ServiceTypeModel) {
-        navigationController?.navigationBar.barTintColor = model.backColor
+        
         let coordinator = ListCoordinator(navigationController: navigationController, serviceHolder: serviceHolder, screenTitle: model.name)
+        navigationController?.navigationBar.barTintColor = model.backColor
         coordinator.start()
     }
     

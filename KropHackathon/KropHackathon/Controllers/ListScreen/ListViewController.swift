@@ -10,19 +10,40 @@ import UIKit
 
 final class ListViewController: UIViewController {
     var viewModel: ListViewModelType!
-
+    
     @IBOutlet private weak var tableView: UITableView!
-
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        configureNavigationBar()
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
         configure()
+        setUpClosure()
+    }
+    
+    private func setUpClosure() {
+        
+        viewModel.didLoadData = {
+            self.tableView.reloadData()
+        }
+        
+        viewModel.didLoadFailed = { [weak self] error in
+            let alert = UIAlertController(title: "Error", message: error, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self?.present(alert, animated: true, completion: nil)
+            
+        }
     }
     
     private func configure() {
-        configureNavigationBar()
-
+        
         self.view.backgroundColor = navigationController?.navigationBar.barTintColor
+        
         tableView.layer.cornerRadius = Style.Radius.defaultRadius
         tableView.layer.borderWidth = 0.5
         tableView.layer.borderColor = Style.Color.borderColor.cgColor
@@ -35,25 +56,22 @@ final class ListViewController: UIViewController {
     private func configureNavigationBar() {
         navigationController?.isNavigationBarHidden = false
         navigationController?.navigationBar.isTranslucent = false
-    
         navigationController?.navigationBar.shadowImage = UIImage()
         
         let backBarButton = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
         navigationItem.backBarButtonItem = backBarButton
         
         let btn = UIButton(type: .custom)
-        btn.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+        btn.frame = Style.Size.backBtnFrame
         btn.addTarget(self, action: #selector(backBtnClicked), for: .touchUpInside)
         btn.setImage(Style.Images.backIcon, for: .normal)
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: btn)
-
-        let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: view.frame.width - 50, height: 50))
-        titleLabel.textColor = UIColor(red: 0.01, green: 0.10, blue: 0.19, alpha: 1.0)
-        titleLabel.font = UIFont.sfRoundedBold(17)
-        titleLabel.textColor = .white
-        titleLabel.text = viewModel.screenTitle //"Ультразвуковi дослiдження"
-        navigationItem.titleView = titleLabel
         
+        let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: view.frame.width - 50, height: 50))
+        titleLabel.font = Style.Font.navTitleFont
+        titleLabel.textColor = .white
+        titleLabel.text = viewModel.screenTitle
+        navigationItem.titleView = titleLabel
     }
     
     @objc
@@ -70,7 +88,6 @@ extension ListViewController: UITableViewDelegate {
         case . hospitals:
             viewModel.openDetails()
         }
-
     }
 }
 
@@ -91,7 +108,7 @@ extension ListViewController: UITableViewDataSource {
                 print("can't find cell")
                 return UITableViewCell()
             }
-            cell.configure(name: viewModel.serviceDetailsModels[indexPath.row].serviceDetailsName, viewModel.serviceDetailsModels[indexPath.row].serviceTypeName)
+            cell.configure( viewModel.serviceDetailsModels[indexPath.row])
             return cell
         case .hospitals:
             guard let cell: HospitalCell = tableView.dequeCell(for: indexPath) else {
@@ -102,6 +119,4 @@ extension ListViewController: UITableViewDataSource {
             return cell
         }
     }
-    
-    
 }

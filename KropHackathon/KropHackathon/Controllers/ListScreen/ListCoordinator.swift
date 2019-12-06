@@ -22,9 +22,9 @@ final class ListCoordinator: ListCoordinatorType {
     private let navigationController: UINavigationController?
     private var serviceHolder: ServiceHolder!
     
-    init(navigationController: UINavigationController?, serviceHolder: ServiceHolder, screenType: ListScreenType = .serviceDetails, screenTitle: String) {
+    init(navigationController: UINavigationController?, serviceHolder: ServiceHolder, _ screenType: ListScreenType = .serviceDetails, screenTitle: String) {
+        
         self.navigationController = navigationController
-        self.navigationController?.navigationBar.isTranslucent = true
         self.serviceHolder = serviceHolder
         
         controller?.viewModel = ListViewModel(self, serviceHolder: self.serviceHolder, screenType: screenType, screenTitle: screenTitle)
@@ -37,7 +37,7 @@ final class ListCoordinator: ListCoordinatorType {
     }
     
     func openHospitals(model: ServiceDetailsModel) {
-        let coordinator = ListCoordinator(navigationController: navigationController, serviceHolder: serviceHolder, screenType: .hospitals, screenTitle: "\(model.serviceTypeName) \(model.serviceDetailsName)")
+        let coordinator = ListCoordinator(navigationController: navigationController, serviceHolder: serviceHolder, .hospitals, screenTitle: "\(model.serviceTypeName) \(model.serviceDetailsName)")
         coordinator.start()
     }
     

@@ -9,5 +9,5 @@ target 'KropHackathon' do
   pod 'SwiftLint'
   pod 'GoogleMaps'
   pod 'GooglePlaces'
-  
+  pod 'RxSwift', '~> 4.4.1'
 end
