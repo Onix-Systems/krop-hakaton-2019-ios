@@ -14,7 +14,6 @@ class SearchResultView: UIView {
     
     var models: [HospitalModel] = []
     var didSelected: ((Int) -> Void)?
-    var didDrag: ( () -> Void)?
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -48,13 +47,10 @@ extension SearchResultView: UITableViewDataSource {
         cell.configure(model: models[indexPath.row])
         return cell
     }
-    
-    
 }
 
 extension SearchResultView: UITableViewDelegate {
    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
         self.didSelected?(indexPath.row)
     }
-    
 }
