@@ -24,9 +24,13 @@ final class HospitalDetailsCoordinator: HospitalDetailsCoordinatorType {
     init(navigationController: UINavigationController?, serviceHolder: ServiceHolder) {
         self.navigationController = navigationController
         self.navigationController?.navigationBar.isTranslucent = true
+        navigationController?.isNavigationBarHidden = true
+
+            
         self.serviceHolder = serviceHolder
         controller?.viewModel = HospitalDetailesModel(self, serviceHolder: self.serviceHolder)
     }
+
     
     func start() {
         if let controller = controller {

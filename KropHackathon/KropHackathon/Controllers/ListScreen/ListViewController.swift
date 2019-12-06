@@ -22,7 +22,7 @@ final class ListViewController: UIViewController {
     private func configure() {
         configureNavigationBar()
 
-        self.view.backgroundColor = Style.Color.uziPink
+        self.view.backgroundColor = navigationController?.navigationBar.barTintColor
         tableView.layer.cornerRadius = Style.Radius.defaultRadius
         tableView.layer.borderWidth = 0.5
         tableView.layer.borderColor = Style.Color.borderColor.cgColor
@@ -35,9 +35,6 @@ final class ListViewController: UIViewController {
     private func configureNavigationBar() {
         navigationController?.isNavigationBarHidden = false
         navigationController?.navigationBar.isTranslucent = false
-
-        navigationController?.navigationBar.barTintColor = Style.Color.uziPink
-
     
         navigationController?.navigationBar.shadowImage = UIImage()
         

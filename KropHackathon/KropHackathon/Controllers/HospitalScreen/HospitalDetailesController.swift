@@ -13,6 +13,7 @@ import GoogleMaps
 final class HospitalDetailesController: UIViewController {
     var viewModel: HospitalDetailesModelType!
     
+    @IBOutlet weak var gradientView: UIView!
     @IBOutlet private weak var lookOnMapButton: UIButton!
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var map: MapView!
@@ -31,7 +32,7 @@ final class HospitalDetailesController: UIViewController {
     
     private func configure() {
         configureMap()
-        configureNavigationBar()
+        //configureNavigationBar()
         configureOpenMapBtn()
         configureTableView()
     }
@@ -40,12 +41,20 @@ final class HospitalDetailesController: UIViewController {
         map.customSetup(with: viewModel.point)
         map.addMarker(coordinate: viewModel.point)
         map.moveToLocation(location: CLLocation.init(latitude: 48.510942, longitude: 32.270891))
+        let gradient = CAGradientLayer()
+        var bounds = self.navigationController?.navigationBar.bounds
+        bounds?.size.height += UIApplication.shared.statusBarFrame.size.height
+        gradient.frame = bounds!
+        gradient.colors = [UIColor.black.cgColor, UIColor.clear.cgColor]
+        gradient.startPoint = CGPoint(x: 0, y: 0)
+        gradient.endPoint = CGPoint(x: 0, y: 1)
+        self.gradientView.layer.addSublayer(gradient)
     }
     
-    private func configureNavigationBar() {
-        navigationController?.isNavigationBarHidden = true
-        navigationController?.navigationBar.isTranslucent = true
-    }
+//    private func configureNavigationBar() {
+//        navigationController?.isNavigationBarHidden = true
+//        navigationController?.navigationBar.isTranslucent = true
+//    }
     
     private func configureOpenMapBtn() {
         lookOnMapButton.layer.cornerRadius = 16.0

@@ -11,7 +11,7 @@ import UIKit
 final class Style {
     
     struct Images {
-        static let backIcon = UIImage(named: "backIcon")!
+        static let backIcon = UIImage(named: "ic_back")!
         static let locationIcon = UIImage(named: "icPinlocation")!
         static let scheduleIcon = UIImage(named: "icTime")!
         static let closedTimeIcon = UIImage(named: "icNoTime")!

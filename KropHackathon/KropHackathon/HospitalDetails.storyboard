@@ -22,11 +22,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tll-co-7eH" customClass="MapView" customModule="KropHackathon">
-                                <rect key="frame" x="-1" y="44" width="415" height="269"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <rect key="frame" x="0.0" y="-44" width="415" height="448"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mjC-sY-jQT">
+                                <rect key="frame" x="0.0" y="-44" width="415" height="180"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <button alpha="0.65000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OfS-WO-tK1">
-                                <rect key="frame" x="14" y="54" width="35" height="35"/>
+                                <rect key="frame" x="15" y="46" width="35" height="35"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="OfS-WO-tK1" secondAttribute="height" multiplier="1:1" id="LaZ-KG-3td"/>
@@ -38,11 +42,11 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wlz-ss-tES">
-                                <rect key="frame" x="-1" y="303" width="415" height="559"/>
+                                <rect key="frame" x="0.5" y="404" width="414" height="492"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
                             <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J71-Ym-ZyB">
-                                <rect key="frame" x="118.5" y="255" width="177" height="33"/>
+                                <rect key="frame" x="118.5" y="356" width="177" height="33"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="33" id="DXy-l0-h93"/>
@@ -57,24 +61,29 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="wlz-ss-tES" firstAttribute="top" secondItem="tll-co-7eH" secondAttribute="bottom" constant="-10" id="0Gc-pf-mvp"/>
-                            <constraint firstItem="J71-Ym-ZyB" firstAttribute="centerX" secondItem="Vbx-3a-fJP" secondAttribute="centerX" id="2qB-tW-i1T"/>
+                            <constraint firstItem="wlz-ss-tES" firstAttribute="top" secondItem="tll-co-7eH" secondAttribute="bottom" id="0Gc-pf-mvp"/>
+                            <constraint firstItem="J71-Ym-ZyB" firstAttribute="centerX" secondItem="tap-kd-ckE" secondAttribute="centerX" id="2qB-tW-i1T"/>
+                            <constraint firstAttribute="top" secondItem="tll-co-7eH" secondAttribute="top" constant="44" id="5sS-TE-Mc5"/>
+                            <constraint firstItem="mjC-sY-jQT" firstAttribute="top" secondItem="tll-co-7eH" secondAttribute="top" id="7wu-TK-D30"/>
                             <constraint firstItem="OfS-WO-tK1" firstAttribute="leading" secondItem="tll-co-7eH" secondAttribute="leading" constant="15" id="8pa-xV-YgI"/>
-                            <constraint firstItem="OfS-WO-tK1" firstAttribute="top" secondItem="tll-co-7eH" secondAttribute="top" constant="10" id="9i4-GF-Ocm"/>
-                            <constraint firstItem="Vbx-3a-fJP" firstAttribute="trailing" secondItem="tll-co-7eH" secondAttribute="trailing" id="APH-EN-l1m"/>
+                            <constraint firstItem="OfS-WO-tK1" firstAttribute="top" secondItem="tll-co-7eH" secondAttribute="top" constant="90" id="9i4-GF-Ocm"/>
+                            <constraint firstAttribute="trailing" secondItem="tll-co-7eH" secondAttribute="trailing" constant="-1" id="APH-EN-l1m"/>
+                            <constraint firstItem="mjC-sY-jQT" firstAttribute="width" secondItem="tll-co-7eH" secondAttribute="width" id="E90-hb-aYw"/>
                             <constraint firstItem="tll-co-7eH" firstAttribute="width" secondItem="tap-kd-ckE" secondAttribute="width" constant="1" id="HMu-Ph-tm6"/>
-                            <constraint firstItem="Vbx-3a-fJP" firstAttribute="bottom" secondItem="wlz-ss-tES" secondAttribute="bottom" id="MnM-NX-qH4"/>
-                            <constraint firstItem="wlz-ss-tES" firstAttribute="width" secondItem="tll-co-7eH" secondAttribute="width" id="Q4q-cC-p1N"/>
-                            <constraint firstItem="Vbx-3a-fJP" firstAttribute="top" secondItem="tll-co-7eH" secondAttribute="top" id="RV4-t4-6bS"/>
+                            <constraint firstItem="mjC-sY-jQT" firstAttribute="leading" secondItem="tll-co-7eH" secondAttribute="leading" id="I8k-5L-vLI"/>
+                            <constraint firstAttribute="bottom" secondItem="wlz-ss-tES" secondAttribute="bottom" id="MnM-NX-qH4"/>
+                            <constraint firstItem="wlz-ss-tES" firstAttribute="width" secondItem="tll-co-7eH" secondAttribute="width" constant="-1" id="Q4q-cC-p1N"/>
                             <constraint firstItem="wlz-ss-tES" firstAttribute="top" secondItem="J71-Ym-ZyB" secondAttribute="bottom" constant="15" id="RtP-gG-REU"/>
+                            <constraint firstItem="mjC-sY-jQT" firstAttribute="height" secondItem="tll-co-7eH" secondAttribute="height" multiplier="0.4" constant="1" id="ZhC-HK-OI1"/>
                             <constraint firstItem="wlz-ss-tES" firstAttribute="centerX" secondItem="tll-co-7eH" secondAttribute="centerX" id="syw-Hn-Pja"/>
-                            <constraint firstItem="tll-co-7eH" firstAttribute="height" secondItem="tap-kd-ckE" secondAttribute="height" multiplier="0.3" id="vSU-0x-c0G"/>
+                            <constraint firstItem="tll-co-7eH" firstAttribute="height" secondItem="tap-kd-ckE" secondAttribute="height" multiplier="0.4" constant="89.599999999999966" id="vSU-0x-c0G"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Vbx-3a-fJP"/>
+                        <viewLayoutGuide key="safeArea" id="PIN-UV-pdu"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <connections>
                         <outlet property="closeButton" destination="OfS-WO-tK1" id="rVB-gP-jPi"/>
+                        <outlet property="gradientView" destination="mjC-sY-jQT" id="asm-Pk-oIJ"/>
                         <outlet property="lookOnMapButton" destination="J71-Ym-ZyB" id="AEC-gG-2Ow"/>
                         <outlet property="map" destination="tll-co-7eH" id="CMO-3U-kue"/>
                         <outlet property="tableView" destination="wlz-ss-tES" id="Ziq-5B-tKx"/>
