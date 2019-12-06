@@ -37,9 +37,9 @@ class MapView: UIView {
         }
     }
     
-    func moveToLocation(location: CLLocation) {
+    func moveToLocation(location: CLLocationCoordinate2D) {
         ivMap.animate(toZoom: 16)
-        ivMap.animate(toLocation: location.coordinate)
+        ivMap.animate(toLocation: location)
     }
     
     func addMarker(coordinate: CLLocationCoordinate2D) {

@@ -6,24 +6,32 @@ PODS:
     - GoogleMaps/Base
   - GooglePlaces (3.6.0):
     - GoogleMaps/Base (= 3.6.0)
+  - RxAtomic (4.4.2)
+  - RxSwift (4.4.2):
+    - RxAtomic (>= 4.4.2, ~> 4.4)
   - SwiftLint (0.37.0)
 
 DEPENDENCIES:
   - GoogleMaps
   - GooglePlaces
+  - RxSwift (~> 4.4.1)
   - SwiftLint
 
 SPEC REPOS:
   trunk:
     - GoogleMaps
     - GooglePlaces
+    - RxAtomic
+    - RxSwift
     - SwiftLint
 
 SPEC CHECKSUMS:
   GoogleMaps: 82f8fe307193bb4de6ef6bf9e88f1d624b718f9d
   GooglePlaces: 1b9d29cf3e164903d873600f511f42acdfe85294
+  RxAtomic: d00e97c10db88c6f08540e0bf2752fc5a2404167
+  RxSwift: 74c29b693c8e42b0f64400e8b06564575742d649
   SwiftLint: c078a14d7d7ade75e5507795d185e3da41d844d2
 
-PODFILE CHECKSUM: 27fa25430da53b15d1a2804eebe8ca86f19b40c1
+PODFILE CHECKSUM: 82767577d4cbd5a0d22f5f6ce14aae8dc22a10e6
 
 COCOAPODS: 1.8.4

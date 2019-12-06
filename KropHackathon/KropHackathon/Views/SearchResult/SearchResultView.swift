@@ -26,11 +26,16 @@ class SearchResultView: UIView {
         self.nibSetup()
     }
     
-    func update(_ models: [HospitalModel]) {
-        self.models = models
+    func configure() {
+        models = []
         tableView.register([HospitalCell.identifier])
         tableView.setDataSource(self, delegate: self)
         self.tableView.reloadData()
+    }
+    
+    func update(_ models: [HospitalModel]) {
+        self.models = models
+         self.tableView.reloadData()
     }    
 }
 

@@ -21,26 +21,43 @@ final class HospitalDetailesController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         configure()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    navigationController?.isNavigationBarHidden = true
     }
     
     @IBAction func pushToMap(_ sender: Any) {
         UrlOpenHelper.openDirections(to: viewModel.point)
-        
     }
     
     private func configure() {
         configureMap()
-        //configureNavigationBar()
         configureOpenMapBtn()
         configureTableView()
+    }
+    
+    private func setUpClosure() {
+        viewModel.didLoadData = {
+            self.tableView.reloadData()
+            self.configureMap()
+        }
+        
+        viewModel.didLoadFailed = { [weak self] error in
+            let alert = UIAlertController(title: "Error", message: error, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self?.present(alert, animated: true, completion: nil)
+            
+        }
     }
     
     private func configureMap() {
         map.customSetup(with: viewModel.point)
         map.addMarker(coordinate: viewModel.point)
-        map.moveToLocation(location: CLLocation.init(latitude: 48.510942, longitude: 32.270891))
+        map.moveToLocation(location: viewModel.point)
+        
         let gradient = CAGradientLayer()
         var bounds = self.navigationController?.navigationBar.bounds
         bounds?.size.height += UIApplication.shared.statusBarFrame.size.height
@@ -48,13 +65,8 @@ final class HospitalDetailesController: UIViewController {
         gradient.colors = [UIColor.black.cgColor, UIColor.clear.cgColor]
         gradient.startPoint = CGPoint(x: 0, y: 0)
         gradient.endPoint = CGPoint(x: 0, y: 1)
-        self.gradientView.layer.addSublayer(gradient)
+    self.gradientView.layer.addSublayer(gradient)
     }
-    
-//    private func configureNavigationBar() {
-//        navigationController?.isNavigationBarHidden = true
-//        navigationController?.navigationBar.isTranslucent = true
-//    }
     
     private func configureOpenMapBtn() {
         lookOnMapButton.layer.cornerRadius = 16.0
@@ -74,7 +86,6 @@ final class HospitalDetailesController: UIViewController {
     @IBAction func closeBtnClicked(_ sender: UIButton) {
         viewModel.goBack()
     }
-    
 }
 
 extension HospitalDetailesController: UITableViewDataSource {
@@ -101,6 +112,4 @@ extension HospitalDetailesController: UITableViewDataSource {
             return cell
         }
     }
-    
-    
 }

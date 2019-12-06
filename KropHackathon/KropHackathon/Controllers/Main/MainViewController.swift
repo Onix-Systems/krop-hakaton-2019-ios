@@ -16,7 +16,6 @@ final class MainViewController: UIViewController {
     @IBOutlet private weak var searchBar: UISearchBar!
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet weak var searchResult: SearchResultView!
-    
     @IBOutlet weak var cancelButton: UIButton!
     
     @IBAction func cancelTapped(_ sender: Any) {
@@ -41,6 +40,11 @@ final class MainViewController: UIViewController {
         configureNavigationBar()
     }
     
+    private func configureNavigationBar() {
+        navigationController?.isNavigationBarHidden = true
+        navigationController?.navigationBar.isTranslucent = true
+    }
+    
     private func configure() {
         tableView.register([ServiceCell.identifier])
         tableView.setDataSource(self, delegate: self)
@@ -48,29 +52,36 @@ final class MainViewController: UIViewController {
         
         searchBar.delegate = self
         searchBar.isUserInteractionEnabled = true
+        searchResult.configure()
     }
     
     private func setUpclosure() {
         searchResult.didSelected = { [weak self] row in
             self?.viewModel.openDetails()
         }
-    }
-    
-    private func configureNavigationBar() {
-        navigationController?.isNavigationBarHidden = true
-        navigationController?.navigationBar.isTranslucent = true
         
+        viewModel.didLoadData = {
+            self.tableView.reloadData()
+        self.searchResult.update(self.viewModel.searchModel)
+        }
+        
+        viewModel.didLoadFailed = { [weak self] error in
+            let alert = UIAlertController(title: "Error", message: error, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self?.present(alert, animated: true, completion: nil)
+
+        }
     }
     
     private func configureSearchMode(_ state: Bool) {
         showCancel(state)
+        searchResult.configure()
         searchResult.isHidden = !state
         tableView.isHidden = state
         titleLabel.isHidden = state
     }
     
     private func showCancel(_ state: Bool) {
-        
         cancelButton.isHidden = !state
         cancelTraling.isActive = state
         cancelTraling.isActive = state
@@ -110,11 +121,10 @@ extension MainViewController: UISearchBarDelegate {
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        searchResult.update(viewModel.searchModel)
+       viewModel.search(text: searchBar.text)
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        searchResult.update(viewModel.searchModel)
         searchBar.endEditing(true)
     }
 }

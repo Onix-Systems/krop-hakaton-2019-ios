@@ -8,15 +8,15 @@
 
 import Foundation
 
-//class HospitalInfoDetailModel {
-//    let infoType: DetailsInfoType
-//    let infoTypeStr: String
-//    let info: String
-//    
-//    init(infoType: DetailsInfoType, infoTypeStr: String, info: String) {
-//        self.infoType = infoType
-//        self.infoTypeStr = infoTypeStr
-//        self.info = info
-//    }
-//    
-//}
+class HospitalInfoDetailModel {
+    let infoType: DetailsInfoType
+    let infoTypeStr: String
+    let info: String
+    
+    init(infoType: DetailsInfoType, infoTypeStr: String, info: String) {
+        self.infoType = infoType
+        self.infoTypeStr = infoTypeStr
+        self.info = info
+    }
+    
+}
