@@ -86,7 +86,7 @@ extension ListViewController: UITableViewDelegate {
         case .serviceDetails:
             viewModel.openHospitals(row: indexPath.row)
         case . hospitals:
-            viewModel.openDetails()
+            viewModel.openDetails(row: indexPath.row)
         }
     }
 }

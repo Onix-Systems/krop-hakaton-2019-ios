@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RxSwift
 
 enum ListScreenType {
     case serviceDetails
@@ -19,19 +20,21 @@ protocol ListViewModelType {
     
     var screenType: ListScreenType { get set }
     var screenTitle: String { get set }
-
+    
     var serviceDetailsModels: [ServiceDetailsModel] { get }
     var hospitalModels: [HospitalModel] { get }
-
+    
     func openHospitals(row: Int)
-    func openDetails()
+    func openDetails(row: Int)
     func goBack()
 }
 
 final class ListViewModel: ListViewModelType {
     
     private let coordinator: ListCoordinatorType
-
+    private let networkService: NetworkServiceType
+    private let disposeBag = DisposeBag()
+    
     var didLoadData: (() -> Void)?
     var didLoadFailed: ((String) -> Void)?
     
@@ -44,9 +47,6 @@ final class ListViewModel: ListViewModelType {
     init(_ coordinator: ListCoordinatorType, serviceHolder: ServiceHolder, screenType: ListScreenType = .serviceDetails, screenTitle: String) {
         self.coordinator = coordinator
         
-//        mapService = serviceHolder.get(by: MapServiceType.self)
-//        medicalService = serviceHolder.get(by: MedicalServiceType.self)
-        
         self.screenType = screenType
         self.screenTitle = screenTitle
         
@@ -56,18 +56,42 @@ final class ListViewModel: ListViewModelType {
         case .serviceDetails:
             self.serviceDetailsModels = Mock.serviceDetailsModels
         }
+        
+        networkService = serviceHolder.get(by: NetworkServiceType.self)
+        
+        networkService.servicesObserver.subscribe(onNext: { [weak self] result in
+            switch result {
+            case .success(let model):
+                //self?.serviceDetailsModels = model
+                self?.didLoadData?()
+            case .failure(error: let error):
+                self?.didLoadFailed?(error)
+            }
+        }).disposed(by: disposeBag)
+        
+        networkService.hospitalsObserver.subscribe(onNext: { [weak self] result in
+            switch result {
+            case .success(let model):
+                //self?.hospitalModels = model
+                self?.didLoadData?()
+            case .failure(error: let error):
+                self?.didLoadFailed?(error)
+            }
+        }).disposed(by: disposeBag)
     }
     
     func openHospitals(row: Int) {
+        networkService.getHospitals()
         coordinator.openHospitals(model: serviceDetailsModels[row])
     }
-        
-    func openDetails() {
+    
+    func openDetails(row: Int) {
+        networkService.getHospital()
         coordinator.openDetails()
     }
     
     func goBack() {
         coordinator.goBack()
     }
-
+    
 }

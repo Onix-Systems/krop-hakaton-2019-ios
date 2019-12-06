@@ -12,11 +12,9 @@ final class AppCoordinator {
     private var navigationController: UINavigationController?
     private let window: UIWindow
     
-//    private var mapService: mapServiceType!
-//    private var medicalService: MedicalService!
+    private var networkService: NetworkServiceType!
 
     private var serviceHolder: ServiceHolder!
-    
     private var mainCoordinator: MainCoordinatorType?
 
     init(window: UIWindow) {
@@ -28,12 +26,8 @@ final class AppCoordinator {
     private func startServices() {
         serviceHolder = ServiceHolder()
         
-//        mapService = MapService()
-//        medicalService = MedicalService()
-        
-//        serviceHolder.add(MapServiceType.self, for: mapService)
-//        serviceHolder.add(MedicalServiceType.self, for: medicalService)
-
+        networkService = NetworkService()
+        serviceHolder.add(NetworkServiceType.self, for: networkService)
     }
     
     func start() {

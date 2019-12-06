@@ -57,12 +57,12 @@ final class MainViewController: UIViewController {
     
     private func setUpclosure() {
         searchResult.didSelected = { [weak self] row in
-            self?.viewModel.openDetails()
+            self?.viewModel.openDetails(row)
         }
         
         viewModel.didLoadData = {
             self.tableView.reloadData()
-        self.searchResult.update(self.viewModel.searchModel)
+        self.searchResult.update(self.viewModel.searchModels)
         }
         
         viewModel.didLoadFailed = { [weak self] error in
