@@ -13,8 +13,8 @@ final class ListViewController: UIViewController {
 
     @IBOutlet private weak var tableView: UITableView!
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         configure()
     }
