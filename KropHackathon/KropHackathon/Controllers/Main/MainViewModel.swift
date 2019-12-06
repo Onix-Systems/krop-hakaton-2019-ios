@@ -17,10 +17,11 @@ protocol MainViewModelType {
 
     func openList(row: Int)
     func openDetails()
+    func search(text: String?)
 }
 
 final class MainViewModel: MainViewModelType {
-    
+
     var serviceModels: [ServiceTypeModel] = []
     var searchModel: [HospitalModel] = []
     
@@ -37,6 +38,10 @@ final class MainViewModel: MainViewModelType {
         searchModel = Mock.searchModel
         
 //        mapService = serviceHolder.get(by: MapServiceType.self)
+    }
+    
+    func search(text: String?) {
+        self.didLoadData?()
     }
     
     func openDetails() {

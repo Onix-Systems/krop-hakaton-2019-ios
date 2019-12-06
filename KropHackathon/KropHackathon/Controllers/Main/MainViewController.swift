@@ -62,6 +62,7 @@ final class MainViewController: UIViewController {
         
         viewModel.didLoadData = {
             self.tableView.reloadData()
+        self.searchResult.update(self.viewModel.searchModel)
         }
         
         viewModel.didLoadFailed = { [weak self] error in
@@ -120,11 +121,10 @@ extension MainViewController: UISearchBarDelegate {
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        searchResult.update(viewModel.searchModel)
+       viewModel.search(text: searchBar.text)
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        searchResult.update(viewModel.searchModel)
         searchBar.endEditing(true)
     }
 }
