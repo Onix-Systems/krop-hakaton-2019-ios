@@ -152,8 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				95EB52F723994D9800A6BD26 /* SearchResult */,
-				954CAAFD23984747007A77C0 /* MapView.xib */,
-				954CAAFB23984740007A77C0 /* MapView.swift */,
+				954BDE4B239A33D5008EA75F /* Map */,
 				9541B09B2396AE670084A0C0 /* Cells */,
 			);
 			path = Views;
@@ -187,6 +186,15 @@
 				EF4D8C852397C632003CA1BF /* ServiceTableViewCell.xib */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		954BDE4B239A33D5008EA75F /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				954CAAFD23984747007A77C0 /* MapView.xib */,
+				954CAAFB23984740007A77C0 /* MapView.swift */,
+			);
+			path = Map;
 			sourceTree = "<group>";
 		};
 		954CAAE42397B569007A77C0 /* Hospital */ = {

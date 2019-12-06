@@ -32,7 +32,7 @@
                                     <constraint firstAttribute="width" secondItem="OfS-WO-tK1" secondAttribute="height" multiplier="1:1" id="LaZ-KG-3td"/>
                                     <constraint firstAttribute="width" constant="35" id="vpR-mg-0MJ"/>
                                 </constraints>
-                                <state key="normal" image="closeBtnIcon"/>
+                                <state key="normal" image="backIcon"/>
                                 <connections>
                                     <action selector="closeBtnClicked:" destination="X1s-SP-F6j" eventType="touchUpInside" id="iuC-ZL-YGy"/>
                                 </connections>
@@ -86,6 +86,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="closeBtnIcon" width="30" height="30"/>
+        <image name="backIcon" width="28" height="22"/>
     </resources>
 </document>
