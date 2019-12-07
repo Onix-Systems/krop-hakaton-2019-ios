@@ -13,13 +13,13 @@ final class ServiceTypeModel {
     var name: String
     var image: String
     var backColor: UIColor
-    var servises: [String]
+    var services: [String]
     
     init(name: String, image: String, backColor: UIColor, services: [String]) {
         self.name = name
         self.image = image
         self.backColor = backColor
-        self.servises = services
+        self.services = services
     }
     
 }

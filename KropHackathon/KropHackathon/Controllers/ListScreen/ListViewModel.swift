@@ -49,23 +49,29 @@ final class ListViewModel: ListViewModelType {
     init(_ coordinator: ListCoordinatorType, serviceHolder: ServiceHolder, screenType: ListScreenType = .serviceDetails, serviceTypeModel: ServiceTypeModel) {
         self.coordinator = coordinator
         networkService = serviceHolder.get(by: NetworkServiceType.self)
-
+        
         self.screenType = screenType
         self.screenTitle = serviceTypeModel.name
         serviceModel = serviceTypeModel
-
-        networkService.hospitalsObserver.subscribe(onNext: { [weak self] result in
-            switch result {
-            case .success(let model):
-                self?.hospitalModels = []
-                model.forEach { element in
-                    self?.hospitalModels.append(HospitalModel.init(model: element))
+        
+        switch screenType {
+        case .serviceDetails:
+            serviceDetailsModels = serviceModel.services.map{ ServiceDetailsModel(serviceTypeName: serviceModel.name, serviceDetailsName: $0, serviceName: serviceModel.name) }
+            self.didLoadData?()
+        case .hospitals:
+            networkService.hospitalsObserver.subscribe(onNext: { [weak self] result in
+                switch result {
+                case .success(let model):
+                    self?.hospitalModels = []
+                    model.forEach { element in
+                        self?.hospitalModels.append(HospitalModel.init(model: element))
+                    }
+                    self?.didLoadData?()
+                case .failure(error: let error):
+                    self?.didLoadFailed?(error)
                 }
-                self?.didLoadData?()
-            case .failure(error: let error):
-                self?.didLoadFailed?(error)
-            }
-        }).disposed(by: disposeBag)
+            }).disposed(by: disposeBag)
+        }
     }
     
     func openHospitals(row: Int) {

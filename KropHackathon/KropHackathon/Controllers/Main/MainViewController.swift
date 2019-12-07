@@ -32,7 +32,7 @@ final class MainViewController: UIViewController {
         super.viewDidLoad()
         showHud()
         configure()
-        setUpclosure()
+        setupClosure()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -55,7 +55,7 @@ final class MainViewController: UIViewController {
         searchResult.configure()
     }
     
-    private func setUpclosure() {
+    private func setupClosure() {
         searchResult.didSelected = { [weak self] row in
             DispatchQueue.main.async {
                 self?.viewModel.openDetails(row)

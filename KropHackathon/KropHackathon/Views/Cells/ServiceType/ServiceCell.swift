@@ -32,7 +32,7 @@ final class ServiceCell: UITableViewCell {
         self.wrapperView.backgroundColor = model.backColor
         var i = 0
         var more = 0
-        let servises = model.servises.prefix(while: { element -> Bool in
+        let servises = model.services.prefix(while: { element -> Bool in
             i += 1 + element.count
             if i <= 60 {
                 more += 1

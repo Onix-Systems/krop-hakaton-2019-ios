@@ -81,7 +81,6 @@ final class MainViewModel: MainViewModelType {
     }
     
     func openList(row: Int) {
-        networkService.getServiceTypes()
         coordinator.openList(model: serviceModels[row])
     }
 }

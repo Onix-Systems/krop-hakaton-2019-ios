@@ -17,6 +17,7 @@ final class ServiceDetailsModel {
         self.serviceTypeName = serviceTypeName
         self.serviceDetailsName = serviceDetailsName
         self.serviceName = serviceName
+        
     }
     
 }

@@ -29,9 +29,9 @@ final class ListViewController: UIViewController {
     private func setUpClosure() {
         
         viewModel.didLoadData = {
-            DispatchQueue.main.async {
-                self.hideHUD()
-                self.tableView.reloadData()
+            DispatchQueue.main.async { [weak self] in
+                self?.hideHUD()
+                self?.tableView.reloadData()
             }
         }
         
