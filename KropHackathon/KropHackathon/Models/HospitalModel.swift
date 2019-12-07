@@ -9,13 +9,13 @@
 import Foundation
 
 class HospitalModel {
-    let id: Int
+    let id: String
     let title: String
     let address: String
     let schedule: String
     
     init(title: String, address: String, schedule: String) {
-        self.id = 666
+        self.id = "bf9ce03de8d60535e900f3bfb1a9f346"
         self.title = title
         self.address = address
         self.schedule = schedule

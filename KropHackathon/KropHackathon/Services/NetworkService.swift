@@ -19,7 +19,7 @@ protocol NetworkServiceType: Service {
     func getServiceTypes()
     func getSearch(text: String)
     func getHospitals(type: String)
-    func getHospital(id: Int)
+    func getHospital(id: String)
 }
 
 class NetworkService: NetworkServiceType {
@@ -91,7 +91,7 @@ class NetworkService: NetworkServiceType {
         
     }
     
-    func getHospital(id: Int) {
+    func getHospital(id: String) {
         
         let compliction: ((Result<HospitalRequest>) -> Void) = { result in
             

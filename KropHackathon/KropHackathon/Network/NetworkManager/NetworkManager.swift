@@ -21,7 +21,7 @@ final class NetworkManager {
     
     fileprivate let path = "https://onix-systems-krop-hakaton-2019.staging.onix.ua/api/"
     
-    func getHospital(id: Int, complition: @escaping (Result<Data>) -> Void) {
+    func getHospital(id: String, complition: @escaping (Result<Data>) -> Void) {
         let endpoint = (path + "hospital/\(id)")
         loadByEndpoint(by: endpoint, complition: complition)
     }
