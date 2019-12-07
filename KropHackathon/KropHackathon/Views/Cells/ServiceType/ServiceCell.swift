@@ -33,15 +33,17 @@ class ServiceCell: UITableViewCell {
         self.model = model
         self.wrapperView.backgroundColor = model.backColor
         var i = 0
+        var more = 0
         let servises = model.servises.prefix(while: { (element) -> Bool in
             i += 1 + element.count
             if i <= 60 {
+                more += 1
                 return true
             } else {
                 return false
             }
         }).joined(separator: " | ")
-        self.servicesLabel.text = servises + " | інше(+30)"
+        self.servicesLabel.text = servises + " | інше(+\(servises.count - more)"
        self.serviceTypeLabel.text = model.name
         self.serviceImageView.image = UIImage(named: model.image) ?? UIImage(named: "redCross")
     }
