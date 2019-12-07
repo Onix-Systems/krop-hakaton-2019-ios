@@ -21,7 +21,7 @@ final class ListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        showHud()
         configure()
         setUpClosure()
     }
@@ -30,15 +30,17 @@ final class ListViewController: UIViewController {
         
         viewModel.didLoadData = {
             DispatchQueue.main.async {
-            self.tableView.reloadData()
+                self.hideHUD()
+                self.tableView.reloadData()
             }
         }
         
         viewModel.didLoadFailed = { [weak self] error in
             DispatchQueue.main.async {
-            let alert = UIAlertController(title: "Error", message: error, preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            self?.present(alert, animated: true, completion: nil)
+                self?.hideHUD()
+                let alert = UIAlertController(title: "Error", message: error, preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                self?.present(alert, animated: true, completion: nil)
             }
             
         }

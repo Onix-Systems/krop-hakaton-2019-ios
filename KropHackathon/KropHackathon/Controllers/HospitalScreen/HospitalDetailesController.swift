@@ -21,6 +21,7 @@ final class HospitalDetailesController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        showHud()
         configure()
         setUpClosure()
     }
@@ -45,16 +46,18 @@ final class HospitalDetailesController: UIViewController {
     private func setUpClosure() {
         viewModel.didLoadData = {
             DispatchQueue.main.async {
-            self.tableView.reloadData()
-            self.configureMap()
+                self.hideHUD()
+                self.tableView.reloadData()
+                self.configureMap()
             }
         }
         
         viewModel.didLoadFailed = { [weak self] error in
             DispatchQueue.main.async {
-            let alert = UIAlertController(title: "Error", message: error, preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            self?.present(alert, animated: true, completion: nil)
+                self?.hideHUD()
+                let alert = UIAlertController(title: "Error", message: error, preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                self?.present(alert, animated: true, completion: nil)
             }
             
         }
@@ -72,7 +75,7 @@ final class HospitalDetailesController: UIViewController {
         bounds?.size.height += UIApplication.shared.statusBarFrame.size.height
         
         if let bounds = bounds {
-        gradient.frame = bounds
+            gradient.frame = bounds
         }
         gradient.colors = [UIColor.black.cgColor, UIColor.clear.cgColor]
         gradient.startPoint = CGPoint(x: 0, y: 0)
