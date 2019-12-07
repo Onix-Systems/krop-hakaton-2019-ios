@@ -18,21 +18,25 @@ enum Result<T> {
 final class NetworkManager {
     
     static let shared = NetworkManager()
-    fileprivate let path = "https://onix-systems-krop-hakaton-2019.staging.onix.ua/"
+    fileprivate let path = "https://onix-systems-krop-hakaton-2019.staging.onix.ua/api/"
+  
+    func getHospital(id: Int, complition: @escaping (Result<Data>) -> Void) {
+        let endpoint = (path + "hospital/666")
+        loadByEndpoint(by: endpoint, complition: complition)
+    }
     
     func getAllData(completion: @escaping (Result<Data>) -> Void) {
-        let endpoint = (path + "api/get-equipment")
-        loadByEndpoint(by: endpoint, completion: completion)
+        let endpoint = (path + "get-equipment")
+        loadByEndpoint(by: endpoint, complition: completion)
     }
-            
-    fileprivate func loadByEndpoint(by endpoint: String, completion: @escaping (Result<Data>) -> Void) {
-        
+    
+    fileprivate func loadByEndpoint(by endpoint: String, complition: @escaping (Result<Data>) -> Void) {
         guard let point = endpoint.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
             let url = URL(string: point) else { assertionFailure("URL is nil"); return }
         
-        loadData(by: url) { (data, _, error) in
-            if let error = error { completion(.failure(error.localizedDescription)) }
-            if let data = data { completion(.success(data)) }
+        loadData(by: url) { (data, responce, error) in
+            if let error = error { complition(.failure(error.localizedDescription)) }
+            if let data = data { complition(.success(data)) }
         }
     }
     

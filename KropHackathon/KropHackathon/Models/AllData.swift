@@ -14,5 +14,4 @@ struct AllData: Codable, Equatable {
     let message: String?
 
     let data: [Categories]
-    
 }

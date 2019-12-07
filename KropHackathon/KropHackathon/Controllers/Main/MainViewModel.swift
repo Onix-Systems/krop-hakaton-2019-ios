@@ -68,7 +68,7 @@ final class MainViewModel: MainViewModelType {
     }
     
     func openDetails(_ index: Int) {
-        networkService.getHospital()
+        networkService.getHospital(id: index)
         coordinator.openDetails()
     }
     

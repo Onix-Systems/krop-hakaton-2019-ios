@@ -14,8 +14,7 @@ final class ParsingHelper {
     static func parsingByType<T: Codable>(_ result: Result<Data>, _ complition: (Result<T>) -> Void) {
         
         switch result {
-        case .success(let data):
-            
+        case .success(let data):  
             do {
                 let object: T = try
                     JSONDecoder().decode(T.self, from: data)
