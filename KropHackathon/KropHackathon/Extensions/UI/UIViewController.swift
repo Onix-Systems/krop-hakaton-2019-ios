@@ -6,8 +6,8 @@
 //  Copyright © 2019 KeyStoneHome. All rights reserved.
 //
 
-import Foundation
 import UIKit
+import MBProgressHUD
 
 extension UIViewController {
     func hideKeyboardWhenTappedAround() {
@@ -19,5 +19,17 @@ extension UIViewController {
     @objc
     func dismissKeyboard() {
         view.endEditing(true)
+    }
+}
+
+extension UIViewController {
+    func showHud(_ message: String) {
+        let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
+        hud.label.text = message
+        hud.isUserInteractionEnabled = false
+    }
+
+    func hideHUD() {
+        MBProgressHUD.hide(for: self.view, animated: true)
     }
 }

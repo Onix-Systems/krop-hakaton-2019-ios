@@ -60,7 +60,7 @@ class NetworkService: NetworkServiceType {
     }
     
     func getServices() {
-        
+
     }
     
     func getSearch() {

@@ -21,6 +21,7 @@ protocol ListViewModelType {
     var screenType: ListScreenType { get set }
     var screenTitle: String { get set }
     
+    var serviceModel: ServiceTypeModel { get set }
     var serviceDetailsModels: [ServiceDetailsModel] { get }
     var hospitalModels: [HospitalModel] { get }
     
@@ -40,35 +41,36 @@ final class ListViewModel: ListViewModelType {
     
     var screenType: ListScreenType
     var screenTitle: String
+    var serviceModel: ServiceTypeModel
     
     var serviceDetailsModels: [ServiceDetailsModel] = []
     var hospitalModels: [HospitalModel] = []
     
-    init(_ coordinator: ListCoordinatorType, serviceHolder: ServiceHolder, screenType: ListScreenType = .serviceDetails, screenTitle: String) {
+    init(_ coordinator: ListCoordinatorType, serviceHolder: ServiceHolder, screenType: ListScreenType = .serviceDetails, serviceTypeModel: ServiceTypeModel) {
         self.coordinator = coordinator
         
         self.screenType = screenType
-        self.screenTitle = screenTitle
-        
-        switch screenType {
-        case .hospitals:
-            //self.hospitalModels = Mock.hospitalModels
-            break
-        case .serviceDetails:
-            self.serviceDetailsModels = Mock.serviceDetailsModels
-        }
-        
+        self.screenTitle = serviceTypeModel.name
+        self.serviceModel = serviceTypeModel
+//        switch screenType {
+//        case .hospitals:
+//            //self.hospitalModels = Mock.hospitalModels
+//            break
+//        case .serviceDetails:
+//            self.serviceDetailsModels = Mock.serviceDetailsModels
+//        }
+
         networkService = serviceHolder.get(by: NetworkServiceType.self)
         
-        networkService.servicesObserver.subscribe(onNext: { [weak self] result in
-            switch result {
-            case .success(let model):
-                //self?.serviceDetailsModels = model
-                self?.didLoadData?()
-            case .failure(error: let error):
-                self?.didLoadFailed?(error)
-            }
-        }).disposed(by: disposeBag)
+//        networkService.servicesObserver.subscribe(onNext: { [weak self] result in
+//            switch result {
+//            case .success(let model):
+//                //self?.serviceDetailsModels = model
+//                self?.didLoadData?()
+//            case .failure(error: let error):
+//                self?.didLoadFailed?(error)
+//            }
+//        }).disposed(by: disposeBag)
         
         networkService.hospitalsObserver.subscribe(onNext: { [weak self] result in
             switch result {
@@ -86,7 +88,8 @@ final class ListViewModel: ListViewModelType {
     
     func openHospitals(row: Int) {
         networkService.getHospitals(type: serviceDetailsModels[row].serviceName)
-        coordinator.openHospitals(model: serviceDetailsModels[row])
+        
+        coordinator.openHospitals(model: serviceModel)
     }
     
     func openDetails(row: Int) {

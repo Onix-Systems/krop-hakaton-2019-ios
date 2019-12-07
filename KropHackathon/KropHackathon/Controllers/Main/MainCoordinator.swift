@@ -40,8 +40,7 @@ final class MainCoordinator: MainCoordinatorType {
     }
         
     func openList(model: ServiceTypeModel) {
-        
-        let coordinator = ListCoordinator(navigationController: navigationController, serviceHolder: serviceHolder, screenTitle: model.name)
+        let coordinator = ListCoordinator(navigationController: navigationController, serviceHolder: serviceHolder, serviceTypeModel: model)
         navigationController?.navigationBar.barTintColor = model.backColor
         coordinator.start()
     }

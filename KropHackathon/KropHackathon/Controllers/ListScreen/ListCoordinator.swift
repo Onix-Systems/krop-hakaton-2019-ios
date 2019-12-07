@@ -11,7 +11,7 @@ import UIKit
 protocol ListCoordinatorType {
     func start()
     
-    func openHospitals(model: ServiceDetailsModel)
+    func openHospitals(model: ServiceTypeModel)
     func openDetails()
     func goBack()
 }
@@ -22,12 +22,12 @@ final class ListCoordinator: ListCoordinatorType {
     private let navigationController: UINavigationController?
     private var serviceHolder: ServiceHolder!
     
-    init(navigationController: UINavigationController?, serviceHolder: ServiceHolder, _ screenType: ListScreenType = .serviceDetails, screenTitle: String) {
+    init(navigationController: UINavigationController?, serviceHolder: ServiceHolder, _ screenType: ListScreenType = .serviceDetails, serviceTypeModel: ServiceTypeModel) {
         
         self.navigationController = navigationController
         self.serviceHolder = serviceHolder
         
-        controller?.viewModel = ListViewModel(self, serviceHolder: self.serviceHolder, screenType: screenType, screenTitle: screenTitle)
+        controller?.viewModel = ListViewModel(self, serviceHolder: self.serviceHolder, screenType: screenType, serviceTypeModel: serviceTypeModel)
     }
     
     func start() {
@@ -36,8 +36,10 @@ final class ListCoordinator: ListCoordinatorType {
         }
     }
     
-    func openHospitals(model: ServiceDetailsModel) {
-        let coordinator = ListCoordinator(navigationController: navigationController, serviceHolder: serviceHolder, .hospitals, screenTitle: "\(model.serviceTypeName) \(model.serviceDetailsName)")
+    func openHospitals(model: ServiceTypeModel) {
+//        let coordinator = ListCoordinator(navigationController: navigationController, serviceHolder: serviceHolder, .hospitals, screenTitle: "\(model.serviceTypeName) \(model.serviceDetailsName)")
+        let coordinator = ListCoordinator(navigationController: navigationController, serviceHolder: serviceHolder, .hospitals, serviceTypeModel: model)
+
         coordinator.start()
     }
     
