@@ -43,7 +43,7 @@ class ServiceCell: UITableViewCell {
                 return false
             }
         }).joined(separator: " | ")
-        self.servicesLabel.text = servises + " | інше(+\(servises.count - more)"
+        self.servicesLabel.text = servises + " | інше(+\(servises.count - more))"
        self.serviceTypeLabel.text = model.name
         self.serviceImageView.image = UIImage(named: model.image) ?? UIImage(named: "redCross")
     }
