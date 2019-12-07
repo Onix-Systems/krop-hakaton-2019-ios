@@ -46,6 +46,7 @@
 		C659F93D2396F6F7009DE50B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6C7AE22395450F00AA51BC /* MainViewController.swift */; };
 		C659F94E239BBD14009DE50B /* DiagnosticType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C659F94D239BBD14009DE50B /* DiagnosticType.swift */; };
 		C659F952239BDE3D009DE50B /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = C659F951239BDE3D009DE50B /* Categories.swift */; };
+		C659F954239C5C87009DE50B /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = C659F953239C5C87009DE50B /* String.swift */; };
 		E1E9F8345ABA826B38B7F327 /* Pods_KropHackathon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6EA3ABF16065DF238874777 /* Pods_KropHackathon.framework */; };
 		EF4D8C752397A8EC003CA1BF /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4D8C742397A8EC003CA1BF /* ListViewController.swift */; };
 		EF4D8C772397AB3B003CA1BF /* ListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4D8C762397AB3B003CA1BF /* ListCoordinator.swift */; };
@@ -113,6 +114,7 @@
 		C659F93B2396B5A2009DE50B /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		C659F94D239BBD14009DE50B /* DiagnosticType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagnosticType.swift; sourceTree = "<group>"; };
 		C659F951239BDE3D009DE50B /* Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
+		C659F953239C5C87009DE50B /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		E6EA3ABF16065DF238874777 /* Pods_KropHackathon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KropHackathon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF4D8C742397A8EC003CA1BF /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		EF4D8C762397AB3B003CA1BF /* ListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCoordinator.swift; sourceTree = "<group>"; };
@@ -310,6 +312,7 @@
 				954CAB0123984DE4007A77C0 /* UrlHelper.swift */,
 				C659F91A2396B533009DE50B /* Date.swift */,
 				C659F9282396B533009DE50B /* NSObject.swift */,
+				C659F953239C5C87009DE50B /* String.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -610,6 +613,7 @@
 			files = (
 				EF4D8C962397E350003CA1BF /* ServiceDetailsModel.swift in Sources */,
 				95EB52F423994D7A00A6BD26 /* SearchResultView.swift in Sources */,
+				C659F954239C5C87009DE50B /* String.swift in Sources */,
 				954CAAFC23984740007A77C0 /* MapView.swift in Sources */,
 				9547427D239A79F600320C07 /* NetworkManager.swift in Sources */,
 				9541B0A9239708130084A0C0 /* CALayer.swift in Sources */,
