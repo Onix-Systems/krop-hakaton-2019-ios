@@ -27,8 +27,7 @@ final class Style {
         static let rengenBlue = UIColor(red: 0.33, green: 0.71, blue: 0.78, alpha: 1)
         static let funcOrange = UIColor(red: 0.92, green: 0.45, blue: 0.28, alpha: 1)
         static let endGreen = UIColor(red: 0.58, green: 0.74, blue: 0.16, alpha: 1)
-        
-        static let serviceTypeColors = [uziPink, rengenBlue, funcOrange, endGreen]
+        static let pinkDef = UIColor(red:0.96, green:0.56, blue:0.52, alpha:1.0)
     }
     
     struct Size {

@@ -66,28 +66,26 @@ final class MainViewModel: MainViewModelType {
     private func createServiceTypesArray(categories: Categories) {
         serviceModels = []
         categories.categories.enumerated().forEach { category in
-            let colors = Style.Color.serviceTypeColors
-            let imgName = setCategoryImage(category: category.element)
-            let serviceType = ServiceTypeModel(name: category.element.name, image: imgName, backColor: colors[category.offset % colors.count], services: category.element.list)
+            let style = setCellStyle(category: category.element)
+            let serviceType = ServiceTypeModel(name: category.element.name, image: style.0, backColor: style.1, services: category.element.list)
             serviceModels.append(serviceType)
         }
     }
     
-    private func setCategoryImage(category: Category) -> String {
-        if category.name.contains("Ультразвук") {
-            return "img_uzi"
+    private func setCellStyle(category: Category) -> (String, UIColor) {
+        if category.name.contains("льтразвук") {
+            return ("img_uzi", Style.Color.uziPink)
         }
-        if category.name.contains("Рентген") {
-            return "img_rentgen"
+        if category.name.contains("ентген") {
+            return ("img_rentgen", Style.Color.rengenBlue)
         }
-        if category.name.contains("Функ") {
-            return "img_funct"
+        if category.name.contains("ункц") {
+            return ("img_funct", Style.Color.funcOrange)
         }
-        if category.name.contains("Ендо") {
-            return "img_endo"
+        if category.name.contains("ндо") {
+            return ("img_endo", Style.Color.endGreen)
         }
-        return "img_all"
-        
+        return ("img_all", Style.Color.pinkDef)
     }
     
     func search(text: String?) {
