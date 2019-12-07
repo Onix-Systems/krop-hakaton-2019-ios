@@ -23,9 +23,8 @@ extension UIViewController {
 }
 
 extension UIViewController {
-    func showHud(_ message: String) {
+    func showHud() {
         let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
-        hud.label.text = message
         hud.isUserInteractionEnabled = false
     }
 

@@ -30,7 +30,7 @@ final class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        showHud()
         configure()
         setUpclosure()
     }
@@ -58,24 +58,26 @@ final class MainViewController: UIViewController {
     private func setUpclosure() {
         searchResult.didSelected = { [weak self] row in
             DispatchQueue.main.async {
-            self?.viewModel.openDetails(row)
+                self?.viewModel.openDetails(row)
             }
         }
         
         viewModel.didLoadData = {
             DispatchQueue.main.async {
-            self.tableView.reloadData()
-        self.searchResult.update(self.viewModel.searchModels)
+                self.hideHUD()
+                self.tableView.reloadData()
+                self.searchResult.update(self.viewModel.searchModels)
             }
         }
         
         viewModel.didLoadFailed = { [weak self] error in
             DispatchQueue.main.async {
-            let alert = UIAlertController(title: "Error", message: error, preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            self?.present(alert, animated: true, completion: nil)
+                self?.hideHUD()
+                let alert = UIAlertController(title: "Error", message: error, preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                self?.present(alert, animated: true, completion: nil)
             }
-
+            
         }
     }
     
@@ -127,7 +129,8 @@ extension MainViewController: UISearchBarDelegate {
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-       viewModel.search(text: searchBar.text)
+        showHud()
+        viewModel.search(text: searchBar.text)
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {

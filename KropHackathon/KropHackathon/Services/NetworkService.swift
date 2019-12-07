@@ -49,7 +49,7 @@ class NetworkService: NetworkServiceType {
                     self.stypesObserver.onNext(.failure(categoriesResonse.message))
                 }
             case .failure(let error):
-                self.hospitalObserver.onNext(.failure(error))
+                self.stypesObserver.onNext(.failure(error))
             }
         }
         

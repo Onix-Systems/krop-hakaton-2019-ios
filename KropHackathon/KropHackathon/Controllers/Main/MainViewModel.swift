@@ -37,7 +37,6 @@ final class MainViewModel: MainViewModelType {
         
         self.coordinator = coordinator
         
-//        serviceModels = Mock.serviceModels
         searchModels = Mock.searchModel
         
         networkService = serviceHolder.get(by: NetworkServiceType.self)
