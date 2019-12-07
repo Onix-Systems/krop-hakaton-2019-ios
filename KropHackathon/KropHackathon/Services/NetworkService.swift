@@ -75,7 +75,7 @@ final class NetworkService: NetworkServiceType {
             }
         }
         
-        networkManager.getSearch(text: text, completion: { data in
+        networkManager.getSearch(text: text, complition: { data in
             ParsingHelper.parsingByType(data, completion)
         })
     }
@@ -126,7 +126,7 @@ final class NetworkService: NetworkServiceType {
             }
         }
         
-        networkManager.getHospital(id: id, completion: { data in
+        networkManager.getHospital(id: id, complition: { data in
             ParsingHelper.parsingByType(data, completion)
         })
     }

@@ -22,7 +22,7 @@ final class NetworkManager {
 
     func getHospital(id: String, complition: @escaping (Result<Data>) -> Void) {
         let endpoint = (path + "hospital/\(id)")
-        loadByEndpoint(by: endpoint, completion: completion)
+        loadByEndpoint(by: endpoint, completion: complition)
     }
     
     func getHospitals(type: String, completion: @escaping (Result<Data>) -> Void) {
@@ -38,7 +38,7 @@ final class NetworkManager {
     func getSearch(text: String, complition: @escaping (Result<Data>) -> Void) {
         if text.count >= 3 {
         let endpoint = (path + "search?q=" + text)
-        loadByEndpoint(by: endpoint, complition: complition)
+            loadByEndpoint(by: endpoint, completion: complition)
         }
     }
     
