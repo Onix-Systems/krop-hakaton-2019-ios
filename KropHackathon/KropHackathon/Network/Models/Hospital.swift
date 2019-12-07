@@ -78,3 +78,25 @@ class HospitalsData: Codable {
         case hospitals
     }
 }
+
+class SearchRequest: Codable {
+    var status: Int
+    var message: String
+    var data: HospitalsData?
+    
+    enum CodingKeys: String, CodingKey {
+        case status
+        case message
+        case data
+    }
+}
+
+class SearchData: Codable {
+    var qty: Int
+    var hospitals: [Hospital]
+    
+    enum CodingKeys: String, CodingKey {
+        case qty
+        case hospitals = "search_result"
+    }
+}

@@ -38,7 +38,6 @@ final class MainViewModel: MainViewModelType {
         self.coordinator = coordinator
         
         serviceModels = Mock.serviceModels
-        searchModels = Mock.searchModel
         
         networkService = serviceHolder.get(by: NetworkServiceType.self)
         
@@ -55,7 +54,10 @@ final class MainViewModel: MainViewModelType {
         networkService.searchObserver.subscribe(onNext: { [weak self] result in
             switch result {
             case .success(let searchModels):
-               // self?.searchModels = searchModels
+                self?.searchModels = []
+                searchModels.forEach { (element) in
+                    self?.searchModels.append(HospitalModel.init(model: element))
+                }
                 self?.didLoadData?()
             case .failure(error: let error):
                 self?.didLoadFailed?(error)
