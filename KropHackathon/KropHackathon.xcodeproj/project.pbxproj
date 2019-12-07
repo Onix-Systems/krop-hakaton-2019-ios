@@ -43,7 +43,6 @@
 		C659F93A2396B57C009DE50B /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C659F9392396B57C009DE50B /* MainCoordinator.swift */; };
 		C659F93C2396B5A2009DE50B /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C659F93B2396B5A2009DE50B /* MainViewModel.swift */; };
 		C659F93D2396F6F7009DE50B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6C7AE22395450F00AA51BC /* MainViewController.swift */; };
-		C659F94E239BBD14009DE50B /* DiagnosticType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C659F94D239BBD14009DE50B /* DiagnosticType.swift */; };
 		C659F952239BDE3D009DE50B /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = C659F951239BDE3D009DE50B /* Categories.swift */; };
 		C659F954239C5C87009DE50B /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = C659F953239C5C87009DE50B /* String.swift */; };
 		E1E9F8345ABA826B38B7F327 /* Pods_KropHackathon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6EA3ABF16065DF238874777 /* Pods_KropHackathon.framework */; };
@@ -59,7 +58,6 @@
 		EF4D8C912397DD77003CA1BF /* SF-Pro-Rounded-Ultralight.otf in Resources */ = {isa = PBXBuildFile; fileRef = EF4D8C8C2397DD77003CA1BF /* SF-Pro-Rounded-Ultralight.otf */; };
 		EF4D8C922397DD77003CA1BF /* SF-Pro-Rounded-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = EF4D8C8D2397DD77003CA1BF /* SF-Pro-Rounded-Semibold.otf */; };
 		EF4D8C932397DD77003CA1BF /* SF-Pro-Rounded-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = EF4D8C8E2397DD77003CA1BF /* SF-Pro-Rounded-Regular.otf */; };
-		EF4D8C962397E350003CA1BF /* ServiceDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4D8C952397E350003CA1BF /* ServiceDetailsModel.swift */; };
 		EF4D8C982397ECCE003CA1BF /* HospitalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4D8C972397ECCE003CA1BF /* HospitalModel.swift */; };
 		EF4D8C9C239907D3003CA1BF /* HospitalDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4D8C9A239907D3003CA1BF /* HospitalDetailsTableViewCell.swift */; };
 		EF4D8C9D239907D3003CA1BF /* HospitalDetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF4D8C9B239907D3003CA1BF /* HospitalDetailsTableViewCell.xib */; };
@@ -110,7 +108,6 @@
 		C659F9282396B533009DE50B /* NSObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSObject.swift; sourceTree = "<group>"; };
 		C659F9392396B57C009DE50B /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		C659F93B2396B5A2009DE50B /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
-		C659F94D239BBD14009DE50B /* DiagnosticType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagnosticType.swift; sourceTree = "<group>"; };
 		C659F951239BDE3D009DE50B /* Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
 		C659F953239C5C87009DE50B /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		E6EA3ABF16065DF238874777 /* Pods_KropHackathon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KropHackathon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -126,7 +123,6 @@
 		EF4D8C8C2397DD77003CA1BF /* SF-Pro-Rounded-Ultralight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Ultralight.otf"; sourceTree = "<group>"; };
 		EF4D8C8D2397DD77003CA1BF /* SF-Pro-Rounded-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Semibold.otf"; sourceTree = "<group>"; };
 		EF4D8C8E2397DD77003CA1BF /* SF-Pro-Rounded-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Regular.otf"; sourceTree = "<group>"; };
-		EF4D8C952397E350003CA1BF /* ServiceDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDetailsModel.swift; sourceTree = "<group>"; };
 		EF4D8C972397ECCE003CA1BF /* HospitalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HospitalModel.swift; sourceTree = "<group>"; };
 		EF4D8C9A239907D3003CA1BF /* HospitalDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HospitalDetailsTableViewCell.swift; sourceTree = "<group>"; };
 		EF4D8C9B239907D3003CA1BF /* HospitalDetailsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HospitalDetailsTableViewCell.xib; sourceTree = "<group>"; };
@@ -214,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				954D2FC9239BAC48009DB756 /* Hospital.swift */,
+				C659F951239BDE3D009DE50B /* Categories.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -375,12 +372,9 @@
 		EF4D8C942397E332003CA1BF /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				EF4D8C952397E350003CA1BF /* ServiceDetailsModel.swift */,
 				EF4D8C972397ECCE003CA1BF /* HospitalModel.swift */,
 				95474286239A8B7000320C07 /* ServiceTypeModel.swift */,
 				EF4D8C9E239926DC003CA1BF /* HospitalInfoDetailModel.swift */,
-				C659F94D239BBD14009DE50B /* DiagnosticType.swift */,
-				C659F951239BDE3D009DE50B /* Categories.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -608,7 +602,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EF4D8C962397E350003CA1BF /* ServiceDetailsModel.swift in Sources */,
 				95EB52F423994D7A00A6BD26 /* SearchResultView.swift in Sources */,
 				C659F954239C5C87009DE50B /* String.swift in Sources */,
 				954CAAFC23984740007A77C0 /* MapView.swift in Sources */,
@@ -626,7 +619,6 @@
 				95474287239A8B7000320C07 /* ServiceTypeModel.swift in Sources */,
 				C659F9322396B533009DE50B /* UIImageView.swift in Sources */,
 				EF4D8C9F239926DC003CA1BF /* HospitalInfoDetailModel.swift in Sources */,
-				C659F94E239BBD14009DE50B /* DiagnosticType.swift in Sources */,
 				95E7738723970B1D00F05169 /* UIColor.swift in Sources */,
 				954CAB00239847B4007A77C0 /* UIView.swift in Sources */,
 				C659F92A2396B533009DE50B /* Date.swift in Sources */,

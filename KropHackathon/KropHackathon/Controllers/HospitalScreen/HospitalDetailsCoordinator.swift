@@ -28,7 +28,6 @@ final class HospitalDetailsCoordinator: HospitalDetailsCoordinatorType {
         controller?.viewModel = HospitalDetailsModel(self, serviceHolder: self.serviceHolder)
     }
 
-    
     func start() {
         if let controller = controller {
             navigationController?.pushViewController(controller, animated: true)

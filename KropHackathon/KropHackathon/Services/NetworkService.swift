@@ -50,7 +50,7 @@ final class NetworkService: NetworkServiceType {
             }
         }
         
-        networkManager.getAllData(completion: { data in
+        networkManager.getAllCategories(completion: { data in
             ParsingHelper.parsingByType(data, completion)
         })
 
