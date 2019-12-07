@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum DetailsInfoType {
+enum DetailsInfoType: String {
     case address
     case schedule
     case closedTime

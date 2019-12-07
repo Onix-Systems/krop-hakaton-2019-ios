@@ -29,13 +29,17 @@ final class ListViewController: UIViewController {
     private func setUpClosure() {
         
         viewModel.didLoadData = {
+            DispatchQueue.main.async {
             self.tableView.reloadData()
+            }
         }
         
         viewModel.didLoadFailed = { [weak self] error in
+            DispatchQueue.main.async {
             let alert = UIAlertController(title: "Error", message: error, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             self?.present(alert, animated: true, completion: nil)
+            }
             
         }
     }
@@ -43,6 +47,7 @@ final class ListViewController: UIViewController {
     private func configure() {
         
         self.view.backgroundColor = navigationController?.navigationBar.barTintColor
+        self.tableView.backgroundColor = navigationController?.navigationBar.barTintColor
         
         tableView.layer.cornerRadius = Style.Radius.defaultRadius
         tableView.layer.borderWidth = 0.5
@@ -86,7 +91,7 @@ extension ListViewController: UITableViewDelegate {
         case .serviceDetails:
             viewModel.openHospitals(row: indexPath.row)
         case . hospitals:
-            viewModel.openDetails()
+            viewModel.openDetails(row: indexPath.row)
         }
     }
 }

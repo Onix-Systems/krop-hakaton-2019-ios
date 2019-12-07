@@ -57,18 +57,24 @@ final class MainViewController: UIViewController {
     
     private func setUpclosure() {
         searchResult.didSelected = { [weak self] row in
-            self?.viewModel.openDetails()
+            DispatchQueue.main.async {
+            self?.viewModel.openDetails(row)
+            }
         }
         
         viewModel.didLoadData = {
+            DispatchQueue.main.async {
             self.tableView.reloadData()
-        self.searchResult.update(self.viewModel.searchModel)
+        self.searchResult.update(self.viewModel.searchModels)
+            }
         }
         
         viewModel.didLoadFailed = { [weak self] error in
+            DispatchQueue.main.async {
             let alert = UIAlertController(title: "Error", message: error, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             self?.present(alert, animated: true, completion: nil)
+            }
 
         }
     }

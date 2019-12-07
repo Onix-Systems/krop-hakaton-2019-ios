@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		9541B0A7239707920084A0C0 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9541B0A6239707920084A0C0 /* Style.swift */; };
 		9541B0A9239708130084A0C0 /* CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9541B0A8239708130084A0C0 /* CALayer.swift */; };
+		9547427D239A79F600320C07 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9547427C239A79F600320C07 /* NetworkManager.swift */; };
+		9547427F239A7A2000320C07 /* ParsingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9547427E239A7A2000320C07 /* ParsingHelper.swift */; };
 		95474281239A81D400320C07 /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95474280239A81D400320C07 /* Mocks.swift */; };
 		95474283239A82B300320C07 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95474282239A82B300320C07 /* NetworkService.swift */; };
 		95474287239A8B7000320C07 /* ServiceTypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95474286239A8B7000320C07 /* ServiceTypeModel.swift */; };
@@ -22,6 +24,7 @@
 		954CAAFE23984747007A77C0 /* MapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 954CAAFD23984747007A77C0 /* MapView.xib */; };
 		954CAB00239847B4007A77C0 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954CAAFF239847B4007A77C0 /* UIView.swift */; };
 		954CAB0223984DE4007A77C0 /* UrlHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954CAB0123984DE4007A77C0 /* UrlHelper.swift */; };
+		954D2FCA239BAC48009DB756 /* Hospital.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954D2FC9239BAC48009DB756 /* Hospital.swift */; };
 		95E7738723970B1D00F05169 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E7738623970B1D00F05169 /* UIColor.swift */; };
 		95E7738B2397123300F05169 /* ServiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E7738A2397123300F05169 /* ServiceCell.swift */; };
 		95E7738D2397124F00F05169 /* ServiceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95E7738C2397124F00F05169 /* ServiceCell.xib */; };
@@ -72,6 +75,8 @@
 		72C9A0A53B930FB5B67DD84F /* Pods-KropHackathon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KropHackathon.release.xcconfig"; path = "Target Support Files/Pods-KropHackathon/Pods-KropHackathon.release.xcconfig"; sourceTree = "<group>"; };
 		9541B0A6239707920084A0C0 /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
 		9541B0A8239708130084A0C0 /* CALayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayer.swift; sourceTree = "<group>"; };
+		9547427C239A79F600320C07 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		9547427E239A7A2000320C07 /* ParsingHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParsingHelper.swift; sourceTree = "<group>"; };
 		95474280239A81D400320C07 /* Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mocks.swift; sourceTree = "<group>"; };
 		95474282239A82B300320C07 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		95474286239A8B7000320C07 /* ServiceTypeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceTypeModel.swift; sourceTree = "<group>"; };
@@ -85,6 +90,7 @@
 		954CAAFD23984747007A77C0 /* MapView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapView.xib; sourceTree = "<group>"; };
 		954CAAFF239847B4007A77C0 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		954CAB0123984DE4007A77C0 /* UrlHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlHelper.swift; sourceTree = "<group>"; };
+		954D2FC9239BAC48009DB756 /* Hospital.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hospital.swift; sourceTree = "<group>"; };
 		95E7738623970B1D00F05169 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		95E7738A2397123300F05169 /* ServiceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCell.swift; sourceTree = "<group>"; };
 		95E7738C2397124F00F05169 /* ServiceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ServiceCell.xib; sourceTree = "<group>"; };
@@ -189,6 +195,32 @@
 				EF4D8C852397C632003CA1BF /* ServiceTableViewCell.xib */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		95474279239A797100320C07 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				9547427B239A79D400320C07 /* NetworkManager */,
+				9547427A239A79C800320C07 /* Models */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		9547427A239A79C800320C07 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				954D2FC9239BAC48009DB756 /* Hospital.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9547427B239A79D400320C07 /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				9547427C239A79F600320C07 /* NetworkManager.swift */,
+				9547427E239A7A2000320C07 /* ParsingHelper.swift */,
+			);
+			path = NetworkManager;
 			sourceTree = "<group>";
 		};
 		95474288239A8BCE00320C07 /* Hospital */ = {
@@ -379,6 +411,7 @@
 			children = (
 				EF6C7ADE2395450F00AA51BC /* AppDelegate.swift */,
 				C659F9122396B44F009DE50B /* AppCoordinator.swift */,
+				95474279239A797100320C07 /* Network */,
 				C659F9192396B533009DE50B /* Extensions */,
 				C659F9112396B3F4009DE50B /* Services */,
 				EF4D8C942397E332003CA1BF /* Models */,
@@ -572,6 +605,7 @@
 				EF4D8C962397E350003CA1BF /* ServiceDetailsModel.swift in Sources */,
 				95EB52F423994D7A00A6BD26 /* SearchResultView.swift in Sources */,
 				954CAAFC23984740007A77C0 /* MapView.swift in Sources */,
+				9547427D239A79F600320C07 /* NetworkManager.swift in Sources */,
 				9541B0A9239708130084A0C0 /* CALayer.swift in Sources */,
 				954CAAF32397EC5A007A77C0 /* HospitalDetailesModel.swift in Sources */,
 				95474281239A81D400320C07 /* Mocks.swift in Sources */,
@@ -581,6 +615,7 @@
 				C659F9372396B533009DE50B /* NSObject.swift in Sources */,
 				95474283239A82B300320C07 /* NetworkService.swift in Sources */,
 				C659F9312396B533009DE50B /* UIViewController.swift in Sources */,
+				954D2FCA239BAC48009DB756 /* Hospital.swift in Sources */,
 				C659F9352396B533009DE50B /* UIStoryboard.swift in Sources */,
 				95474287239A8B7000320C07 /* ServiceTypeModel.swift in Sources */,
 				C659F9322396B533009DE50B /* UIImageView.swift in Sources */,
@@ -596,6 +631,7 @@
 				C659F93D2396F6F7009DE50B /* MainViewController.swift in Sources */,
 				954CAB0223984DE4007A77C0 /* UrlHelper.swift in Sources */,
 				C659F92E2396B533009DE50B /* UITableView.swift in Sources */,
+				9547427F239A7A2000320C07 /* ParsingHelper.swift in Sources */,
 				C659F93A2396B57C009DE50B /* MainCoordinator.swift in Sources */,
 				EF4D8C9C239907D3003CA1BF /* HospitalDetailsTableViewCell.swift in Sources */,
 				EF4D8C772397AB3B003CA1BF /* ListCoordinator.swift in Sources */,

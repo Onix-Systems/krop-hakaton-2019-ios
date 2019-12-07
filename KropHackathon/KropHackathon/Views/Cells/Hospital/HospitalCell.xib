@@ -25,6 +25,13 @@
                 <rect key="frame" x="0.0" y="0.0" width="397" height="184"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kPa-HH-mtz">
+                        <rect key="frame" x="0.0" y="183" width="397" height="1"/>
+                        <color key="backgroundColor" red="0.98039871450000005" green="0.98038035629999998" blue="0.98039287330000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="bFJ-dv-vQg"/>
+                        </constraints>
+                    </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m5x-ox-K9j">
                         <rect key="frame" x="15" y="5" width="367" height="174"/>
                         <subviews>
@@ -45,13 +52,13 @@
                                 <rect key="frame" x="15" y="109" width="347" height="60"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icPinlocation" translatesAutoresizingMaskIntoConstraints="NO" id="rNf-gJ-gG3">
-                                        <rect key="frame" x="0.0" y="3" width="24" height="24"/>
+                                        <rect key="frame" x="0.0" y="7" width="16" height="16"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="rNf-gJ-gG3" secondAttribute="height" multiplier="1:1" id="TZJ-zq-aFG"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TML-fu-BPz">
-                                        <rect key="frame" x="29" y="5" width="318" height="20"/>
+                                        <rect key="frame" x="21" y="5" width="326" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="7TO-Bz-0et"/>
                                         </constraints>
@@ -60,13 +67,13 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icTime" translatesAutoresizingMaskIntoConstraints="NO" id="tLN-K3-Bpy">
-                                        <rect key="frame" x="0.0" y="33" width="24" height="24"/>
+                                        <rect key="frame" x="0.0" y="37" width="16" height="16"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="tLN-K3-Bpy" secondAttribute="height" multiplier="1:1" id="D0O-OT-gaz"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Пн-Пт 08:00 - 16:00" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="36u-0Z-V1q">
-                                        <rect key="frame" x="29" y="35" width="318" height="20"/>
+                                        <rect key="frame" x="21" y="35" width="326" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="YWb-3t-M3G"/>
                                         </constraints>
@@ -108,6 +115,9 @@
                 </subviews>
                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 <constraints>
+                    <constraint firstItem="kPa-HH-mtz" firstAttribute="centerX" secondItem="bf3-uo-vYa" secondAttribute="centerX" id="6N2-iH-anX"/>
+                    <constraint firstAttribute="bottom" secondItem="kPa-HH-mtz" secondAttribute="bottom" id="Rxo-qi-av9"/>
+                    <constraint firstItem="kPa-HH-mtz" firstAttribute="width" secondItem="bf3-uo-vYa" secondAttribute="width" id="UvG-BV-TQp"/>
                     <constraint firstAttribute="bottom" secondItem="m5x-ox-K9j" secondAttribute="bottom" constant="5" id="WzC-Um-22R"/>
                     <constraint firstAttribute="trailing" secondItem="m5x-ox-K9j" secondAttribute="trailing" constant="15" id="aME-nm-pRX"/>
                     <constraint firstItem="m5x-ox-K9j" firstAttribute="top" secondItem="bf3-uo-vYa" secondAttribute="top" constant="5" id="lqC-ZU-uOn"/>
@@ -126,7 +136,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="icPinlocation" width="24" height="24"/>
-        <image name="icTime" width="24" height="24"/>
+        <image name="icPinlocation" width="16" height="16"/>
+        <image name="icTime" width="16" height="16"/>
     </resources>
 </document>

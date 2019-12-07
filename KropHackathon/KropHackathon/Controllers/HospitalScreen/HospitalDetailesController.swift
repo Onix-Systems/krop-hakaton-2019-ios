@@ -22,15 +22,18 @@ final class HospitalDetailesController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
+        setUpClosure()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-    navigationController?.isNavigationBarHidden = true
+        navigationController?.isNavigationBarHidden = true
     }
     
     @IBAction func pushToMap(_ sender: Any) {
-        UrlOpenHelper.openDirections(to: viewModel.point)
+        if let point = viewModel.point {
+            UrlOpenHelper.openDirections(to: point)
+        }
     }
     
     private func configure() {
@@ -41,31 +44,40 @@ final class HospitalDetailesController: UIViewController {
     
     private func setUpClosure() {
         viewModel.didLoadData = {
+            DispatchQueue.main.async {
             self.tableView.reloadData()
             self.configureMap()
+            }
         }
         
         viewModel.didLoadFailed = { [weak self] error in
+            DispatchQueue.main.async {
             let alert = UIAlertController(title: "Error", message: error, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             self?.present(alert, animated: true, completion: nil)
+            }
             
         }
     }
     
     private func configureMap() {
-        map.customSetup(with: viewModel.point)
-        map.addMarker(coordinate: viewModel.point)
-        map.moveToLocation(location: viewModel.point)
+        if let point = viewModel.point {
+            map.customSetup(with: point)
+            map.addMarker(coordinate: point)
+            map.moveToLocation(location: point)
+        }
         
         let gradient = CAGradientLayer()
         var bounds = self.navigationController?.navigationBar.bounds
         bounds?.size.height += UIApplication.shared.statusBarFrame.size.height
-        gradient.frame = bounds!
+        
+        if let bounds = bounds {
+        gradient.frame = bounds
+        }
         gradient.colors = [UIColor.black.cgColor, UIColor.clear.cgColor]
         gradient.startPoint = CGPoint(x: 0, y: 0)
         gradient.endPoint = CGPoint(x: 0, y: 1)
-    self.gradientView.layer.addSublayer(gradient)
+        self.gradientView.layer.addSublayer(gradient)
     }
     
     private func configureOpenMapBtn() {
@@ -97,8 +109,8 @@ extension HospitalDetailesController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             guard let cell: TitleTableViewCell = tableView.dequeCell(for: indexPath) else {
-            print("can't find cell")
-            return UITableViewCell()
+                print("can't find cell")
+                return UITableViewCell()
             }
             cell.configure(title: viewModel.title)
             return cell
