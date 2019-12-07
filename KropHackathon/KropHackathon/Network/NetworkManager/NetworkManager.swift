@@ -34,6 +34,11 @@ final class NetworkManager {
         let endpoint = (path + "get-equipment/category")
         loadByEndpoint(by: endpoint, complition: completion)
     }
+
+    func getSearch(text: String, complition: @escaping (Result<Data>) -> Void) {
+        let endpoint = (path + "search?q=" + text)
+        loadByEndpoint(by: endpoint, complition: complition)
+    }
     
     fileprivate func loadByEndpoint(by endpoint: String, complition: @escaping (Result<Data>) -> Void) {
         guard let point = endpoint.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
