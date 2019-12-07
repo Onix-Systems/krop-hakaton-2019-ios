@@ -46,15 +46,15 @@ class NetworkService: NetworkServiceType {
             case .success(let hospitals):
                 if hospitals.status == 200 {
                     if let hospitals = hospitals.data?.hospitals {
-                        self.hospitalsObserver.onNext(.success(hospitals))
+                        self.searchObserver.onNext(.success(hospitals))
                     } else {
-                        self.hospitalObserver.onNext(.failure(hospitals.message))
+                        self.searchObserver.onNext(.failure(hospitals.message))
                     }
                 } else {
-                    self.hospitalObserver.onNext(.failure(hospitals.message))
+                    self.searchObserver.onNext(.failure(hospitals.message))
                 }
             case .failure(let error):
-                self.hospitalObserver.onNext(.failure(error))
+                self.searchObserver.onNext(.failure(error))
             }
         }
         

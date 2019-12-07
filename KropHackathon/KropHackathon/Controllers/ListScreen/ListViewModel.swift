@@ -60,16 +60,6 @@ final class ListViewModel: ListViewModelType {
         
         networkService = serviceHolder.get(by: NetworkServiceType.self)
         
-        networkService.servicesObserver.subscribe(onNext: { [weak self] result in
-            switch result {
-            case .success(let model):
-                //self?.serviceDetailsModels = model
-                self?.didLoadData?()
-            case .failure(error: let error):
-                self?.didLoadFailed?(error)
-            }
-        }).disposed(by: disposeBag)
-        
         networkService.hospitalsObserver.subscribe(onNext: { [weak self] result in
             switch result {
             case .success(let model):

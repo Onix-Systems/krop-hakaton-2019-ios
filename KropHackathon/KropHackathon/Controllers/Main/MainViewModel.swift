@@ -66,7 +66,7 @@ final class MainViewModel: MainViewModelType {
     }
     
     func search(text: String?) {
-        self.didLoadData?()
+        networkService.getSearch(text: text ?? "")
     }
     
     func openDetails(_ index: Int) {

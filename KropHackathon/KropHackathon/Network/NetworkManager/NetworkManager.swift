@@ -32,8 +32,10 @@ final class NetworkManager {
     }
     
     func getSearch(text: String, complition: @escaping (Result<Data>) -> Void) {
+        if text.count >= 3 {
         let endpoint = (path + "search?q=" + text)
         loadByEndpoint(by: endpoint, complition: complition)
+        }
     }
     
     fileprivate func loadByEndpoint(by endpoint: String, complition: @escaping (Result<Data>) -> Void) {
