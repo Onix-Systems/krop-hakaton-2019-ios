@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -13,20 +11,20 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Hospital Detailes Controller-->
+        <!--Hospital Details Controller-->
         <scene sceneID="l0j-0H-41H">
             <objects>
-                <viewController storyboardIdentifier="HospitalDetailesController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="X1s-SP-F6j" customClass="HospitalDetailesController" customModule="KropHackathon" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HospitalDetailesController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="X1s-SP-F6j" customClass="HospitalDetailsController" customModule="KropHackathon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tap-kd-ckE">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tll-co-7eH" customClass="MapView" customModule="KropHackathon">
-                                <rect key="frame" x="0.0" y="-44" width="415" height="448"/>
+                                <rect key="frame" x="0.0" y="-44" width="601" height="329.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mjC-sY-jQT">
-                                <rect key="frame" x="0.0" y="-44" width="415" height="180"/>
+                                <rect key="frame" x="0.0" y="-44" width="601" height="133"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <button alpha="0.65000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OfS-WO-tK1">
@@ -42,11 +40,11 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wlz-ss-tES">
-                                <rect key="frame" x="0.5" y="404" width="414" height="492"/>
+                                <rect key="frame" x="0.5" y="285.5" width="600" height="314.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
                             <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J71-Ym-ZyB">
-                                <rect key="frame" x="118.5" y="356" width="177" height="33"/>
+                                <rect key="frame" x="211.5" y="237.5" width="177" height="33"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="33" id="DXy-l0-h93"/>

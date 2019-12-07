@@ -22,7 +22,7 @@ protocol NetworkServiceType: Service {
     func getHospital(id: Int)
 }
 
-class NetworkService: NetworkServiceType {
+final class NetworkService: NetworkServiceType {
     
     private let networkManager = NetworkManager.shared
     
@@ -55,8 +55,9 @@ class NetworkService: NetworkServiceType {
         })
 
     }
+    
     func getSearch(text: String) {
-        let compliction: ((Result<SearchRequest>) -> Void) = { result in
+        let completion: ((Result<SearchRequest>) -> Void) = { result in
             
             switch result {
             case .success(let hospitals):
@@ -73,15 +74,15 @@ class NetworkService: NetworkServiceType {
                 self.hospitalObserver.onNext(.failure(error))
             }
         }
-        networkManager.getSearch(text: text, complition: {
-            [weak self] data in
-            ParsingHelper.parsingByType(data, compliction)
+        
+        networkManager.getSearch(text: text, completion: { data in
+            ParsingHelper.parsingByType(data, completion)
         })
     }
     
     func getHospitals(type: String) {
         
-        let compliction: ((Result<HospitalsRequest>) -> Void) = { result in
+        let completion: ((Result<HospitalsRequest>) -> Void) = { result in
             
             switch result {
             case .success(let hospitals):
@@ -99,16 +100,15 @@ class NetworkService: NetworkServiceType {
             }
         }
         
-        networkManager.getHospitals(type: type, complition: {
-            [weak self] data in
-            ParsingHelper.parsingByType(data, compliction)
+        networkManager.getHospitals(type: type, completion: { data in
+            ParsingHelper.parsingByType(data, completion)
         })
         
     }
     
     func getHospital(id: Int) {
         
-        let compliction: ((Result<HospitalRequest>) -> Void) = { result in
+        let completion: ((Result<HospitalRequest>) -> Void) = { result in
             
             switch result {
             case .success(let hospital):
@@ -126,9 +126,8 @@ class NetworkService: NetworkServiceType {
             }
         }
         
-        networkManager.getHospital(id: id, complition: {
-            [weak self] data in
-            ParsingHelper.parsingByType(data, compliction)
+        networkManager.getHospital(id: id, completion: { data in
+            ParsingHelper.parsingByType(data, completion)
         })
     }
 }

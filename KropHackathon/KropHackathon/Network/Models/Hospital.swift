@@ -44,8 +44,7 @@ final class Hospital: Codable {
     }
 }
 
-
-class HospitalRequest: Codable {
+final class HospitalRequest: Codable {
     var status: Int
     var message: String
     var data: [String: [Hospital]]?
@@ -57,7 +56,7 @@ class HospitalRequest: Codable {
     }
 }
 
-class HospitalsRequest: Codable {
+final class HospitalsRequest: Codable {
     var status: Int
     var message: String
     var data: HospitalsData?
@@ -69,7 +68,7 @@ class HospitalsRequest: Codable {
     }
 }
 
-class HospitalsData: Codable {
+final class HospitalsData: Codable {
     var qty: Int
     var hospitals: [Hospital]
     
@@ -79,7 +78,7 @@ class HospitalsData: Codable {
     }
 }
 
-class SearchRequest: Codable {
+final class SearchRequest: Codable {
     var status: Int
     var message: String
     var data: HospitalsData?
@@ -91,7 +90,7 @@ class SearchRequest: Codable {
     }
 }
 
-class SearchData: Codable {
+final class SearchData: Codable {
     var qty: Int
     var hospitals: [Hospital]
     

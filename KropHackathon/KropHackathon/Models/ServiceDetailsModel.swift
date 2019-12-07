@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ServiceDetailsModel {
+final class ServiceDetailsModel {
     var serviceTypeName: String
     var serviceDetailsName: String
     var serviceName: String

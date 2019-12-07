@@ -17,16 +17,15 @@ protocol HospitalDetailsCoordinatorType {
 
 final class HospitalDetailsCoordinator: HospitalDetailsCoordinatorType {
     
-    private weak var controller: HospitalDetailesController? = Storyboard.hospital.instantiateViewController()
+    private weak var controller: HospitalDetailsController? = Storyboard.hospital.instantiateViewController()
     private let navigationController: UINavigationController?
     private var serviceHolder: ServiceHolder!
     
     init(navigationController: UINavigationController?, serviceHolder: ServiceHolder) {
-        
         self.navigationController = navigationController
         self.serviceHolder = serviceHolder
         
-        controller?.viewModel = HospitalDetailesModel(self, serviceHolder: self.serviceHolder)
+        controller?.viewModel = HospitalDetailsModel(self, serviceHolder: self.serviceHolder)
     }
 
     

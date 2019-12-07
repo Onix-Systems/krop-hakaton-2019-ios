@@ -20,33 +20,33 @@ final class NetworkManager {
     static let shared = NetworkManager()
     fileprivate let path = "https://onix-systems-krop-hakaton-2019.staging.onix.ua/api/"
   
-    func getHospital(id: Int, complition: @escaping (Result<Data>) -> Void) {
+    func getHospital(id: Int, completion: @escaping (Result<Data>) -> Void) {
         let endpoint = (path + "hospital/\(id)")
-        loadByEndpoint(by: endpoint, complition: complition)
+        loadByEndpoint(by: endpoint, completion: completion)
     }
     
-    func getHospitals(type: String, complition: @escaping (Result<Data>) -> Void) {
+    func getHospitals(type: String, completion: @escaping (Result<Data>) -> Void) {
         let endpoint = (path + "get-equipment/category-by-type?type=" + type)
-        loadByEndpoint(by: endpoint, complition: complition)
+        loadByEndpoint(by: endpoint, completion: completion)
     }
     
     func getAllData(completion: @escaping (Result<Data>) -> Void) {
         let endpoint = (path + "get-equipment/category")
-        loadByEndpoint(by: endpoint, complition: completion)
+        loadByEndpoint(by: endpoint, completion: completion)
     }
 
-    func getSearch(text: String, complition: @escaping (Result<Data>) -> Void) {
+    func getSearch(text: String, completion: @escaping (Result<Data>) -> Void) {
         let endpoint = (path + "search?q=" + text)
-        loadByEndpoint(by: endpoint, complition: complition)
+        loadByEndpoint(by: endpoint, completion: completion)
     }
     
-    fileprivate func loadByEndpoint(by endpoint: String, complition: @escaping (Result<Data>) -> Void) {
+    fileprivate func loadByEndpoint(by endpoint: String, completion: @escaping (Result<Data>) -> Void) {
         guard let point = endpoint.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
             let url = URL(string: point) else { assertionFailure("URL is nil"); return }
         
-        loadData(by: url) { (data, responce, error) in
-            if let error = error { complition(.failure(error.localizedDescription)) }
-            if let data = data { complition(.success(data)) }
+        loadData(by: url) { data, responce, error in
+            if let error = error { completion(.failure(error.localizedDescription)) }
+            if let data = data { completion(.success(data)) }
         }
     }
     

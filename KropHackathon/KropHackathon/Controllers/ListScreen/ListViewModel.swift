@@ -48,35 +48,17 @@ final class ListViewModel: ListViewModelType {
     
     init(_ coordinator: ListCoordinatorType, serviceHolder: ServiceHolder, screenType: ListScreenType = .serviceDetails, serviceTypeModel: ServiceTypeModel) {
         self.coordinator = coordinator
-        
+        networkService = serviceHolder.get(by: NetworkServiceType.self)
+
         self.screenType = screenType
         self.screenTitle = serviceTypeModel.name
-        self.serviceModel = serviceTypeModel
-//        switch screenType {
-//        case .hospitals:
-//            //self.hospitalModels = Mock.hospitalModels
-//            break
-//        case .serviceDetails:
-//            self.serviceDetailsModels = Mock.serviceDetailsModels
-//        }
+        serviceModel = serviceTypeModel
 
-        networkService = serviceHolder.get(by: NetworkServiceType.self)
-        
-//        networkService.servicesObserver.subscribe(onNext: { [weak self] result in
-//            switch result {
-//            case .success(let model):
-//                //self?.serviceDetailsModels = model
-//                self?.didLoadData?()
-//            case .failure(error: let error):
-//                self?.didLoadFailed?(error)
-//            }
-//        }).disposed(by: disposeBag)
-        
         networkService.hospitalsObserver.subscribe(onNext: { [weak self] result in
             switch result {
             case .success(let model):
                 self?.hospitalModels = []
-                model.forEach { (element) in
+                model.forEach { element in
                     self?.hospitalModels.append(HospitalModel.init(model: element))
                 }
                 self?.didLoadData?()

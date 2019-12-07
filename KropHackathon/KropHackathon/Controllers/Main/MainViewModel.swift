@@ -34,9 +34,7 @@ final class MainViewModel: MainViewModelType {
     var didLoadFailed: ((String) -> Void)?
     
     init(_ coordinator: MainCoordinatorType, serviceHolder: ServiceHolder) {
-        
         self.coordinator = coordinator
-        serviceModels = Mock.serviceModels
         
         networkService = serviceHolder.get(by: NetworkServiceType.self)
         
@@ -54,7 +52,7 @@ final class MainViewModel: MainViewModelType {
             switch result {
             case .success(let searchModels):
                 self?.searchModels = []
-                searchModels.forEach { (element) in
+                searchModels.forEach { element in
                     self?.searchModels.append(HospitalModel.init(model: element))
                 }
                 self?.didLoadData?()
@@ -67,26 +65,10 @@ final class MainViewModel: MainViewModelType {
     private func createServiceTypesArray(categories: Categories) {
         serviceModels = []
         categories.categories.enumerated().forEach { category in
-            let style = setCellStyle(category: category.element)
+            let style = Style.setCellStyle(category: category.element)
             let serviceType = ServiceTypeModel(name: category.element.name, image: style.0, backColor: style.1, services: category.element.list)
             serviceModels.append(serviceType)
         }
-    }
-    
-    private func setCellStyle(category: Category) -> (String, UIColor) {
-        if category.name.contains("льтразвук") {
-            return ("img_uzi", Style.Color.uziPink)
-        }
-        if category.name.contains("ентген") {
-            return ("img_rentgen", Style.Color.rengenBlue)
-        }
-        if category.name.contains("ункц") {
-            return ("img_funct", Style.Color.funcOrange)
-        }
-        if category.name.contains("ндо") {
-            return ("img_endo", Style.Color.endGreen)
-        }
-        return ("img_all", Style.Color.pinkDef)
     }
     
     func search(text: String?) {

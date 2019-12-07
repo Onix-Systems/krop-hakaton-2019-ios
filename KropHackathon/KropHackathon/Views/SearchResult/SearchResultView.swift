@@ -6,10 +6,9 @@
 //  Copyright © 2019 onix. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
-class SearchResultView: UIView {
+final class SearchResultView: UIView {
     @IBOutlet private weak var tableView: UITableView!
     
     var models: [HospitalModel] = []
@@ -35,7 +34,7 @@ class SearchResultView: UIView {
     
     func update(_ models: [HospitalModel]) {
         self.models = models
-         self.tableView.reloadData()
+        self.tableView.reloadData()
     }    
 }
 
@@ -55,7 +54,7 @@ extension SearchResultView: UITableViewDataSource {
 }
 
 extension SearchResultView: UITableViewDelegate {
-   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
         self.didSelected?(indexPath.row)
     }
 }

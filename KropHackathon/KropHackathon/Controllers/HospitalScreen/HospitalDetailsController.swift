@@ -6,14 +6,13 @@
 //  Copyright © 2019 onix. All rights reserved.
 //
 
-import Foundation
 import UIKit
 import GoogleMaps
 
-final class HospitalDetailesController: UIViewController {
-    var viewModel: HospitalDetailesModelType!
+final class HospitalDetailsController: UIViewController {
+    var viewModel: HospitalDetailsModelType!
     
-    @IBOutlet weak var gradientView: UIView!
+    @IBOutlet private weak var gradientView: UIView!
     @IBOutlet private weak var lookOnMapButton: UIButton!
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var map: MapView!
@@ -103,7 +102,7 @@ final class HospitalDetailesController: UIViewController {
     }
 }
 
-extension HospitalDetailesController: UITableViewDataSource {
+extension HospitalDetailsController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.hospitalInfoDetailModels.count + 1

@@ -8,9 +8,9 @@
 
 import UIKit
 
-class ServiceTableViewCell: UITableViewCell {
+final class ServiceTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet private weak var nameLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -18,11 +18,9 @@ class ServiceTableViewCell: UITableViewCell {
     }
     
     func configure(_ model: ServiceDetailsModel) {
-
-        
         let font = UIFont.sfRoundedBold(17)
         var attributes: [NSAttributedString.Key: Any]? = [NSAttributedString.Key.font: font,
-                          .foregroundColor: UIColor.black]
+                                                          .foregroundColor: UIColor.black]
         
         let attributedName = NSAttributedString(string: model.serviceDetailsName, attributes: attributes)
         

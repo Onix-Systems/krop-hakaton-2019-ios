@@ -6,10 +6,9 @@
 //  Copyright © 2019 onix. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
-class ServiceTypeModel {
+final class ServiceTypeModel {
     
     var name: String
     var image: String

@@ -6,15 +6,14 @@
 //  Copyright © 2019 onix. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
-class HospitalCell: UITableViewCell {
+final class HospitalCell: UITableViewCell {
     
-    @IBOutlet weak var hospitalNameLabel: UILabel!
-    @IBOutlet weak var wrapperView: UIView!
-    @IBOutlet weak var locationLabel: UILabel!
-    @IBOutlet weak var workTimeLabel: UILabel!
+    @IBOutlet private weak var hospitalNameLabel: UILabel!
+    @IBOutlet private weak var wrapperView: UIView!
+    @IBOutlet private weak var locationLabel: UILabel!
+    @IBOutlet private weak var workTimeLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

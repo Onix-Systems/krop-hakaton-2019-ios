@@ -21,9 +21,7 @@ final class MainCoordinator: MainCoordinatorType {
     private var serviceHolder: ServiceHolder!
     
     init(navigationController: UINavigationController?, serviceHolder: ServiceHolder) {
-        
         self.navigationController = navigationController
-        
         self.serviceHolder = serviceHolder
         controller?.viewModel = MainViewModel(self, serviceHolder: self.serviceHolder)
     }

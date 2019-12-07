@@ -10,7 +10,7 @@ import Foundation
 import CoreLocation
 import RxSwift
 
-protocol HospitalDetailesModelType {
+protocol HospitalDetailsModelType {
     var didLoadData: (() -> Void)? { get set }
     var didLoadFailed: ((String) -> Void)? { get set }
     
@@ -21,7 +21,7 @@ protocol HospitalDetailesModelType {
     func goBack()
 }
 
-final class HospitalDetailesModel: HospitalDetailesModelType {
+final class HospitalDetailsModel: HospitalDetailsModelType {
     
     var hospitalInfoDetailModels: [HospitalDetailsCellViewModel] = []
     var title: String = ""

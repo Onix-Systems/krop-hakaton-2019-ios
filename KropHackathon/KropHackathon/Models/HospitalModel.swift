@@ -8,7 +8,7 @@
 
 import Foundation
 
-class HospitalModel {
+final class HospitalModel {
     let id: Int
     let title: String
     let address: String

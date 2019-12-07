@@ -37,9 +37,8 @@ final class ListCoordinator: ListCoordinatorType {
     }
     
     func openHospitals(model: ServiceTypeModel) {
-//        let coordinator = ListCoordinator(navigationController: navigationController, serviceHolder: serviceHolder, .hospitals, screenTitle: "\(model.serviceTypeName) \(model.serviceDetailsName)")
         let coordinator = ListCoordinator(navigationController: navigationController, serviceHolder: serviceHolder, .hospitals, serviceTypeModel: model)
-
+        
         coordinator.start()
     }
     
@@ -47,13 +46,13 @@ final class ListCoordinator: ListCoordinatorType {
         let coordinator = HospitalDetailsCoordinator(navigationController: navigationController, serviceHolder: serviceHolder)
         coordinator.start()
     }
-
+    
     func goBack() {
         _ = navigationController?.popViewController(animated: true)
     }
-
+    
     deinit {
         print("ListCoordinator - deinit")
     }
-
+    
 }

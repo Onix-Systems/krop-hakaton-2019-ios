@@ -8,35 +8,35 @@
 
 import Foundation
 
-struct EquipmentsResponse: Codable, Equatable {
-    let status: Int
-    let code: String
-    let message: String
-
-    let data: Equipments
-}
-
-struct Equipments: Codable, Equatable {
-    let qty: Int
-    let categories: [DiagnosticType]
-
-}
-
-struct DiagnosticType: Codable, Equatable {
-    
-    let id: Int
-    let structureName: String
-    let diagnosticSubgroup: String
-    let diagnosticType: String
-
-    enum CodingKeys: String, CodingKey {
-       case id
-       case structureName = "structure_name"
-       case diagnosticSubgroup = "diagnostic_subgroup" // Ультразвукові
-       case diagnosticType = "diagnostic_type" // нирок
-    }
-    
-}
+//struct EquipmentsResponse: Codable, Equatable {
+//    let status: Int
+//    let code: String
+//    let message: String
+//
+//    let data: Equipments
+//}
+//
+//struct Equipments: Codable, Equatable {
+//    let qty: Int
+//    let categories: [DiagnosticType]
+//
+//}
+//
+//struct DiagnosticType: Codable, Equatable {
+//
+//    let id: Int
+//    let structureName: String
+//    let diagnosticSubgroup: String
+//    let diagnosticType: String
+//
+//    enum CodingKeys: String, CodingKey {
+//       case id
+//       case structureName = "structure_name"
+//       case diagnosticSubgroup = "diagnostic_subgroup" // Ультразвукові
+//       case diagnosticType = "diagnostic_type" // нирок
+//    }
+//
+//}
 
 //struct DiagnosticType: Codable, Equatable {
 //

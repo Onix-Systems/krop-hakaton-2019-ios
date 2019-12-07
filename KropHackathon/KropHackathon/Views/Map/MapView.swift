@@ -9,10 +9,10 @@
 import UIKit
 import GoogleMaps
 
-class MapView: UIView {
+final class MapView: UIView {
     private let defaultLocation = CLLocation(latitude: 50.4547, longitude: 30.5238)
     
-    @IBOutlet weak var ivMap: GMSMapView!
+    @IBOutlet private weak var ivMap: GMSMapView!
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

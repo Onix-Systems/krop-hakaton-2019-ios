@@ -12,11 +12,11 @@ final class MainViewController: UIViewController {
     
     var viewModel: MainViewModelType!
     
-    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var searchBar: UISearchBar!
     @IBOutlet private weak var tableView: UITableView!
-    @IBOutlet weak var searchResult: SearchResultView!
-    @IBOutlet weak var cancelButton: UIButton!
+    @IBOutlet private weak var searchResult: SearchResultView!
+    @IBOutlet private weak var cancelButton: UIButton!
     
     @IBAction func cancelTapped(_ sender: Any) {
         configureSearchMode(false)
@@ -24,9 +24,9 @@ final class MainViewController: UIViewController {
         searchBar.text = ""
     }
     
-    @IBOutlet weak var cancelLeading: NSLayoutConstraint!
-    @IBOutlet weak var searchBarTraling: NSLayoutConstraint!
-    @IBOutlet weak var cancelTraling: NSLayoutConstraint!
+    @IBOutlet private weak var cancelLeading: NSLayoutConstraint!
+    @IBOutlet private weak var searchBarTraling: NSLayoutConstraint!
+    @IBOutlet private weak var cancelTraling: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,10 +63,10 @@ final class MainViewController: UIViewController {
         }
         
         viewModel.didLoadData = {
-            DispatchQueue.main.async {
-                self.hideHUD()
-                self.tableView.reloadData()
-                self.searchResult.update(self.viewModel.searchModels)
+            DispatchQueue.main.async { [weak self] in
+                self?.hideHUD()
+                self?.tableView.reloadData()
+                self?.searchResult.update(self?.viewModel.searchModels ?? [])
             }
         }
         

@@ -29,7 +29,7 @@ extension UIImageView {
         let request = URLRequest(url: url)
         
         self.image = UIImage()
-        URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
+        URLSession.shared.dataTask(with: request, completionHandler: { data, response, _ in
             if let data = data, let response = response, ((response as? HTTPURLResponse)?.statusCode ?? 500) < 300, let image = UIImage(data: data) {
                 DispatchQueue.main.async {
                     self.transition(toImage: image)
