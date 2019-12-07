@@ -44,8 +44,8 @@ final class MainViewModel: MainViewModelType {
         
         networkService.stypesObserver.subscribe(onNext: { [weak self] result in
             switch result {
-            case .success(let serviceModels):
-               // self?.serviceModels = serviceModels
+            case .success(let categories):
+                self?.createServiceTypesArray(categories: categories)
                 self?.didLoadData?()
             case .failure(error: let error):
                 self?.didLoadFailed?(error)
@@ -61,6 +61,33 @@ final class MainViewModel: MainViewModelType {
                 self?.didLoadFailed?(error)
             }
         }).disposed(by: disposeBag)
+    }
+    
+    private func createServiceTypesArray(categories: Categories) {
+        serviceModels = []
+        categories.categories.enumerated().forEach { category in
+            let colors = Style.Color.serviceTypeColors
+            let imgName = setCategoryImage(category: category.element)
+            let serviceType = ServiceTypeModel(name: category.element.name, image: imgName, backColor: colors[category.offset % colors.count], services: category.element.list)
+            serviceModels.append(serviceType)
+        }
+    }
+    
+    private func setCategoryImage(category: Category) -> String {
+        if category.name.contains("Ультразвук") {
+            return "img_uzi"
+        }
+        if category.name.contains("Рентген") {
+            return "img_rentgen"
+        }
+        if category.name.contains("Функ") {
+            return "img_funct"
+        }
+        if category.name.contains("Ендо") {
+            return "img_endo"
+        }
+        return "img_all"
+        
     }
     
     func search(text: String?) {

@@ -8,6 +8,14 @@
 
 import Foundation
 
+struct CategoriesResponse: Codable, Equatable {
+    let status: Int
+    let code: String
+    let message: String
+
+    let data: Categories
+}
+
 struct Categories: Codable, Equatable {
     let qty: Int
     let categories: [Category]

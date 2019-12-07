@@ -12,7 +12,7 @@ import Foundation
 protocol NetworkServiceType: Service {
     
     var servicesObserver: ReplaySubject<Result<Bool>> { get }
-    var stypesObserver: ReplaySubject<Result<Bool>> { get }
+    var stypesObserver: ReplaySubject<Result<Categories>> { get }
     var hospitalsObserver: ReplaySubject<Result<Bool>> { get }
     var searchObserver: ReplaySubject<Result<Bool>> { get }
     var hospitalObserver: ReplaySubject<Result<Hospital>> { get }
@@ -33,13 +33,30 @@ class NetworkService: NetworkServiceType {
     }
     
     var servicesObserver = ReplaySubject<Result<Bool>>.create(bufferSize: 1)
-    var stypesObserver = ReplaySubject<Result<Bool>>.create(bufferSize: 1)
+    var stypesObserver = ReplaySubject<Result<Categories>>.create(bufferSize: 1)
     var hospitalObserver = ReplaySubject<Result<Hospital>>.create(bufferSize: 1)
     var hospitalsObserver = ReplaySubject<Result<Bool>>.create(bufferSize: 1)
     var searchObserver = ReplaySubject<Result<Bool>>.create(bufferSize: 1)
     
     func getServiceTypes() {
+        let completion: ((Result<CategoriesResponse>) -> Void) = { result in
+            
+            switch result {
+            case .success(let allData):
+                if allData.status == 200 {
+                    self.stypesObserver.onNext(.success(allData.data))
+                } else {
+                    self.stypesObserver.onNext(.failure(allData.message))
+                }
+            case .failure(let error):
+                self.hospitalObserver.onNext(.failure(error))
+            }
+        }
         
+        networkManager.getAllData(completion: { data in
+            ParsingHelper.parsingByType(data, completion)
+        })
+
     }
     
     func getServices() {
