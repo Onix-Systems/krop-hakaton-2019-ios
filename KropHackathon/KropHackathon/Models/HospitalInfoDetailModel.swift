@@ -18,5 +18,4 @@ class HospitalInfoDetailModel {
         self.infoTypeStr = infoTypeStr
         self.info = info
     }
-    
 }

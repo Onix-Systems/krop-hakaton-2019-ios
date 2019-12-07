@@ -19,25 +19,20 @@ final class NetworkManager {
     
     static let shared = NetworkManager()
     
-    fileprivate let path = "https://api.themoviedb.org"
-    fileprivate let appID = "188e653cc6cad40ebe5f11acb98ed11f"
+    fileprivate let path = "https://onix-systems-krop-hakaton-2019.staging.onix.ua/api/"
     
-    func getPopular(page: Int, complition: @escaping (Result<Data>) -> Void) {
-        let endpoint = (path + "/3/movie/popular?api_key=\(appID)&language=en-US&page=\(page)")
+    func getHospital(id: Int, complition: @escaping (Result<Data>) -> Void) {
+        let endpoint = (path + "hospital/666")
         loadByEndpoint(by: endpoint, complition: complition)
     }
     
-    func getFilmByGenre(by id: Int, page: Int, complition: @escaping (Result<Data>) -> Void) {
-        let endpoint = (path + "/3/discover/movie?api_key=\(appID)&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=\(page)&with_genres=\(id)")
-        loadByEndpoint(by: endpoint, complition: complition)
-    }
-        
     fileprivate func loadByEndpoint(by endpoint: String, complition: @escaping (Result<Data>) -> Void) {
         
         guard let point = endpoint.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
             let url = URL(string: point) else { assertionFailure("URL is nil"); return }
         
-        loadData(by: url) { (data, _, error) in
+       
+        loadData(by: url) { (data, responce, error) in
             if let error = error { complition(.failure(error.localizedDescription)) }
             if let data = data { complition(.success(data)) }
         }

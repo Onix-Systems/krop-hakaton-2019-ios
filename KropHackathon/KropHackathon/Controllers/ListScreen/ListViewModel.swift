@@ -86,7 +86,7 @@ final class ListViewModel: ListViewModelType {
     }
     
     func openDetails(row: Int) {
-        networkService.getHospital()
+        networkService.getHospital(id: 666)
         coordinator.openDetails()
     }
     
