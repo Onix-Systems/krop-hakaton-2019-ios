@@ -30,8 +30,8 @@ final class Hospital: Codable {
         case id
         case name = "custodian_name"
         case adress = "address_street_address"
-        case lan = "latitude"
-        case lat = "longitude"
+        case lan = "longitude"
+        case lat = "latitude"
         case workTime = "work_shedule"
         case unworkTime = "availability_restriction"
         case roomNumber = "room_number"
@@ -49,10 +49,32 @@ class HospitalRequest: Codable {
     var status: Int
     var message: String
     var data: [String: [Hospital]]?
-
+    
     enum CodingKeys: String, CodingKey {
         case status
         case message
         case data
+    }
+}
+
+class HospitalsRequest: Codable {
+    var status: Int
+    var message: String
+    var data: HospitalsData?
+    
+    enum CodingKeys: String, CodingKey {
+        case status
+        case message
+        case data
+    }
+}
+
+class HospitalsData: Codable {
+    var qty: Int
+    var hospitals: [Hospital]
+    
+    enum CodingKeys: String, CodingKey {
+        case qty
+        case hospitals
     }
 }

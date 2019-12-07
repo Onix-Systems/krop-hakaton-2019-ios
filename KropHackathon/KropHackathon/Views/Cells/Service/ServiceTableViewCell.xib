@@ -28,6 +28,13 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KmD-TC-hO9">
+                        <rect key="frame" x="0.0" y="43" width="320" height="1"/>
+                        <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="deviceRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="omE-D1-j3W"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
                     <constraint firstItem="Xe4-la-kyx" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="3Wo-YM-toy"/>
@@ -36,6 +43,11 @@
                 </constraints>
             </tableViewCellContentView>
             <color key="tintColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="njF-e1-oar" firstAttribute="trailing" secondItem="KmD-TC-hO9" secondAttribute="trailing" id="9OD-dJ-qjP"/>
+                <constraint firstItem="KmD-TC-hO9" firstAttribute="width" secondItem="KGk-i7-Jjw" secondAttribute="width" id="A11-FG-OYq"/>
+                <constraint firstItem="KmD-TC-hO9" firstAttribute="bottom" secondItem="njF-e1-oar" secondAttribute="bottom" id="uSY-qs-vNH"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="nameLabel" destination="Xe4-la-kyx" id="gCd-qR-vUn"/>

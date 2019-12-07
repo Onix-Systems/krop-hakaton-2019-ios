@@ -51,9 +51,11 @@ final class HospitalDetailesController: UIViewController {
         }
         
         viewModel.didLoadFailed = { [weak self] error in
+            DispatchQueue.main.async {
             let alert = UIAlertController(title: "Error", message: error, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             self?.present(alert, animated: true, completion: nil)
+            }
             
         }
     }
@@ -68,7 +70,10 @@ final class HospitalDetailesController: UIViewController {
         let gradient = CAGradientLayer()
         var bounds = self.navigationController?.navigationBar.bounds
         bounds?.size.height += UIApplication.shared.statusBarFrame.size.height
-        gradient.frame = bounds!
+        
+        if let bounds = bounds {
+        gradient.frame = bounds
+        }
         gradient.colors = [UIColor.black.cgColor, UIColor.clear.cgColor]
         gradient.startPoint = CGPoint(x: 0, y: 0)
         gradient.endPoint = CGPoint(x: 0, y: 1)

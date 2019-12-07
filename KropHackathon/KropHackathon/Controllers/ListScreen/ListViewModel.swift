@@ -52,7 +52,8 @@ final class ListViewModel: ListViewModelType {
         
         switch screenType {
         case .hospitals:
-            self.hospitalModels = Mock.hospitalModels
+            //self.hospitalModels = Mock.hospitalModels
+            break
         case .serviceDetails:
             self.serviceDetailsModels = Mock.serviceDetailsModels
         }
@@ -72,7 +73,10 @@ final class ListViewModel: ListViewModelType {
         networkService.hospitalsObserver.subscribe(onNext: { [weak self] result in
             switch result {
             case .success(let model):
-                //self?.hospitalModels = model
+                self?.hospitalModels = []
+                model.forEach { (element) in
+                    self?.hospitalModels.append(HospitalModel.init(model: element))
+                }
                 self?.didLoadData?()
             case .failure(error: let error):
                 self?.didLoadFailed?(error)
@@ -81,12 +85,12 @@ final class ListViewModel: ListViewModelType {
     }
     
     func openHospitals(row: Int) {
-        networkService.getHospitals()
+        networkService.getHospitals(type: serviceDetailsModels[row].serviceName)
         coordinator.openHospitals(model: serviceDetailsModels[row])
     }
     
     func openDetails(row: Int) {
-        networkService.getHospital(id: 666)
+        networkService.getHospital(id: hospitalModels[row].id)
         coordinator.openDetails()
     }
     

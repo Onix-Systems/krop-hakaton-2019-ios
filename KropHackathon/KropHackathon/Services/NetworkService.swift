@@ -13,14 +13,14 @@ protocol NetworkServiceType: Service {
     
     var servicesObserver: ReplaySubject<Result<Bool>> { get }
     var stypesObserver: ReplaySubject<Result<Categories>> { get }
-    var hospitalsObserver: ReplaySubject<Result<Bool>> { get }
+    var hospitalsObserver: ReplaySubject<Result<[Hospital]>> { get }
     var searchObserver: ReplaySubject<Result<Bool>> { get }
     var hospitalObserver: ReplaySubject<Result<Hospital>> { get }
     
     func getServiceTypes()
     func getServices()
     func getSearch()
-    func getHospitals()
+    func getHospitals(type: String)
     func getHospital(id: Int)
 }
 
@@ -35,7 +35,7 @@ class NetworkService: NetworkServiceType {
     var servicesObserver = ReplaySubject<Result<Bool>>.create(bufferSize: 1)
     var stypesObserver = ReplaySubject<Result<Categories>>.create(bufferSize: 1)
     var hospitalObserver = ReplaySubject<Result<Hospital>>.create(bufferSize: 1)
-    var hospitalsObserver = ReplaySubject<Result<Bool>>.create(bufferSize: 1)
+    var hospitalsObserver = ReplaySubject<Result<[Hospital]>>.create(bufferSize: 1)
     var searchObserver = ReplaySubject<Result<Bool>>.create(bufferSize: 1)
     
     func getServiceTypes() {
@@ -67,7 +67,30 @@ class NetworkService: NetworkServiceType {
         
     }
     
-    func getHospitals() {
+    func getHospitals(type: String) {
+        
+        let compliction: ((Result<HospitalsRequest>) -> Void) = { result in
+            
+            switch result {
+            case .success(let hospitals):
+                if hospitals.status == 200 {
+                    if let hospitals = hospitals.data?.hospitals {
+                        self.hospitalsObserver.onNext(.success(hospitals))
+                    } else {
+                        self.hospitalObserver.onNext(.failure(hospitals.message))
+                    }
+                } else {
+                    self.hospitalObserver.onNext(.failure(hospitals.message))
+                }
+            case .failure(let error):
+                self.hospitalObserver.onNext(.failure(error))
+            }
+        }
+        
+        networkManager.getHospitals(type: type, complition: {
+            [weak self] data in
+            ParsingHelper.parsingByType(data, compliction)
+        })
         
     }
     

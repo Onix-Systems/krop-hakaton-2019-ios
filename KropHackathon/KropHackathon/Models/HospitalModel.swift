@@ -9,14 +9,23 @@
 import Foundation
 
 class HospitalModel {
+    let id: Int
     let title: String
     let address: String
     let schedule: String
     
     init(title: String, address: String, schedule: String) {
+        self.id = 666
         self.title = title
         self.address = address
         self.schedule = schedule
+    }
+    
+    init(model: Hospital) {
+        self.id = model.id
+        self.title = model.name ?? ""
+        self.address = model.adress ?? ""
+        self.schedule = model.workTime ?? ""
     }
     
 }
