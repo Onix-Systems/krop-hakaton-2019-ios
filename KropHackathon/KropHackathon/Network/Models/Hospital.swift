@@ -10,7 +10,7 @@ import Foundation
 
 final class Hospital: Codable {
     
-    var id: Int
+    var id: String
     var name: String?
     var adress: String?
     var lan: String?
@@ -27,7 +27,7 @@ final class Hospital: Codable {
     
     
     enum CodingKeys: String, CodingKey {
-        case id
+        case id = "id_u"
         case name = "custodian_name"
         case adress = "address_street_address"
         case lan = "longitude"
@@ -81,7 +81,7 @@ final class HospitalsData: Codable {
 final class SearchRequest: Codable {
     var status: Int
     var message: String
-    var data: HospitalsData?
+    var data: SearchData?
     
     enum CodingKeys: String, CodingKey {
         case status

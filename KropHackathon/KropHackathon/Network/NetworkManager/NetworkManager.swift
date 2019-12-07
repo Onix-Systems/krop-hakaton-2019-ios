@@ -19,8 +19,8 @@ final class NetworkManager {
     
     static let shared = NetworkManager()
     fileprivate let path = "https://onix-systems-krop-hakaton-2019.staging.onix.ua/api/"
-  
-    func getHospital(id: Int, completion: @escaping (Result<Data>) -> Void) {
+
+    func getHospital(id: String, complition: @escaping (Result<Data>) -> Void) {
         let endpoint = (path + "hospital/\(id)")
         loadByEndpoint(by: endpoint, completion: completion)
     }
@@ -35,9 +35,11 @@ final class NetworkManager {
         loadByEndpoint(by: endpoint, completion: completion)
     }
 
-    func getSearch(text: String, completion: @escaping (Result<Data>) -> Void) {
+    func getSearch(text: String, complition: @escaping (Result<Data>) -> Void) {
+        if text.count >= 3 {
         let endpoint = (path + "search?q=" + text)
-        loadByEndpoint(by: endpoint, completion: completion)
+        loadByEndpoint(by: endpoint, complition: complition)
+        }
     }
     
     fileprivate func loadByEndpoint(by endpoint: String, completion: @escaping (Result<Data>) -> Void) {

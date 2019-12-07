@@ -19,7 +19,7 @@ protocol NetworkServiceType: Service {
     func getServiceTypes()
     func getSearch(text: String)
     func getHospitals(type: String)
-    func getHospital(id: Int)
+    func getHospital(id: String)
 }
 
 final class NetworkService: NetworkServiceType {
@@ -63,15 +63,15 @@ final class NetworkService: NetworkServiceType {
             case .success(let hospitals):
                 if hospitals.status == 200 {
                     if let hospitals = hospitals.data?.hospitals {
-                        self.hospitalsObserver.onNext(.success(hospitals))
+                        self.searchObserver.onNext(.success(hospitals))
                     } else {
-                        self.hospitalObserver.onNext(.failure(hospitals.message))
+                        self.searchObserver.onNext(.failure(hospitals.message))
                     }
                 } else {
-                    self.hospitalObserver.onNext(.failure(hospitals.message))
+                    self.searchObserver.onNext(.failure(hospitals.message))
                 }
             case .failure(let error):
-                self.hospitalObserver.onNext(.failure(error))
+                self.searchObserver.onNext(.failure(error))
             }
         }
         
@@ -106,7 +106,7 @@ final class NetworkService: NetworkServiceType {
         
     }
     
-    func getHospital(id: Int) {
+    func getHospital(id: String) {
         
         let completion: ((Result<HospitalRequest>) -> Void) = { result in
             
