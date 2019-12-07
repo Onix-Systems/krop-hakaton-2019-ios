@@ -11,7 +11,7 @@ import Foundation
 struct Hospitals: Codable, Equatable {
     let status: Int
     let code: String
-    let message: String
+    let message: String?
 
     let data: [Hospital]
     
