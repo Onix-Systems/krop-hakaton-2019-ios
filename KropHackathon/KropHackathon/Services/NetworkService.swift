@@ -42,11 +42,11 @@ class NetworkService: NetworkServiceType {
         let completion: ((Result<CategoriesResponse>) -> Void) = { result in
             
             switch result {
-            case .success(let allData):
-                if allData.status == 200 {
-                    self.stypesObserver.onNext(.success(allData.data))
+            case .success(let categoriesResonse):
+                if categoriesResonse.status == 200 {
+                    self.stypesObserver.onNext(.success(categoriesResonse.data))
                 } else {
-                    self.stypesObserver.onNext(.failure(allData.message))
+                    self.stypesObserver.onNext(.failure(categoriesResonse.message))
                 }
             case .failure(let error):
                 self.hospitalObserver.onNext(.failure(error))

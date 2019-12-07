@@ -26,7 +26,7 @@ final class NetworkManager {
     }
     
     func getAllData(completion: @escaping (Result<Data>) -> Void) {
-        let endpoint = (path + "get-equipment")
+        let endpoint = (path + "get-equipment/category")
         loadByEndpoint(by: endpoint, complition: completion)
     }
     
