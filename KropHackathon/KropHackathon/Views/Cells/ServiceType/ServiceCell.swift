@@ -34,14 +34,18 @@ final class ServiceCell: UITableViewCell {
         var more = 0
         let servises = model.services.prefix(while: { element -> Bool in
             i += 1 + element.count
-            if i <= 60 {
+            if i <= 40 {
                 more += 1
                 return true
             } else {
                 return false
             }
         }).joined(separator: " | ")
-        self.servicesLabel.text = servises + " | інше(+\(servises.count - more))"
+        if model.services.count - more == 0 {
+            self.servicesLabel.text = servises
+        } else {
+            self.servicesLabel.text = servises + " | інше(+\(model.services.count - more))"
+        }
         self.serviceTypeLabel.text = model.name
         self.serviceImageView.image = UIImage(named: model.image) ?? UIImage(named: "redCross")
     }

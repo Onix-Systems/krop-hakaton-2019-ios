@@ -21,7 +21,6 @@ final class ListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        showHud()
         configure()
         setUpClosure()
     }
@@ -49,7 +48,6 @@ final class ListViewController: UIViewController {
     private func configure() {
         
         self.view.backgroundColor = navigationController?.navigationBar.barTintColor
-        self.tableView.backgroundColor = navigationController?.navigationBar.barTintColor
         
         tableView.layer.cornerRadius = Style.Radius.defaultRadius
         tableView.layer.borderWidth = 0.5
@@ -58,6 +56,10 @@ final class ListViewController: UIViewController {
         tableView.setDataSource(self, delegate: self)
         
         tableView.reloadData()
+        
+        if viewModel.isHUD {
+            showHud()
+        }
     }
     
     private func configureNavigationBar() {

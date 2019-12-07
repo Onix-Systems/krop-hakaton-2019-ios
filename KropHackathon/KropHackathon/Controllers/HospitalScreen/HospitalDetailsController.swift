@@ -76,7 +76,7 @@ final class HospitalDetailsController: UIViewController {
         if let bounds = bounds {
             gradient.frame = bounds
         }
-        gradient.colors = [UIColor.black.cgColor, UIColor.clear.cgColor]
+        gradient.colors = [UIColor.lightGray.cgColor, UIColor.clear.cgColor]
         gradient.startPoint = CGPoint(x: 0, y: 0)
         gradient.endPoint = CGPoint(x: 0, y: 1)
         self.gradientView.layer.addSublayer(gradient)

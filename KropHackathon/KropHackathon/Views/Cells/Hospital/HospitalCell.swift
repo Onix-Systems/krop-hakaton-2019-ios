@@ -21,8 +21,16 @@ final class HospitalCell: UITableViewCell {
     
     func configure(model: HospitalModel) {
         hospitalNameLabel.text = model.title
-        locationLabel.text = model.address
-        workTimeLabel.text = model.schedule
+        if model.address.contains("null") {
+            locationLabel.text = "інформація відсутня"
+        } else {
+            locationLabel.text = model.address
+        }
+        if model.schedule.contains("null") {
+            workTimeLabel.text = "інформація відсутня"
+        } else {
+            workTimeLabel.text = model.schedule
+        }
     }
     
 }

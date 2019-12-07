@@ -57,47 +57,48 @@ final class HospitalDetailsModel: HospitalDetailsModelType {
         if let name = model.name {
             self.title = name
         }
-        if let lat = Double(model.lat!), let lan = Double(model.lan!) {
+        if let latit = model.lat, !latit.contains("null"), let lat = Double(latit),
+            let lanit = model.lan, !lanit.contains("null"), let lan = Double(lanit) {
             self.point = CLLocationCoordinate2D.init(latitude: lat, longitude: lan)
         }
 
         self.hospitalInfoDetailModels = []
-        if let addressa = model.adress {
+        if let addressa = model.adress, !addressa.contains("null") {
             self.hospitalInfoDetailModels.append( HospitalDetailsCellViewModel(infoType: .address, infoTypeStr: "Вулиця та номер будинку:", info: addressa))
         }
         
-        if let workTime = model.workTime {
+        if let workTime = model.workTime, !workTime.contains("null") {
             self.hospitalInfoDetailModels.append( HospitalDetailsCellViewModel(infoType: .schedule, infoTypeStr: "Графік работи:", info: workTime))
         }
         
-        if let unworkTime = model.unworkTime {
+        if let unworkTime = model.unworkTime, !unworkTime.contains("null") {
             self.hospitalInfoDetailModels.append( HospitalDetailsCellViewModel(infoType: .closedTime, infoTypeStr: "Обмеження прийому:", info: unworkTime))
         }
         
-        if let equipName = model.equipName {
+        if let equipName = model.equipName, !equipName.contains("null") {
             self.hospitalInfoDetailModels.append( HospitalDetailsCellViewModel(infoType: .none, infoTypeStr: "Назва обладнання:", info: equipName))
         }
         
-        if let stuctName = model.structureName {
+        if let stuctName = model.structureName, !stuctName.contains("null") {
             self.hospitalInfoDetailModels.append( HospitalDetailsCellViewModel(infoType: .none, infoTypeStr: "Назва структурного підрозділу:", info: stuctName))
         }
         
-        if let floorNumber = model.floorNumber {
+        if let floorNumber = model.floorNumber, floorNumber != 0 {
             self.hospitalInfoDetailModels.append( HospitalDetailsCellViewModel(infoType: .none, infoTypeStr: "Номер поверху:", info: "\(floorNumber)"))
         }
         
-        if let roomNumber = model.roomNumber {
+        if let roomNumber = model.roomNumber, roomNumber != 0 {
             self.hospitalInfoDetailModels.append( HospitalDetailsCellViewModel(infoType: .none, infoTypeStr: "Номер кабінету:", info: "\(roomNumber)"))
         }
         
-        if let equipCountry = model.equipCountry{
+        if let equipCountry = model.equipCountry, !equipCountry.contains("null") {
             self.hospitalInfoDetailModels.append( HospitalDetailsCellViewModel(infoType: .none, infoTypeStr: "Країна виробник:", info: equipCountry))
         }
-        if let eqipYear = model.eqipYear {
+        if let eqipYear = model.eqipYear, !eqipYear.contains("null") {
             self.hospitalInfoDetailModels.append( HospitalDetailsCellViewModel(infoType: .none, infoTypeStr: "Рік випуску обладнання:", info: eqipYear))
         }
         
-        if let equipCondition = model.equipCondition {
+        if let equipCondition = model.equipCondition, !equipCondition.contains("null") {
             self.hospitalInfoDetailModels.append( HospitalDetailsCellViewModel(infoType: .none, infoTypeStr: "Експлуатаційний стан обладнання:", info: equipCondition))
         }
     }

@@ -58,6 +58,7 @@ final class MainViewController: UIViewController {
     private func setupClosure() {
         searchResult.didSelected = { [weak self] row in
             DispatchQueue.main.async {
+                self?.hideHUD()
                 self?.viewModel.openDetails(row)
             }
         }
@@ -87,6 +88,9 @@ final class MainViewController: UIViewController {
         searchResult.isHidden = !state
         tableView.isHidden = state
         titleLabel.isHidden = state
+        if state {
+            searchResult.clean()
+        }
     }
     
     private func showCancel(_ state: Bool) {
@@ -129,7 +133,6 @@ extension MainViewController: UISearchBarDelegate {
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        showHud()
         viewModel.search(text: searchBar.text)
     }
     

@@ -24,6 +24,7 @@ protocol ListViewModelType {
     var serviceModel: ServiceTypeModel { get set }
     var serviceDetailsModels: [String] { get }
     var hospitalModels: [HospitalModel] { get }
+    var isHUD: Bool { get }
     
     func openHospitals(row: Int)
     func openDetails(row: Int)
@@ -42,24 +43,28 @@ final class ListViewModel: ListViewModelType {
     var screenType: ListScreenType
     var screenTitle: String
     var serviceModel: ServiceTypeModel
+    var isHUD: Bool
     
     var serviceDetailsModels: [String] = []
     var hospitalModels: [HospitalModel] = []
     
-    init(_ coordinator: ListCoordinatorType, serviceHolder: ServiceHolder, screenType: ListScreenType = .serviceDetails, serviceTypeModel: ServiceTypeModel) {
+    init(_ coordinator: ListCoordinatorType, serviceHolder: ServiceHolder, screenType: ListScreenType = .serviceDetails, serviceTypeModel: ServiceTypeModel, serviceIndex: Int) {
         self.coordinator = coordinator
         networkService = serviceHolder.get(by: NetworkServiceType.self)
         
         self.screenType = screenType
-        self.screenTitle = serviceTypeModel.name
         serviceModel = serviceTypeModel
+         
         
         switch screenType {
         case .serviceDetails:
+            self.screenTitle = serviceTypeModel.name
             serviceDetailsModels = serviceModel.services
-            self.didLoadData?()
+            self.isHUD = false
         case .hospitals:
-            networkService.hospitalsObserver.subscribe(onNext: { [weak self] result in
+                self.isHUD = true
+                self.screenTitle = serviceTypeModel.services[serviceIndex]
+               networkService.hospitalsObserver.subscribe(onNext: { [weak self] result in
                 switch result {
                 case .success(let model):
                     self?.hospitalModels = []
@@ -77,7 +82,7 @@ final class ListViewModel: ListViewModelType {
     func openHospitals(row: Int) {
         networkService.getHospitals(type: serviceDetailsModels[row])
         
-        coordinator.openHospitals(model: serviceModel)
+        coordinator.openHospitals(model: serviceModel, row)
     }
     
     func openDetails(row: Int) {

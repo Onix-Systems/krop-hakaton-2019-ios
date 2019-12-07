@@ -11,7 +11,7 @@ import UIKit
 protocol ListCoordinatorType {
     func start()
     
-    func openHospitals(model: ServiceTypeModel)
+    func openHospitals(model: ServiceTypeModel, _ serviceIndex: Int)
     func openDetails()
     func goBack()
 }
@@ -22,12 +22,12 @@ final class ListCoordinator: ListCoordinatorType {
     private let navigationController: UINavigationController?
     private var serviceHolder: ServiceHolder!
     
-    init(navigationController: UINavigationController?, serviceHolder: ServiceHolder, _ screenType: ListScreenType = .serviceDetails, serviceTypeModel: ServiceTypeModel) {
+    init(navigationController: UINavigationController?, serviceHolder: ServiceHolder, _ screenType: ListScreenType = .serviceDetails, serviceTypeModel: ServiceTypeModel, _ serviceIndex: Int = 0) {
         
         self.navigationController = navigationController
         self.serviceHolder = serviceHolder
         
-        controller?.viewModel = ListViewModel(self, serviceHolder: self.serviceHolder, screenType: screenType, serviceTypeModel: serviceTypeModel)
+        controller?.viewModel = ListViewModel(self, serviceHolder: self.serviceHolder, screenType: screenType, serviceTypeModel: serviceTypeModel, serviceIndex: serviceIndex)
     }
     
     func start() {
@@ -36,8 +36,8 @@ final class ListCoordinator: ListCoordinatorType {
         }
     }
     
-    func openHospitals(model: ServiceTypeModel) {
-        let coordinator = ListCoordinator(navigationController: navigationController, serviceHolder: serviceHolder, .hospitals, serviceTypeModel: model)
+    func openHospitals(model: ServiceTypeModel, _ serviceIndex: Int) {
+        let coordinator = ListCoordinator(navigationController: navigationController, serviceHolder: serviceHolder, .hospitals, serviceTypeModel: model, serviceIndex)
         
         coordinator.start()
     }

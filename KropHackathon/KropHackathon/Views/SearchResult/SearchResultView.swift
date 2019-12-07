@@ -25,8 +25,11 @@ final class SearchResultView: UIView {
         self.nibSetup()
     }
     
-    func configure() {
+    func clean() {
         models = []
+    }
+    
+    func configure() {
         tableView.register([HospitalCell.identifier])
         tableView.setDataSource(self, delegate: self)
         self.tableView.reloadData()
@@ -48,7 +51,9 @@ extension SearchResultView: UITableViewDataSource {
             print("can't find cell")
             return UITableViewCell()
         }
+        if indexPath.row < models.count {
         cell.configure(model: models[indexPath.row])
+        }
         return cell
     }
 }

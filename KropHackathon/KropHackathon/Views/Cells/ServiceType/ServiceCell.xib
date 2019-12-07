@@ -38,7 +38,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ryh-qQ-xav">
-                                <rect key="frame" x="112" y="50.5" width="272" height="75.5"/>
+                                <rect key="frame" x="112" y="126" width="272" height="0.0"/>
                                 <fontDescription key="fontDescription" name="SFProRounded-Regular" family="SF Pro Rounded" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -50,7 +50,7 @@
                             <constraint firstAttribute="bottom" secondItem="eYC-ZT-Xaa" secondAttribute="bottom" id="7Dh-pA-PXd"/>
                             <constraint firstItem="eYC-ZT-Xaa" firstAttribute="width" secondItem="Ie7-Nd-Nja" secondAttribute="height" multiplier="8:13" id="CYm-Bd-le7"/>
                             <constraint firstItem="eYC-ZT-Xaa" firstAttribute="top" secondItem="Ie7-Nd-Nja" secondAttribute="top" id="FZW-Rq-EwM"/>
-                            <constraint firstItem="Ryh-qQ-xav" firstAttribute="top" secondItem="Spc-JE-wR2" secondAttribute="bottom" constant="15" id="Gvj-wx-dL1"/>
+                            <constraint firstItem="Ryh-qQ-xav" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Spc-JE-wR2" secondAttribute="bottom" id="Gvj-wx-dL1"/>
                             <constraint firstItem="Spc-JE-wR2" firstAttribute="leading" secondItem="eYC-ZT-Xaa" secondAttribute="trailing" constant="15" id="Mbb-cR-1I0"/>
                             <constraint firstItem="Spc-JE-wR2" firstAttribute="top" secondItem="Ie7-Nd-Nja" secondAttribute="top" constant="15" id="aVe-n0-Afa"/>
                             <constraint firstItem="eYC-ZT-Xaa" firstAttribute="leading" secondItem="Ie7-Nd-Nja" secondAttribute="leading" constant="10" id="cb4-M8-BGu"/>
