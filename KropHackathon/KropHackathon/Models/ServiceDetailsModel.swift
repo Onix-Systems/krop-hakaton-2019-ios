@@ -11,10 +11,12 @@ import Foundation
 class ServiceDetailsModel {
     var serviceTypeName: String
     var serviceDetailsName: String
+    var serviceName: String
     
-    init(serviceTypeName: String, serviceDetailsName: String) {
+    init(serviceTypeName: String, serviceDetailsName: String, serviceName: String) {
         self.serviceTypeName = serviceTypeName
         self.serviceDetailsName = serviceDetailsName
+        self.serviceName = serviceName
     }
     
 }
