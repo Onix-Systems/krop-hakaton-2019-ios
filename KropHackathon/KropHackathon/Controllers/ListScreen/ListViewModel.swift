@@ -22,7 +22,7 @@ protocol ListViewModelType {
     var screenTitle: String { get set }
     
     var serviceModel: ServiceTypeModel { get set }
-    var serviceDetailsModels: [ServiceDetailsModel] { get }
+    var serviceDetailsModels: [String] { get }
     var hospitalModels: [HospitalModel] { get }
     
     func openHospitals(row: Int)
@@ -43,7 +43,7 @@ final class ListViewModel: ListViewModelType {
     var screenTitle: String
     var serviceModel: ServiceTypeModel
     
-    var serviceDetailsModels: [ServiceDetailsModel] = []
+    var serviceDetailsModels: [String] = []
     var hospitalModels: [HospitalModel] = []
     
     init(_ coordinator: ListCoordinatorType, serviceHolder: ServiceHolder, screenType: ListScreenType = .serviceDetails, serviceTypeModel: ServiceTypeModel) {
@@ -56,7 +56,7 @@ final class ListViewModel: ListViewModelType {
         
         switch screenType {
         case .serviceDetails:
-            serviceDetailsModels = serviceModel.services.map{ ServiceDetailsModel(serviceTypeName: serviceModel.name, serviceDetailsName: $0, serviceName: serviceModel.name) }
+            serviceDetailsModels = serviceModel.services
             self.didLoadData?()
         case .hospitals:
             networkService.hospitalsObserver.subscribe(onNext: { [weak self] result in
@@ -75,7 +75,7 @@ final class ListViewModel: ListViewModelType {
     }
     
     func openHospitals(row: Int) {
-        networkService.getHospitals(type: serviceDetailsModels[row].serviceName)
+        networkService.getHospitals(type: serviceDetailsModels[row])
         
         coordinator.openHospitals(model: serviceModel)
     }

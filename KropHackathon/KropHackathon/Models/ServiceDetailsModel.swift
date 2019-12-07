@@ -8,16 +8,16 @@
 
 import Foundation
 
-final class ServiceDetailsModel {
-    var serviceTypeName: String
-    var serviceDetailsName: String
-    var serviceName: String
-    
-    init(serviceTypeName: String, serviceDetailsName: String, serviceName: String) {
-        self.serviceTypeName = serviceTypeName
-        self.serviceDetailsName = serviceDetailsName
-        self.serviceName = serviceName
-        
-    }
-    
-}
+//final class ServiceDetailsModel {
+//////    var serviceTypeName: String
+//    var serviceDetailsName: String
+//    var serviceName: String
+//
+//    init(serviceDetailsName: String, serviceName: String) {
+//        self.serviceTypeName = serviceTypeName
+//        self.serviceDetailsName = serviceDetailsName
+//        self.serviceName = serviceName
+//
+//    }
+//
+//}
