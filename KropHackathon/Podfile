@@ -6,10 +6,8 @@ target 'KropHackathon' do
   use_frameworks!
 
   # Pods for KropHackathon
-  pod 'Firebase'
+  pod 'Firebase/Analytics'
   pod 'SwiftLint'
-  pod 'GoogleMaps'
-  pod 'GooglePlaces'
   pod 'RxSwift', '~> 4.4.1'
   pod 'MBProgressHUD'
 end

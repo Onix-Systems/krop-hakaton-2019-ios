@@ -24,7 +24,8 @@
 		954CAB00239847B4007A77C0 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954CAAFF239847B4007A77C0 /* UIView.swift */; };
 		954CAB0223984DE4007A77C0 /* UrlHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954CAB0123984DE4007A77C0 /* UrlHelper.swift */; };
 		954D2FCA239BAC48009DB756 /* Hospital.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954D2FC9239BAC48009DB756 /* Hospital.swift */; };
-		95571D1A239D1ED60024FC90 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 95571D19239D1ED60024FC90 /* GoogleService-Info.plist */; };
+		95CA07D7239D282000FCC21E /* MapPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CA07D6239D282000FCC21E /* MapPin.swift */; };
+		95CA07D9239D2D6600FCC21E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 95CA07D8239D2D6600FCC21E /* GoogleService-Info.plist */; };
 		95E7738723970B1D00F05169 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E7738623970B1D00F05169 /* UIColor.swift */; };
 		95E7738B2397123300F05169 /* ServiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E7738A2397123300F05169 /* ServiceCell.swift */; };
 		95E7738D2397124F00F05169 /* ServiceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95E7738C2397124F00F05169 /* ServiceCell.xib */; };
@@ -87,7 +88,8 @@
 		954CAAFF239847B4007A77C0 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		954CAB0123984DE4007A77C0 /* UrlHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlHelper.swift; sourceTree = "<group>"; };
 		954D2FC9239BAC48009DB756 /* Hospital.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hospital.swift; sourceTree = "<group>"; };
-		95571D19239D1ED60024FC90 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		95CA07D6239D282000FCC21E /* MapPin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPin.swift; sourceTree = "<group>"; };
+		95CA07D8239D2D6600FCC21E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		95E7738623970B1D00F05169 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		95E7738A2397123300F05169 /* ServiceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCell.swift; sourceTree = "<group>"; };
 		95E7738C2397124F00F05169 /* ServiceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ServiceCell.xib; sourceTree = "<group>"; };
@@ -240,6 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				954CAAFD23984747007A77C0 /* MapView.xib */,
+				95CA07D6239D282000FCC21E /* MapPin.swift */,
 				954CAAFB23984740007A77C0 /* MapView.swift */,
 			);
 			path = Map;
@@ -414,7 +417,7 @@
 				954CAAF42397ECE9007A77C0 /* HospitalDetails.storyboard */,
 				EF6C7AE92395451000AA51BC /* LaunchScreen.storyboard */,
 				EF6C7AEC2395451000AA51BC /* Info.plist */,
-				95571D19239D1ED60024FC90 /* GoogleService-Info.plist */,
+				95CA07D8239D2D6600FCC21E /* GoogleService-Info.plist */,
 			);
 			path = KropHackathon;
 			sourceTree = "<group>";
@@ -440,7 +443,6 @@
 				EF6C7AD82395450F00AA51BC /* Frameworks */,
 				EF6C7AD92395450F00AA51BC /* Resources */,
 				EF6C7AF623954BCA00AA51BC /* ShellScript */,
-				300B8BF633507D3D41245859 /* [CP] Copy Pods Resources */,
 				178045E3E5DD81F716F3CD37 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
@@ -491,6 +493,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				95E7738D2397124F00F05169 /* ServiceCell.xib in Resources */,
+				95CA07D9239D2D6600FCC21E /* GoogleService-Info.plist in Resources */,
 				EF4D8C8F2397DD77003CA1BF /* SF-Pro-Rounded-Bold.otf in Resources */,
 				EF4D8C922397DD77003CA1BF /* SF-Pro-Rounded-Semibold.otf in Resources */,
 				EF6C7AEB2395451000AA51BC /* LaunchScreen.storyboard in Resources */,
@@ -501,7 +504,6 @@
 				EF6C7AE82395451000AA51BC /* Assets.xcassets in Resources */,
 				EF4D8C902397DD77003CA1BF /* SF-Pro-Rounded-Heavy.otf in Resources */,
 				954CAAF52397ECE9007A77C0 /* HospitalDetails.storyboard in Resources */,
-				95571D1A239D1ED60024FC90 /* GoogleService-Info.plist in Resources */,
 				EF4D8C872397C632003CA1BF /* ServiceTableViewCell.xib in Resources */,
 				EF4D8C7B2397AC15003CA1BF /* List.storyboard in Resources */,
 				EF4D8CA323992B54003CA1BF /* TitleTableViewCell.xib in Resources */,
@@ -529,23 +531,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KropHackathon/Pods-KropHackathon-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		300B8BF633507D3D41245859 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KropHackathon/Pods-KropHackathon-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KropHackathon/Pods-KropHackathon-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KropHackathon/Pods-KropHackathon-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		AE1D413828E17931FAAAEC66 /* [CP] Check Pods Manifest.lock */ = {
@@ -630,6 +615,7 @@
 				EF4D8C792397AB94003CA1BF /* ListViewModel.swift in Sources */,
 				EF4D8C7F2397B930003CA1BF /* UIFont.swift in Sources */,
 				EF4D8C752397A8EC003CA1BF /* ListViewController.swift in Sources */,
+				95CA07D7239D282000FCC21E /* MapPin.swift in Sources */,
 				EF6C7ADF2395450F00AA51BC /* AppDelegate.swift in Sources */,
 				EF4D8CA223992B54003CA1BF /* TitleTableViewCell.swift in Sources */,
 				9541B0A7239707920084A0C0 /* Style.swift in Sources */,

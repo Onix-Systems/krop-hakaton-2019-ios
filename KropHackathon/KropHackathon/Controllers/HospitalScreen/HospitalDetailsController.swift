@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import GoogleMaps
 
 final class HospitalDetailsController: UIViewController {
     var viewModel: HospitalDetailsModelType!
@@ -68,7 +67,7 @@ final class HospitalDetailsController: UIViewController {
         if let point = viewModel.point {
             map.customSetup(with: point)
             map.addMarker(coordinate: point)
-            map.moveToLocation(location: point)
+            map.moveToLocation(coordinate: point)
         }
         
         let gradient = CAGradientLayer()
