@@ -73,7 +73,7 @@ final class HospitalDetailsController: UIViewController {
         
         let gradient = CAGradientLayer()
         var bounds = self.navigationController?.navigationBar.bounds
-        bounds?.size.height += UIApplication.shared.statusBarFrame.size.height
+        bounds?.size.height += UIApplication.shared.statusBarFrame.size.height + 40.0
         
         if let bounds = bounds {
             gradient.frame = bounds
@@ -94,9 +94,11 @@ final class HospitalDetailsController: UIViewController {
     private func configureTableView() {
         tableView.register([HospitalDetailsTableViewCell.className, TitleTableViewCell.className])
         tableView.setDataSource(self)
-        tableView.layer.cornerRadius = 10
-        tableView.reloadData()
+        tableView.layer.cornerRadius = 20.0
+        tableView.layer.borderWidth = 0.5
+        tableView.layer.borderColor = Style.Color.borderColor.cgColor
         tableView.layer.applySketchShadow(color: Style.Color.shadowColor, alpha: 0.3, xxx: 0, yyy: -8, blur: 8, spread: 0)
+        self.tableView.reloadData()
     }
     
     @IBAction func closeBtnClicked(_ sender: UIButton) {

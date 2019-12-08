@@ -255,6 +255,7 @@
 		954CAAED2397EB9F007A77C0 /* HospitalScreen */ = {
 			isa = PBXGroup;
 			children = (
+				EF4D8C942397E332003CA1BF /* Models */,
 				954CAAEE2397EC20007A77C0 /* HospitalDetailsController.swift */,
 				954CAAF02397EC47007A77C0 /* HospitalDetailsCoordinator.swift */,
 				954CAAF22397EC5A007A77C0 /* HospitalDetailesModel.swift */,
@@ -403,7 +404,6 @@
 				95474279239A797100320C07 /* Network */,
 				C659F9192396B533009DE50B /* Extensions */,
 				C659F9112396B3F4009DE50B /* Services */,
-				EF4D8C942397E332003CA1BF /* Models */,
 				C659F9142396B4C0009DE50B /* Controllers */,
 				9541B09A2396AE060084A0C0 /* Views */,
 				C659F93E2396F8A0009DE50B /* Resources */,
