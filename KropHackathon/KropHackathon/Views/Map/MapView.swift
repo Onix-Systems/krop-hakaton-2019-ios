@@ -7,12 +7,11 @@
 //
 
 import UIKit
-import GoogleMaps
+import MapKit
 
 final class MapView: UIView {
-    private let defaultLocation = CLLocation(latitude: 50.4547, longitude: 30.5238)
     
-    @IBOutlet private weak var ivMap: GMSMapView!
+    @IBOutlet private weak var ivMap: MKMapView!
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -24,29 +23,27 @@ final class MapView: UIView {
         self.nibSetup()
     }
     
-    func customSetup(with coordinate: CLLocationCoordinate2D?) {
-        ivMap.isMyLocationEnabled = true
-        ivMap.settings.myLocationButton = false
+    func customSetup(with coordinate: CLLocationCoordinate2D) {
         
-        ivMap.animate(toZoom: 12)
-        
-        if let coordinate = coordinate {
-            ivMap.animate(toLocation: coordinate)
-        } else {
-            ivMap.animate(toLocation: defaultLocation.coordinate)
-        }
+        let regionRadius: CLLocationDistance = 100
+        let coordinateRegion = MKCoordinateRegion(center: coordinate,
+                                                  latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
+        ivMap.setRegion(coordinateRegion, animated: true)
+        ivMap.isZoomEnabled = true
+        ivMap.isScrollEnabled = true
     }
     
-    func moveToLocation(location: CLLocationCoordinate2D) {
-        ivMap.animate(toZoom: 16)
-        ivMap.animate(toLocation: location)
+    func moveToLocation(coordinate: CLLocationCoordinate2D) {
+        ivMap.isZoomEnabled = true
+        
+        let regionRadius: CLLocationDistance = 100
+        let coordinateRegion = MKCoordinateRegion(center: coordinate,
+                                                  latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
+        ivMap.setRegion(coordinateRegion, animated: true)
     }
     
     func addMarker(coordinate: CLLocationCoordinate2D) {
-        let marker = GMSMarker()
-        marker.position = coordinate
-        marker.icon = UIImage(named: "icPin")
-        marker.map = ivMap
+        let artwork = Pin(coordinate: coordinate)
+        ivMap.addAnnotation(artwork)
     }
-    
 }
