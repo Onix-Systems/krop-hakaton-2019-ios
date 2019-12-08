@@ -20,12 +20,12 @@ final class ParsingHelper {
                     JSONDecoder().decode(T.self, from: data)
                 complition(.success(object))
             } catch {
-                assertionFailure("parse error")
+//                assertionFailure("parse error")
                 complition(.failure(error.localizedDescription))
             }
             
         case .failure(let error):
-            assertionFailure("data error")
+//            assertionFailure("data error")
             complition(.failure(error))
         }
     }

@@ -18,10 +18,25 @@ final class MainViewController: UIViewController {
     @IBOutlet private weak var searchResult: SearchResultView!
     @IBOutlet private weak var cancelButton: UIButton!
     
+    @IBOutlet private weak var aboutButton: UIButton!
+    
     @IBAction func cancelTapped(_ sender: Any) {
         configureSearchMode(false)
         searchBar.endEditing(true)
         searchBar.text = ""
+    }
+    
+    @IBAction func aboutBtnClicked(_ sender: UIButton) {
+        let text = "Onix-Systems \n\n App for search medical equipment and services in Kropyvnitskyi \n\n iOS developers: \n Olena Drobko, Tetiana Nieizviestna \n\n  Designer: \n Max Honcharov"
+        let alert = UIAlertController(title: "About", message: text, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Onix-Systems.com", style: .default, handler: { _ in
+            if let url = URL(string: "https://onix-systems.com") {
+                UIApplication.shared.open(url)
+            }
+        }))
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+
+        self.present(alert, animated: true, completion: nil)
     }
     
     @IBOutlet private weak var cancelLeading: NSLayoutConstraint!
