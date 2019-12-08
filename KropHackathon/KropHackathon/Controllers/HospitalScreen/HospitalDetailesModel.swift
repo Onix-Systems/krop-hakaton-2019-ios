@@ -19,6 +19,8 @@ protocol HospitalDetailsModelType {
     var title: String { get set }
     var isHUD: Bool { get }
     
+    func sendEventOpen()
+    func sendEventMap()
     func goBack()
 }
 
@@ -31,6 +33,7 @@ final class HospitalDetailsModel: HospitalDetailsModelType {
     
     private let coordinator: HospitalDetailsCoordinatorType
     private let networkService: NetworkServiceType
+    private let analiticsService: AnalyticsServiceType
     private let disposeBag = DisposeBag()
     
     var didLoadData: (() -> Void)?
@@ -40,6 +43,7 @@ final class HospitalDetailsModel: HospitalDetailsModelType {
         self.coordinator = coordinator
         
         networkService = serviceHolder.get(by: NetworkServiceType.self)
+        analiticsService = serviceHolder.get(by: AnalyticsServiceType.self)
         networkService.hospitalObserver.subscribe(onNext: { [weak self] result in
             switch result {
             case .success(let model):
@@ -105,4 +109,13 @@ final class HospitalDetailsModel: HospitalDetailsModelType {
             self.hospitalInfoDetailModels.append( HospitalDetailsCellViewModel(infoType: .none, infoTypeStr: "Експлуатаційний стан обладнання:", info: equipCondition))
         }
     }
+    
+    func sendEventOpen() {
+        analiticsService.log(event: .HOSPITAL_OPEN, parameters: nil)
+    }
+    
+    func sendEventMap() {
+        analiticsService.log(event: .GOOGLEMAP_OPEN, parameters: nil)
+    }
+    
 }

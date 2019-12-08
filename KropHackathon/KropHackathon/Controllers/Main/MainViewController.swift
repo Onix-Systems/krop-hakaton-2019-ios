@@ -27,10 +27,12 @@ final class MainViewController: UIViewController {
     }
     
     @IBAction func aboutBtnClicked(_ sender: UIButton) {
+        self.viewModel.sendEventOpenAbout()
         let text = "Onix-Systems \n\n App for search medical equipment and services in Kropyvnitskyi \n\n iOS developers: \n Olena Drobko, Tetiana Nieizviestna \n\n  Designer: \n Max Honcharov"
         let alert = UIAlertController(title: "About", message: text, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Onix-Systems.com", style: .default, handler: { _ in
             if let url = URL(string: "https://onix-systems.com") {
+                self.viewModel.sendEventOnix()
                 UIApplication.shared.open(url)
             }
         }))
@@ -53,6 +55,7 @@ final class MainViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         configureNavigationBar()
+        self.viewModel.sendEventApp()
     }
     
     private func configureNavigationBar() {
@@ -74,7 +77,7 @@ final class MainViewController: UIViewController {
         searchResult.didSelected = { [weak self] row in
             DispatchQueue.main.async {
                 self?.hideHUD()
-                self?.viewModel.openDetails(row)
+                self?.viewModel.openDetails(row, text: self?.searchBar.text ?? "")
             }
         }
         

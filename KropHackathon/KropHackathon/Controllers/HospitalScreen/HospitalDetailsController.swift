@@ -25,11 +25,13 @@ final class HospitalDetailsController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.viewModel.sendEventOpen()
         navigationController?.isNavigationBarHidden = true
     }
     
     @IBAction func pushToMap(_ sender: Any) {
         if let point = viewModel.point {
+            self.viewModel.sendEventMap()
             UrlOpenHelper.openDirections(to: point)
         }
     }

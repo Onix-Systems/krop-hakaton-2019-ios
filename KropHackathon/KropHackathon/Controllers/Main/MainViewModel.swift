@@ -18,17 +18,23 @@ protocol MainViewModelType {
     
 //    func showAboutInfo()
     func openList(row: Int)
-    func openDetails(_ index: Int)
+    func openDetails(_ index: Int, text: String)
     func search(text: String?)
+    
+    func sendEventApp()
+    func sendEventCategory(type: String)
+    func sendEventOpenAbout()
+    func sendEventOnix()
+    func sendEventSearch(text: String)
 }
 
 final class MainViewModel: MainViewModelType {
-    
     var serviceModels: [ServiceTypeModel] = []
     var searchModels: [HospitalModel] = []
     
     private let coordinator: MainCoordinatorType
     private let networkService: NetworkServiceType
+    private let analiticsService: AnalyticsServiceType
     private let disposeBag = DisposeBag()
 
     var didLoadData: (() -> Void)?
@@ -37,6 +43,7 @@ final class MainViewModel: MainViewModelType {
     init(_ coordinator: MainCoordinatorType, serviceHolder: ServiceHolder) {
         self.coordinator = coordinator
         
+        analiticsService = serviceHolder.get(by: AnalyticsServiceType.self)
         networkService = serviceHolder.get(by: NetworkServiceType.self)
         
         networkService.stypesObserver.subscribe(onNext: { [weak self] result in
@@ -76,12 +83,34 @@ final class MainViewModel: MainViewModelType {
         networkService.getSearch(text: text ?? "")
     }
     
-    func openDetails(_ index: Int) {
+    func openDetails(_ index: Int, text: String) {
+        sendEventSearch(text: text)
         networkService.getHospital(id: searchModels[index].id)
         coordinator.openDetails()
     }
     
     func openList(row: Int) {
+        sendEventCategory(type: serviceModels[row].name)
         coordinator.openList(model: serviceModels[row])
+    }
+    
+    func sendEventSearch(text: String) {
+        analiticsService.log(event: .SEARCH, parameters: [AnalyticsParameter.TEXT.rawValue:text])
+    }
+    
+    func sendEventApp() {
+        analiticsService.log(event: .APP_OPEN, parameters: nil)
+    }
+    
+    func sendEventCategory(type: String) {
+        analiticsService.log(event: .CATEGORY_OPEN, parameters: [AnalyticsParameter.TYPE.rawValue:type])
+    }
+    
+    func sendEventOpenAbout() {
+        analiticsService.log(event: .ABOUT_OPEN, parameters: nil)
+    }
+    
+    func sendEventOnix() {
+        analiticsService.log(event: .GO_TO_ONIX, parameters: nil)
     }
 }

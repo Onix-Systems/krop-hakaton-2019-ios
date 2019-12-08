@@ -22,11 +22,15 @@ class AnalyticsService: AnalyticsServiceType {
 
 enum AnalyticsParameter: String, Codable {
     case TYPE
+    case TEXT
 }
 
 enum AnalyticsEvent: String, Codable {
-    case PROFILE_SCREEN_OPEN
-    case PROFILE_LOGOUT_PRESS
-    case POPUP_LOGOUT_YES
-    case POPUP_LOGOUT_NO
+    case APP_OPEN
+    case CATEGORY_OPEN // TYPE
+    case ABOUT_OPEN
+    case GO_TO_ONIX
+    case HOSPITAL_OPEN
+    case GOOGLEMAP_OPEN
+    case SEARCH //TEXT
 }
