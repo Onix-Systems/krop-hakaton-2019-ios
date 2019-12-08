@@ -20,7 +20,6 @@ final class HospitalDetailsController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        showHud()
         configure()
         setUpClosure()
     }
@@ -37,6 +36,9 @@ final class HospitalDetailsController: UIViewController {
     }
     
     private func configure() {
+        if viewModel.isHUD {
+            showHud()
+        }
         configureMap()
         configureOpenMapBtn()
         configureTableView()

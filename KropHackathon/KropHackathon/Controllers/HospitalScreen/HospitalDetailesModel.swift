@@ -17,6 +17,7 @@ protocol HospitalDetailsModelType {
     var point: CLLocationCoordinate2D? { get }
     var hospitalInfoDetailModels: [HospitalDetailsCellViewModel] { get }
     var title: String { get set }
+    var isHUD: Bool { get }
     
     func goBack()
 }
@@ -26,6 +27,7 @@ final class HospitalDetailsModel: HospitalDetailsModelType {
     var hospitalInfoDetailModels: [HospitalDetailsCellViewModel] = []
     var title: String = ""
     var point: CLLocationCoordinate2D?
+    var isHUD: Bool = true
     
     private let coordinator: HospitalDetailsCoordinatorType
     private let networkService: NetworkServiceType
@@ -42,6 +44,7 @@ final class HospitalDetailsModel: HospitalDetailsModelType {
             switch result {
             case .success(let model):
                 self?.update(model: model)
+                self?.isHUD = false
                 self?.didLoadData?()
             case .failure(error: let error):
                 self?.didLoadFailed?(error)
