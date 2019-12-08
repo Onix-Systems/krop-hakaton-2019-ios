@@ -34,7 +34,7 @@ final class ServiceCell: UITableViewCell {
         var more = 0
         let servises = model.services.prefix(while: { element -> Bool in
             i += 1 + element.count
-            if i <= 40 {
+            if i <= 30 { // Max length of line
                 more += 1
                 return true
             } else {
