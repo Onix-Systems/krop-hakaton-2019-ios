@@ -11,8 +11,8 @@
         <array key="SF-Pro-Rounded-Bold.otf">
             <string>SFProRounded-Bold</string>
         </array>
-        <array key="TimesNewRoman.ttf">
-            <string>.SFUI-Regular</string>
+        <array key="SF-Pro-Rounded-Semibold.otf">
+            <string>SFProRounded-Semibold</string>
         </array>
     </customFonts>
     <scenes>
@@ -25,7 +25,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar clipsSubviews="YES" contentMode="redraw" searchBarStyle="minimal" placeholder="Пошук мед закладу чи послуги" translatesAutoresizingMaskIntoConstraints="NO" id="UE2-gd-JfI">
-                                <rect key="frame" x="15" y="44" width="295" height="56"/>
+                                <rect key="frame" x="15" y="44" width="384" height="56"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="barTintColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -53,8 +53,8 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uIN-Aa-WUL">
-                                <rect key="frame" x="229" y="124.5" width="165" height="31"/>
-                                <fontDescription key="fontDescription" name=".SFUI-Regular" family=".AppleSystemUIFont" pointSize="17"/>
+                                <rect key="frame" x="229" y="120" width="165" height="40"/>
+                                <fontDescription key="fontDescription" name="SFProRounded-Semibold" family="SF Pro Rounded" pointSize="23"/>
                                 <state key="normal" title="About">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -67,7 +67,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v1t-jx-zZZ">
-                                <rect key="frame" x="315" y="55.5" width="84" height="33"/>
+                                <rect key="frame" x="399" y="55.5" width="0.0" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Скасувати"/>
                                 <connections>
@@ -77,23 +77,24 @@
                         </subviews>
                         <color key="backgroundColor" red="0.96081680059999997" green="0.96065860989999996" blue="0.96863669159999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="v1t-jx-zZZ" secondAttribute="trailing" constant="15" id="3pa-Zf-n5v"/>
                             <constraint firstItem="uIN-Aa-WUL" firstAttribute="centerY" secondItem="wH3-ZH-tAV" secondAttribute="centerY" id="8zy-pa-ZZc"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="QNX-PO-frV" secondAttribute="bottom" id="9AC-tB-x73"/>
                             <constraint firstItem="v1t-jx-zZZ" firstAttribute="centerY" secondItem="UE2-gd-JfI" secondAttribute="centerY" id="Ae8-Bt-e8X"/>
                             <constraint firstItem="wH3-ZH-tAV" firstAttribute="top" secondItem="UE2-gd-JfI" secondAttribute="bottom" constant="25" id="DHx-w9-1AT"/>
                             <constraint firstItem="I7f-qX-JQs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="DfW-Xm-WCh"/>
                             <constraint firstItem="wH3-ZH-tAV" firstAttribute="trailing" secondItem="uIN-Aa-WUL" secondAttribute="leading" constant="-5" id="EHB-Gm-Lkr"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="v1t-jx-zZZ" secondAttribute="trailing" constant="15" id="GTV-jb-f7i"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="I7f-qX-JQs" secondAttribute="trailing" id="Woo-eh-TmZ"/>
                             <constraint firstItem="UE2-gd-JfI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="XcZ-1N-QDu"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UE2-gd-JfI" secondAttribute="trailing" constant="15" id="ado-k5-vhG"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uIN-Aa-WUL" secondAttribute="trailing" constant="20" id="bLZ-be-zq7"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="v1t-jx-zZZ" secondAttribute="trailing" constant="5" id="iYh-BU-qeL"/>
                             <constraint firstItem="wH3-ZH-tAV" firstAttribute="leading" secondItem="UE2-gd-JfI" secondAttribute="leading" constant="5" id="jPO-bx-Koa"/>
                             <constraint firstItem="I7f-qX-JQs" firstAttribute="top" secondItem="UE2-gd-JfI" secondAttribute="bottom" constant="15" id="jvm-3P-cfA"/>
                             <constraint firstItem="QNX-PO-frV" firstAttribute="leading" secondItem="UE2-gd-JfI" secondAttribute="leading" id="jyy-X2-Typ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="I7f-qX-JQs" secondAttribute="bottom" id="ksX-XA-s3k"/>
-                            <constraint firstItem="v1t-jx-zZZ" firstAttribute="leading" secondItem="UE2-gd-JfI" secondAttribute="trailing" constant="5" id="oLS-w9-4Ve"/>
-                            <constraint firstItem="QNX-PO-frV" firstAttribute="trailing" secondItem="v1t-jx-zZZ" secondAttribute="trailing" id="oyK-2H-0VC"/>
+                            <constraint firstItem="v1t-jx-zZZ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="UE2-gd-JfI" secondAttribute="trailing" symbolic="YES" id="oLS-w9-4Ve"/>
+                            <constraint firstItem="QNX-PO-frV" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-15" id="oyK-2H-0VC"/>
                             <constraint firstItem="UE2-gd-JfI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="rEE-0R-xef"/>
                             <constraint firstItem="QNX-PO-frV" firstAttribute="top" secondItem="wH3-ZH-tAV" secondAttribute="bottom" constant="15" id="wba-pG-Iud"/>
                         </constraints>
@@ -110,6 +111,7 @@
                         <outlet property="cancelLeading" destination="oLS-w9-4Ve" id="bdg-yv-r1c"/>
                         <outlet property="cancelTraling" destination="iYh-BU-qeL" id="CVP-bn-voG"/>
                         <outlet property="searchBar" destination="UE2-gd-JfI" id="KFT-Xg-Jqs"/>
+                        <outlet property="searchBarTraling" destination="ado-k5-vhG" id="iBR-Sq-qAY"/>
                         <outlet property="searchResult" destination="I7f-qX-JQs" id="Fvt-iB-BPI"/>
                         <outlet property="tableView" destination="QNX-PO-frV" id="CWI-Xo-XPL"/>
                         <outlet property="titleLabel" destination="wH3-ZH-tAV" id="ATd-V4-gbB"/>
