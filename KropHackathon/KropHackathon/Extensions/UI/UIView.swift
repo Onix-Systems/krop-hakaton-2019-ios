@@ -15,8 +15,6 @@ func nibSetup() {
     backgroundColor = .clear
     let subView = loadViewFromNib()
     subView.frame = bounds
-    //subView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-    //subView.translatesAutoresizingMaskIntoConstraints = true
     subView.translatesAutoresizingMaskIntoConstraints = false
     subView.clipsToBounds = true
     

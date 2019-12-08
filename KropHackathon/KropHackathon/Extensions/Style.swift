@@ -34,12 +34,7 @@ final class Style {
         static let backBtnFrame = CGRect(x: 0, y: 0, width: 50, height: 50)
     }
     
-    struct Constaints {
-
-    }
-    
     struct Radius {
-
         static let defaultRadius: CGFloat = 8
     }
     
@@ -62,5 +57,4 @@ final class Style {
         }
         return ("img_all", Color.pinkDef)
     }
-    
 }
