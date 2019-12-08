@@ -17,9 +17,8 @@ final class ServiceTableViewCell: UITableViewCell {
         
     }
     
-//    func configure(_ model: ServiceDetailsModel) {
     func configure(_ serviceName: String) {
-        let uzd = "УЗД "
+        let uzd = "УЗД"
         let isUzd = hasStrUZD(string: serviceName)
         let typeStr = isUzd ? uzd : ""
         var name = serviceName
