@@ -1,6 +1,5 @@
 //
 //  MapView.swift
-//  Metro
 //
 //  Created by Sergey Pritula on 4/24/19.
 //  Copyright © 2019 Onix. All rights reserved.

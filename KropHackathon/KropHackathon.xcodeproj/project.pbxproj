@@ -26,6 +26,7 @@
 		954D2FCA239BAC48009DB756 /* Hospital.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954D2FC9239BAC48009DB756 /* Hospital.swift */; };
 		95CA07D7239D282000FCC21E /* MapPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CA07D6239D282000FCC21E /* MapPin.swift */; };
 		95CA07D9239D2D6600FCC21E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 95CA07D8239D2D6600FCC21E /* GoogleService-Info.plist */; };
+		95CA07DB239D322200FCC21E /* AnalyticsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CA07DA239D322200FCC21E /* AnalyticsService.swift */; };
 		95E7738723970B1D00F05169 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E7738623970B1D00F05169 /* UIColor.swift */; };
 		95E7738B2397123300F05169 /* ServiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E7738A2397123300F05169 /* ServiceCell.swift */; };
 		95E7738D2397124F00F05169 /* ServiceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95E7738C2397124F00F05169 /* ServiceCell.xib */; };
@@ -90,6 +91,7 @@
 		954D2FC9239BAC48009DB756 /* Hospital.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hospital.swift; sourceTree = "<group>"; };
 		95CA07D6239D282000FCC21E /* MapPin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPin.swift; sourceTree = "<group>"; };
 		95CA07D8239D2D6600FCC21E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		95CA07DA239D322200FCC21E /* AnalyticsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalyticsService.swift; sourceTree = "<group>"; };
 		95E7738623970B1D00F05169 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		95E7738A2397123300F05169 /* ServiceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCell.swift; sourceTree = "<group>"; };
 		95E7738C2397124F00F05169 /* ServiceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ServiceCell.xib; sourceTree = "<group>"; };
@@ -280,6 +282,7 @@
 			isa = PBXGroup;
 			children = (
 				C659F9152396B4EC009DE50B /* ServiceHolder.swift */,
+				95CA07DA239D322200FCC21E /* AnalyticsService.swift */,
 				95474282239A82B300320C07 /* NetworkService.swift */,
 			);
 			path = Services;
@@ -595,6 +598,7 @@
 				95474287239A8B7000320C07 /* ServiceTypeModel.swift in Sources */,
 				EF4D8C9F239926DC003CA1BF /* HospitalInfoDetailModel.swift in Sources */,
 				95E7738723970B1D00F05169 /* UIColor.swift in Sources */,
+				95CA07DB239D322200FCC21E /* AnalyticsService.swift in Sources */,
 				954CAB00239847B4007A77C0 /* UIView.swift in Sources */,
 				954CAAEF2397EC20007A77C0 /* HospitalDetailsController.swift in Sources */,
 				EF4D8C862397C632003CA1BF /* ServiceTableViewCell.swift in Sources */,

@@ -13,7 +13,7 @@ final class AppCoordinator {
     private let window: UIWindow
     
     private var networkService: NetworkServiceType!
-
+    private var analyticsService: AnalyticsServiceType!
     private var serviceHolder: ServiceHolder!
     private var mainCoordinator: MainCoordinatorType?
 
@@ -28,6 +28,9 @@ final class AppCoordinator {
         
         networkService = NetworkService()
         serviceHolder.add(NetworkServiceType.self, for: networkService)
+        
+        analyticsService = AnalyticsService()
+        serviceHolder.add(AnalyticsServiceType.self, for: analyticsService)
     }
     
     func start() {
