@@ -320,6 +320,7 @@
 		C659F93E2396F8A0009DE50B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				EF6C7AE72395451000AA51BC /* Assets.xcassets */,
 				C659F93F2396F8B0009DE50B /* Fonts */,
 			);
 			path = Resources;
@@ -409,7 +410,6 @@
 				EF6C7AE42395450F00AA51BC /* Main.storyboard */,
 				EF4D8C7A2397AC15003CA1BF /* List.storyboard */,
 				954CAAF42397ECE9007A77C0 /* HospitalDetails.storyboard */,
-				EF6C7AE72395451000AA51BC /* Assets.xcassets */,
 				EF6C7AE92395451000AA51BC /* LaunchScreen.storyboard */,
 				EF6C7AEC2395451000AA51BC /* Info.plist */,
 			);

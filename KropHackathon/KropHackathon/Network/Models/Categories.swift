@@ -8,10 +8,16 @@
 
 import Foundation
 
-struct CategoriesResponse: Codable, Equatable {
-    let status: Int
-    let code: String
-    let message: String
+protocol Response {
+    var status: Int { get set }
+    var code: String { get set }
+    var message: String { get set }
+}
+
+struct CategoriesResponse: Codable, Equatable, Response {
+    var status: Int
+    var code: String
+    var message: String
 
     let data: Categories
 }
