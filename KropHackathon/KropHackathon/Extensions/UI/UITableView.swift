@@ -22,27 +22,6 @@ extension UITableView {
     }
 }
 
-// MARK: Scroll
-extension UITableView {
-    func scrollToLast(animated: Bool) {
-        
-        guard numberOfSections > 0 else { return }
-        let lastSectionIndex = numberOfSections - 1
-        guard numberOfRows(inSection: lastSectionIndex) > 0 else { return }
-        
-        let lastItemIndexPath = IndexPath(item: numberOfRows(inSection: lastSectionIndex) - 1,
-                                          section: lastSectionIndex)
-        scrollToRow(at: lastItemIndexPath, at: .bottom, animated: animated)
-    }
-    
-    func scrollToTop(animated: Bool) {
-        guard numberOfSections > 0 else { return }
-        guard numberOfRows(inSection: 0) > 0 else { return }
-        
-        scrollToRow(at: IndexPath(item: 0, section: 0), at: .top, animated: animated)
-    }
-}
-
 extension UITableView {
     
     func dequeCell<T: UITableViewCell>(for indexPath: IndexPath) -> T? {
