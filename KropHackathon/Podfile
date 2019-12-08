@@ -6,6 +6,7 @@ target 'KropHackathon' do
   use_frameworks!
 
   # Pods for KropHackathon
+  pod 'Firebase'
   pod 'SwiftLint'
   pod 'GoogleMaps'
   pod 'GooglePlaces'
