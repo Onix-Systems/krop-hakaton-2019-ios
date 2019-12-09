@@ -26,19 +26,19 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ie7-Nd-Nja">
-                        <rect key="frame" x="15" y="8" width="399" height="141"/>
+                        <rect key="frame" x="0.0" y="8" width="429" height="141"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eYC-ZT-Xaa">
                                 <rect key="frame" x="10" y="0.0" width="87" height="141"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ультразвукові дослідження" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Spc-JE-wR2">
-                                <rect key="frame" x="112" y="15" width="272" height="20.5"/>
+                                <rect key="frame" x="112" y="15" width="302" height="20.5"/>
                                 <fontDescription key="fontDescription" name="SFProRounded-Heavy" family="SF Pro Rounded" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ryh-qQ-xav">
-                                <rect key="frame" x="112" y="59" width="272" height="67"/>
+                                <rect key="frame" x="112" y="59" width="302" height="67"/>
                                 <string key="text">Ультразвукове дослідження нирок | Ультразвукове дослідження суглобів |Ультразвукове дослідження судин нижніх кінцівок | (інше +30)</string>
                                 <fontDescription key="fontDescription" name="SFProRounded-Regular" family="SF Pro Rounded" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -62,10 +62,10 @@
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="Ie7-Nd-Nja" secondAttribute="trailing" constant="15" id="GWR-oM-X8C"/>
+                    <constraint firstAttribute="trailing" secondItem="Ie7-Nd-Nja" secondAttribute="trailing" id="GWR-oM-X8C"/>
                     <constraint firstItem="Ie7-Nd-Nja" firstAttribute="top" secondItem="ssJ-0H-Jvu" secondAttribute="top" constant="8" id="HIb-jk-6Pc"/>
                     <constraint firstAttribute="bottom" secondItem="Ie7-Nd-Nja" secondAttribute="bottom" constant="7" id="xNy-rw-GcI"/>
-                    <constraint firstItem="Ie7-Nd-Nja" firstAttribute="leading" secondItem="ssJ-0H-Jvu" secondAttribute="leading" constant="15" id="yAR-UI-1ut"/>
+                    <constraint firstItem="Ie7-Nd-Nja" firstAttribute="leading" secondItem="ssJ-0H-Jvu" secondAttribute="leading" id="yAR-UI-1ut"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

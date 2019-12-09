@@ -138,6 +138,7 @@ extension MainViewController: UITableViewDataSource {
         
         guard let cell: ServiceCell = tableView.dequeCell(for: indexPath) else { return UITableViewCell() }
         cell.configure(viewModel.serviceModels[indexPath.row])
+        cell.frame.size.width = tableView.frame.size.width
         
         return cell
     }
