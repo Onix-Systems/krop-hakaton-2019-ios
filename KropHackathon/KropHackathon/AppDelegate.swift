@@ -33,6 +33,7 @@ import Firebase
     private func registerServices() {
        
             FirebaseApp.configure()
+         Analytics.setAnalyticsCollectionEnabled(true)
     }
 
 }

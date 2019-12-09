@@ -18,7 +18,7 @@ class UrlOpenHelper {
     }
     
     static func openDirections(to coordinate: CLLocationCoordinate2D) {
-        let urlStr = String.init(format: "https://maps.google.com/?saddr=Current Location&daddr=%1.6f,%1.6f&directionsmode=driving", coordinate.latitude, coordinate.longitude)
+        let urlStr = String.init(format: "https://maps.google.com/?saddr=&daddr=%1.6f,%1.6f&directionsmode=driving", coordinate.latitude, coordinate.longitude)
         UrlOpenHelper.open(url: urlStr)
     }
     

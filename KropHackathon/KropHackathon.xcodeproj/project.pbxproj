@@ -24,8 +24,8 @@
 		954CAB00239847B4007A77C0 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954CAAFF239847B4007A77C0 /* UIView.swift */; };
 		954CAB0223984DE4007A77C0 /* UrlHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954CAB0123984DE4007A77C0 /* UrlHelper.swift */; };
 		954D2FCA239BAC48009DB756 /* Hospital.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954D2FC9239BAC48009DB756 /* Hospital.swift */; };
+		95A2F3E5239E22CF00222CD7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 95A2F3E4239E22CF00222CD7 /* GoogleService-Info.plist */; };
 		95CA07D7239D282000FCC21E /* MapPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CA07D6239D282000FCC21E /* MapPin.swift */; };
-		95CA07D9239D2D6600FCC21E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 95CA07D8239D2D6600FCC21E /* GoogleService-Info.plist */; };
 		95CA07DB239D322200FCC21E /* AnalyticsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CA07DA239D322200FCC21E /* AnalyticsService.swift */; };
 		95E7738723970B1D00F05169 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E7738623970B1D00F05169 /* UIColor.swift */; };
 		95E7738B2397123300F05169 /* ServiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E7738A2397123300F05169 /* ServiceCell.swift */; };
@@ -89,8 +89,8 @@
 		954CAAFF239847B4007A77C0 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		954CAB0123984DE4007A77C0 /* UrlHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlHelper.swift; sourceTree = "<group>"; };
 		954D2FC9239BAC48009DB756 /* Hospital.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hospital.swift; sourceTree = "<group>"; };
+		95A2F3E4239E22CF00222CD7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		95CA07D6239D282000FCC21E /* MapPin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPin.swift; sourceTree = "<group>"; };
-		95CA07D8239D2D6600FCC21E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		95CA07DA239D322200FCC21E /* AnalyticsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalyticsService.swift; sourceTree = "<group>"; };
 		95E7738623970B1D00F05169 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		95E7738A2397123300F05169 /* ServiceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCell.swift; sourceTree = "<group>"; };
@@ -420,7 +420,7 @@
 				954CAAF42397ECE9007A77C0 /* HospitalDetails.storyboard */,
 				EF6C7AE92395451000AA51BC /* LaunchScreen.storyboard */,
 				EF6C7AEC2395451000AA51BC /* Info.plist */,
-				95CA07D8239D2D6600FCC21E /* GoogleService-Info.plist */,
+				95A2F3E4239E22CF00222CD7 /* GoogleService-Info.plist */,
 			);
 			path = KropHackathon;
 			sourceTree = "<group>";
@@ -496,7 +496,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				95E7738D2397124F00F05169 /* ServiceCell.xib in Resources */,
-				95CA07D9239D2D6600FCC21E /* GoogleService-Info.plist in Resources */,
 				EF4D8C8F2397DD77003CA1BF /* SF-Pro-Rounded-Bold.otf in Resources */,
 				EF4D8C922397DD77003CA1BF /* SF-Pro-Rounded-Semibold.otf in Resources */,
 				EF6C7AEB2395451000AA51BC /* LaunchScreen.storyboard in Resources */,
@@ -507,6 +506,7 @@
 				EF6C7AE82395451000AA51BC /* Assets.xcassets in Resources */,
 				EF4D8C902397DD77003CA1BF /* SF-Pro-Rounded-Heavy.otf in Resources */,
 				954CAAF52397ECE9007A77C0 /* HospitalDetails.storyboard in Resources */,
+				95A2F3E5239E22CF00222CD7 /* GoogleService-Info.plist in Resources */,
 				EF4D8C872397C632003CA1BF /* ServiceTableViewCell.xib in Resources */,
 				EF4D8C7B2397AC15003CA1BF /* List.storyboard in Resources */,
 				EF4D8CA323992B54003CA1BF /* TitleTableViewCell.xib in Resources */,
