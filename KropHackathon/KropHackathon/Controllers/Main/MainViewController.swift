@@ -131,7 +131,7 @@ extension MainViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return .init(signOf: tableView.bounds.size.width, magnitudeOf: tableView.bounds.size.width / 2.4)
+        return .init(signOf: tableView.bounds.size.width, magnitudeOf: tableView.bounds.size.width / 2.37)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

@@ -39,7 +39,7 @@ final class Style {
     }
     
     struct Font {
-        static let navTitleFont = UIFont.sfRoundedBold(17)
+        static let navTitleFont = UIFont.sfRoundedHeavy(17)
     }
     
     static func setCellStyle(category: Category) -> (String, UIColor) {

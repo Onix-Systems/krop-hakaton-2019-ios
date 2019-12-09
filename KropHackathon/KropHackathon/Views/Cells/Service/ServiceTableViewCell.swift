@@ -27,7 +27,7 @@ final class ServiceTableViewCell: UITableViewCell {
             name = serviceName.removing(charactersOf: uzd)
         }
         
-        let font = UIFont.sfRoundedBold(17)
+        let font = UIFont.sfRoundedSemibold(17)
         var attributes: [NSAttributedString.Key: Any]? = [NSAttributedString.Key.font: font,
                                                           .foregroundColor: UIColor.black]
         
