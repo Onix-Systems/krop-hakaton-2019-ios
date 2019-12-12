@@ -30,6 +30,13 @@ final class MainViewController: UIViewController {
         self.viewModel.sendEventOpenAbout()
         let text = "Onix-Systems \n\n App for search medical equipment and services in Kropyvnitskyi \n\n iOS developers: \n Olena Drobko, Tetiana Nieizviestna \n\n  Designer: \n Max Honcharov"
         let alert = UIAlertController(title: "About", message: text, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Terms of use & Privacy Policy", style: .default, handler: { _ in
+            //TODO: Get URL for terms of use & privacy policy
+            if let url = URL(string: "https://onix-systems-krop-hakaton-2019.staging.onix.ua") {
+                self.viewModel.sendEventOnix()
+                UIApplication.shared.open(url)
+            }
+        }))
         alert.addAction(UIAlertAction(title: "Onix-Systems.com", style: .default, handler: { _ in
             if let url = URL(string: "https://onix-systems.com") {
                 self.viewModel.sendEventOnix()
