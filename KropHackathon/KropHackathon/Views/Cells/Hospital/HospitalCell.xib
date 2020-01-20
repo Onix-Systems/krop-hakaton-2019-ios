@@ -126,6 +126,7 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="5Pt-jY-Eyk"/>
             <connections>
+                <outlet property="border" destination="kPa-HH-mtz" id="85G-ZV-NZd"/>
                 <outlet property="hospitalNameLabel" destination="znq-ha-2gz" id="2HX-cr-hzX"/>
                 <outlet property="locationLabel" destination="TML-fu-BPz" id="P0O-lQ-RjN"/>
                 <outlet property="workTimeLabel" destination="36u-0Z-V1q" id="3Vs-SW-nsj"/>

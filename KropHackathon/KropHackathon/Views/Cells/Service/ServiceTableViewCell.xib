@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,7 +18,7 @@
         <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" id="KGk-i7-Jjw" customClass="ServiceTableViewCell" customModule="KropHackathon" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+            <tableViewCellContentView key="contentView" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="293" height="44"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
@@ -29,7 +29,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KmD-TC-hO9">
-                        <rect key="frame" x="0.0" y="43" width="320" height="1"/>
+                        <rect key="frame" x="15" y="43" width="320" height="1"/>
                         <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="deviceRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="1" id="omE-D1-j3W"/>
@@ -39,17 +39,18 @@
                 <constraints>
                     <constraint firstItem="Xe4-la-kyx" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="3Wo-YM-toy"/>
                     <constraint firstAttribute="trailing" secondItem="Xe4-la-kyx" secondAttribute="trailing" constant="15" id="SoD-9v-SLQ"/>
+                    <constraint firstItem="KmD-TC-hO9" firstAttribute="leading" secondItem="Xe4-la-kyx" secondAttribute="leading" id="bdo-z4-1mg"/>
                     <constraint firstItem="Xe4-la-kyx" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="z1S-ru-4Lt"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="tintColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="njF-e1-oar" firstAttribute="trailing" secondItem="KmD-TC-hO9" secondAttribute="trailing" id="9OD-dJ-qjP"/>
                 <constraint firstItem="KmD-TC-hO9" firstAttribute="width" secondItem="KGk-i7-Jjw" secondAttribute="width" id="A11-FG-OYq"/>
                 <constraint firstItem="KmD-TC-hO9" firstAttribute="bottom" secondItem="njF-e1-oar" secondAttribute="bottom" id="uSY-qs-vNH"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="border" destination="KmD-TC-hO9" id="wuc-Kl-vXb"/>
                 <outlet property="nameLabel" destination="Xe4-la-kyx" id="gCd-qR-vUn"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="116.51785714285714"/>

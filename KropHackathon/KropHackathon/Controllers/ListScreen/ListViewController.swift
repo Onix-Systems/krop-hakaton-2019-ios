@@ -58,7 +58,7 @@ final class ListViewController: UIViewController {
         
         self.view.backgroundColor = navigationController?.navigationBar.barTintColor
         
-        tableView.layer.cornerRadius = Style.Radius.defaultRadius
+        tableView.layer.cornerRadius = 10.0
         tableView.layer.borderWidth = 0.5
         tableView.layer.borderColor = Style.Color.borderColor.cgColor
         tableView.register([ServiceTableViewCell.className, HospitalCell.className])
