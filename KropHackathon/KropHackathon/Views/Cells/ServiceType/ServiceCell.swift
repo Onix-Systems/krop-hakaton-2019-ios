@@ -21,10 +21,10 @@ final class ServiceCell: UITableViewCell {
         super.awakeFromNib()
         serviceImageView.layer.cornerRadius = Style.Radius.defaultRadius
         
-        wrapperView.layer.cornerRadius = Style.Radius.defaultRadius
-        wrapperView.layer.borderWidth = 0.5
-        wrapperView.layer.borderColor = Style.Color.borderColor.cgColor
-        wrapperView.layer.applySketchShadow(color: Style.Color.shadowColor, alpha: 0.14, xxx: 0, yyy: 4, blur: 12, spread: 0)
+        wrapperView.layer.cornerRadius = 11.0
+//        wrapperView.layer.borderWidth = 0.5
+//        wrapperView.layer.borderColor = Style.Color.borderColor.cgColor
+//        wrapperView.layer.applySketchShadow(color: Style.Color.shadowColor, alpha: 0.14, xxx: 1, yyy: 4, blur: 5, spread: 0)
     }
     
     func configure(_ model: ServiceTypeModel) {
