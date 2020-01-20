@@ -69,12 +69,14 @@ PODS:
   - RxSwift (4.4.2):
     - RxAtomic (>= 4.4.2, ~> 4.4)
   - SwiftLint (0.37.0)
+  - TagListView (1.4.0)
 
 DEPENDENCIES:
   - Firebase/Analytics
   - MBProgressHUD
   - RxSwift (~> 4.4.1)
   - SwiftLint
+  - TagListView
 
 SPEC REPOS:
   trunk:
@@ -93,6 +95,7 @@ SPEC REPOS:
     - RxAtomic
     - RxSwift
     - SwiftLint
+    - TagListView
 
 SPEC CHECKSUMS:
   Firebase: bc9cfc7a96c73268656d5aaab453ff1b4b530e0e
@@ -110,7 +113,8 @@ SPEC CHECKSUMS:
   RxAtomic: d00e97c10db88c6f08540e0bf2752fc5a2404167
   RxSwift: 74c29b693c8e42b0f64400e8b06564575742d649
   SwiftLint: c078a14d7d7ade75e5507795d185e3da41d844d2
+  TagListView: 987b0bdbb16cd9d9e7c0e2ec32aff37ecba8b173
 
-PODFILE CHECKSUM: c7af950591ca66bbdabdb66f1a4f43eb83d9dd2a
+PODFILE CHECKSUM: f323b60ea8586f008d6e1022f0e8a169bedf8c16
 
 COCOAPODS: 1.8.4

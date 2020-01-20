@@ -10,4 +10,5 @@ target 'KropHackathon' do
   pod 'SwiftLint'
   pod 'RxSwift', '~> 4.4.1'
   pod 'MBProgressHUD'
+  pod "TagListView"
 end

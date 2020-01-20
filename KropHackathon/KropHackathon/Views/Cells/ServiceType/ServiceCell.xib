@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -31,24 +31,40 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eYC-ZT-Xaa">
                                 <rect key="frame" x="10" y="0.0" width="87" height="141"/>
                             </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ультразвукові дослідження" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Spc-JE-wR2">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="255" verticalHuggingPriority="255" horizontalCompressionResistancePriority="755" verticalCompressionResistancePriority="755" text="Ультразвукові дослідження" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Spc-JE-wR2">
                                 <rect key="frame" x="112" y="15" width="302" height="23"/>
                                 <fontDescription key="fontDescription" name="SFProRounded-Heavy" family="SF Pro Rounded" pointSize="19"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ryh-qQ-xav">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ryh-qQ-xav">
                                 <rect key="frame" x="112" y="59" width="302" height="67"/>
                                 <string key="text">Ультразвукове дослідження нирок | Ультразвукове дослідження суглобів |Ультразвукове дослідження судин нижніх кінцівок | (інше +30)</string>
                                 <fontDescription key="fontDescription" name="SFProRounded-Regular" family="SF Pro Rounded" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view hidden="YES" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="Qx9-Yd-dPl" customClass="TagListView" customModule="TagListView">
+                                <rect key="frame" x="112" y="48" width="302" height="16"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="tagBackgroundColor">
+                                        <color key="value" white="1" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Ryh-qQ-xav" firstAttribute="leading" secondItem="eYC-ZT-Xaa" secondAttribute="trailing" constant="15" id="3CA-kT-rbE"/>
                             <constraint firstAttribute="bottom" secondItem="eYC-ZT-Xaa" secondAttribute="bottom" id="7Dh-pA-PXd"/>
+                            <constraint firstItem="Qx9-Yd-dPl" firstAttribute="leading" secondItem="eYC-ZT-Xaa" secondAttribute="trailing" constant="15" id="Af2-zw-idq"/>
                             <constraint firstItem="eYC-ZT-Xaa" firstAttribute="width" secondItem="Ie7-Nd-Nja" secondAttribute="height" multiplier="8:13" id="CYm-Bd-le7"/>
                             <constraint firstItem="eYC-ZT-Xaa" firstAttribute="top" secondItem="Ie7-Nd-Nja" secondAttribute="top" id="FZW-Rq-EwM"/>
                             <constraint firstItem="Ryh-qQ-xav" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Spc-JE-wR2" secondAttribute="bottom" id="Gvj-wx-dL1"/>
@@ -58,6 +74,7 @@
                             <constraint firstAttribute="bottom" secondItem="Ryh-qQ-xav" secondAttribute="bottom" constant="15" id="inv-fq-d2l"/>
                             <constraint firstAttribute="trailing" secondItem="Ryh-qQ-xav" secondAttribute="trailing" constant="15" id="lqA-Ig-pyg"/>
                             <constraint firstAttribute="trailing" secondItem="Spc-JE-wR2" secondAttribute="trailing" constant="15" id="qE5-9H-Y91"/>
+                            <constraint firstItem="Qx9-Yd-dPl" firstAttribute="top" secondItem="Spc-JE-wR2" secondAttribute="bottom" constant="10" id="uUW-Eu-PaY"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -69,14 +86,19 @@
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="oZ8-8x-HtZ" firstAttribute="trailing" secondItem="Qx9-Yd-dPl" secondAttribute="trailing" constant="15" id="FDS-1C-1lw"/>
+                <constraint firstItem="oZ8-8x-HtZ" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Qx9-Yd-dPl" secondAttribute="bottom" constant="10" id="nQN-Bv-7jQ"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="oZ8-8x-HtZ"/>
             <connections>
                 <outlet property="serviceImageView" destination="eYC-ZT-Xaa" id="WfN-00-Ehv"/>
                 <outlet property="serviceTypeLabel" destination="Spc-JE-wR2" id="h09-Iw-AJq"/>
                 <outlet property="servicesLabel" destination="Ryh-qQ-xav" id="c8q-7d-Ka4"/>
+                <outlet property="tagsListView" destination="Qx9-Yd-dPl" id="0ax-9F-Ryf"/>
                 <outlet property="wrapperView" destination="Ie7-Nd-Nja" id="gRe-59-we6"/>
             </connections>
-            <point key="canvasLocation" x="177.536231884058" y="151.33928571428569"/>
+            <point key="canvasLocation" x="177.536231884058" y="150.66964285714286"/>
         </tableViewCell>
     </objects>
 </document>
