@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,38 +22,51 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tll-co-7eH" customClass="MapView" customModule="KropHackathon">
-                                <rect key="frame" x="0.0" y="-44" width="415" height="448"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="0.0" y="-118" width="414" height="472"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mjC-sY-jQT">
-                                <rect key="frame" x="0.0" y="-44" width="415" height="135.5"/>
+                                <rect key="frame" x="0.0" y="-147" width="414" height="140"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="140" id="gjB-eo-ZRi"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" id="spl-LT-t3w">
+                                <rect key="frame" x="0.0" y="329" width="415" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <button alpha="0.65000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OfS-WO-tK1">
-                                <rect key="frame" x="15" y="46" width="35" height="35"/>
+                                <rect key="frame" x="15" y="-299" width="40" height="40"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="OfS-WO-tK1" secondAttribute="height" multiplier="1:1" id="LaZ-KG-3td"/>
-                                    <constraint firstAttribute="width" constant="35" id="vpR-mg-0MJ"/>
                                 </constraints>
-                                <state key="normal" image="backIcon"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="closeBtnIcon">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="closeBtnClicked:" destination="X1s-SP-F6j" eventType="touchUpInside" id="iuC-ZL-YGy"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wlz-ss-tES">
-                                <rect key="frame" x="0.0" y="379" width="415" height="517"/>
+                                <rect key="frame" x="0.0" y="329" width="414" height="567"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
                             <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J71-Ym-ZyB">
-                                <rect key="frame" x="118.5" y="331" width="177" height="33"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <rect key="frame" x="107" y="269" width="200" height="40"/>
+                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="33" id="DXy-l0-h93"/>
-                                    <constraint firstAttribute="width" constant="177" id="oE4-Nd-mbZ"/>
+                                    <constraint firstAttribute="height" constant="40" id="DXy-l0-h93"/>
+                                    <constraint firstAttribute="width" constant="200" id="oE4-Nd-mbZ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="SFProRounded-Bold" family="SF Pro Rounded" pointSize="17"/>
-                                <state key="normal" title="Подивитися на мапі"/>
+                                <state key="normal" title="Подивитися на мапі">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="pushToMap:" destination="X1s-SP-F6j" eventType="touchUpInside" id="jco-9i-qYQ"/>
                                 </connections>
@@ -63,20 +76,20 @@
                         <constraints>
                             <constraint firstItem="wlz-ss-tES" firstAttribute="top" secondItem="tll-co-7eH" secondAttribute="bottom" constant="-25" id="0Gc-pf-mvp"/>
                             <constraint firstItem="J71-Ym-ZyB" firstAttribute="centerX" secondItem="tap-kd-ckE" secondAttribute="centerX" id="2qB-tW-i1T"/>
-                            <constraint firstAttribute="top" secondItem="tll-co-7eH" secondAttribute="top" constant="44" id="5sS-TE-Mc5"/>
-                            <constraint firstItem="mjC-sY-jQT" firstAttribute="top" secondItem="tll-co-7eH" secondAttribute="top" id="7wu-TK-D30"/>
+                            <constraint firstItem="wlz-ss-tES" firstAttribute="top" secondItem="spl-LT-t3w" secondAttribute="top" id="7Zq-y2-370"/>
+                            <constraint firstItem="mjC-sY-jQT" firstAttribute="top" secondItem="tll-co-7eH" secondAttribute="top" constant="-29" id="7wu-TK-D30"/>
                             <constraint firstItem="OfS-WO-tK1" firstAttribute="leading" secondItem="tll-co-7eH" secondAttribute="leading" constant="15" id="8pa-xV-YgI"/>
-                            <constraint firstItem="OfS-WO-tK1" firstAttribute="top" secondItem="tll-co-7eH" secondAttribute="top" constant="90" id="9i4-GF-Ocm"/>
-                            <constraint firstAttribute="trailing" secondItem="tll-co-7eH" secondAttribute="trailing" constant="-1" id="APH-EN-l1m"/>
-                            <constraint firstItem="mjC-sY-jQT" firstAttribute="width" secondItem="tll-co-7eH" secondAttribute="width" id="E90-hb-aYw"/>
-                            <constraint firstItem="tll-co-7eH" firstAttribute="width" secondItem="tap-kd-ckE" secondAttribute="width" constant="1" id="HMu-Ph-tm6"/>
+                            <constraint firstItem="OfS-WO-tK1" firstAttribute="top" secondItem="tll-co-7eH" secondAttribute="top" constant="-181" id="9i4-GF-Ocm"/>
+                            <constraint firstAttribute="trailing" secondItem="tll-co-7eH" secondAttribute="trailing" id="APH-EN-l1m"/>
+                            <constraint firstItem="tll-co-7eH" firstAttribute="width" secondItem="tap-kd-ckE" secondAttribute="width" id="HMu-Ph-tm6"/>
                             <constraint firstItem="mjC-sY-jQT" firstAttribute="leading" secondItem="tll-co-7eH" secondAttribute="leading" id="I8k-5L-vLI"/>
+                            <constraint firstItem="OfS-WO-tK1" firstAttribute="width" secondItem="tap-kd-ckE" secondAttribute="width" multiplier="0.0966184" id="MN2-lZ-1WL"/>
                             <constraint firstAttribute="bottom" secondItem="wlz-ss-tES" secondAttribute="bottom" id="MnM-NX-qH4"/>
                             <constraint firstItem="wlz-ss-tES" firstAttribute="width" secondItem="tll-co-7eH" secondAttribute="width" id="Q4q-cC-p1N"/>
-                            <constraint firstItem="wlz-ss-tES" firstAttribute="top" secondItem="J71-Ym-ZyB" secondAttribute="bottom" constant="15" id="RtP-gG-REU"/>
-                            <constraint firstItem="mjC-sY-jQT" firstAttribute="height" secondItem="tll-co-7eH" secondAttribute="height" multiplier="0.3" constant="1" id="ZhC-HK-OI1"/>
+                            <constraint firstItem="wlz-ss-tES" firstAttribute="top" secondItem="J71-Ym-ZyB" secondAttribute="bottom" constant="20" id="RtP-gG-REU"/>
+                            <constraint firstItem="mjC-sY-jQT" firstAttribute="centerX" secondItem="PIN-UV-pdu" secondAttribute="centerX" id="kGP-aR-s0s"/>
+                            <constraint firstItem="spl-LT-t3w" firstAttribute="height" secondItem="tll-co-7eH" secondAttribute="height" multiplier="0.07" constant="18.959999999999994" id="oU0-gf-FbS"/>
                             <constraint firstItem="wlz-ss-tES" firstAttribute="centerX" secondItem="tll-co-7eH" secondAttribute="centerX" id="syw-Hn-Pja"/>
-                            <constraint firstItem="tll-co-7eH" firstAttribute="height" secondItem="tap-kd-ckE" secondAttribute="height" multiplier="0.4" constant="89.599999999999966" id="vSU-0x-c0G"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PIN-UV-pdu"/>
                     </view>
@@ -87,6 +100,7 @@
                         <outlet property="lookOnMapButton" destination="J71-Ym-ZyB" id="AEC-gG-2Ow"/>
                         <outlet property="map" destination="tll-co-7eH" id="CMO-3U-kue"/>
                         <outlet property="tableView" destination="wlz-ss-tES" id="Ziq-5B-tKx"/>
+                        <outlet property="tableViewShadowView" destination="spl-LT-t3w" id="mgH-s9-BUy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I7E-0P-1ms" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -95,6 +109,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="backIcon" width="28" height="22"/>
+        <image name="closeBtnIcon" width="30" height="30"/>
     </resources>
 </document>

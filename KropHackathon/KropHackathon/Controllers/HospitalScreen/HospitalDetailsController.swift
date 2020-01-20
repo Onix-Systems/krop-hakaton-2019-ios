@@ -10,7 +10,8 @@ import UIKit
 
 final class HospitalDetailsController: UIViewController {
     var viewModel: HospitalDetailsModelType!
-    
+    private var separator = 0
+    @IBOutlet weak var tableViewShadowView: UIView!
     @IBOutlet private weak var gradientView: UIView!
     @IBOutlet private weak var lookOnMapButton: UIButton!
     @IBOutlet private weak var tableView: UITableView!
@@ -72,30 +73,49 @@ final class HospitalDetailsController: UIViewController {
             map.moveToLocation(coordinate: point)
         }
         
-        let gradient = CAGradientLayer()
-        var bounds = self.navigationController?.navigationBar.bounds
-        bounds?.size.height += UIApplication.shared.statusBarFrame.size.height + 40.0
+        tableViewShadowView.layer.shadowColor = UIColor.lightGray.cgColor
+        tableViewShadowView.layer.shadowOpacity = 0.7
+        tableViewShadowView.layer.shadowOffset = .zero
+        tableViewShadowView.layer.shadowRadius = 4
+        tableViewShadowView.layer.shadowPath = UIBezierPath(rect: tableViewShadowView.bounds).cgPath
+        tableViewShadowView.layer.shouldRasterize = true
+        tableViewShadowView.layer.rasterizationScale = UIScreen.main.scale
         
-        if let bounds = bounds {
-            gradient.frame = bounds
-        }
-        gradient.colors = [UIColor.lightGray.cgColor, UIColor.clear.cgColor]
-        gradient.startPoint = CGPoint(x: 0, y: 0)
-        gradient.endPoint = CGPoint(x: 0, y: 1)
-        self.gradientView.layer.addSublayer(gradient)
+        gradientView.layer.shadowColor = UIColor.black.cgColor
+        gradientView.layer.shadowOpacity = 1
+        gradientView.layer.shadowOffset = CGSize(width: 0, height: 3)
+        gradientView.layer.shadowRadius = 70
+        
+        
+        //tableViewShadowView.layer.shadowPath = UIBezierPath(rect: tableViewShadowView.bounds).cgPath
+        gradientView.layer.shouldRasterize = true
+        gradientView.layer.rasterizationScale = UIScreen.main.scale
+         
     }
     
     private func configureOpenMapBtn() {
-        lookOnMapButton.layer.cornerRadius = 16.0
+        lookOnMapButton.backgroundColor = UIColor(red: 0, green: 0.48, blue: 1, alpha: 1)
+        
+        lookOnMapButton.layer.cornerRadius = 20.0
         lookOnMapButton.layer.borderWidth = 0.5
         lookOnMapButton.layer.borderColor = Style.Color.borderColor.cgColor
         lookOnMapButton.layer.applySketchShadow(color: Style.Color.shadowColor, alpha: 0.14, xxx: 0, yyy: 4, blur: 12, spread: 0)
     }
     
     private func configureTableView() {
+        
+        tableView.layer.shadowColor = UIColor.black.cgColor
+        tableView.layer.shadowOpacity = 1
+        tableView.layer.shadowOffset = .zero
+        tableView.layer.shadowRadius = 10
+        tableView.layer.shadowPath = UIBezierPath(rect: tableView.bounds).cgPath
+        tableView.layer.shouldRasterize = true
+        tableView.layer.rasterizationScale = UIScreen.main.scale
+        
+        
         tableView.register([HospitalDetailsTableViewCell.className, TitleTableViewCell.className])
         tableView.setDataSource(self)
-        tableView.layer.cornerRadius = 20.0
+        tableView.layer.cornerRadius = 10.0
         tableView.layer.borderWidth = 0.5
         tableView.layer.borderColor = Style.Color.borderColor.cgColor
         tableView.layer.applySketchShadow(color: Style.Color.shadowColor, alpha: 0.3, xxx: 0, yyy: -8, blur: 8, spread: 0)
@@ -114,6 +134,7 @@ extension HospitalDetailsController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         if indexPath.row == 0 {
             guard let cell: TitleTableViewCell = tableView.dequeCell(for: indexPath) else {
                 print("can't find cell")
@@ -127,7 +148,14 @@ extension HospitalDetailsController: UITableViewDataSource {
                 print("can't find cell")
                 return UITableViewCell()
             }
-            cell.configure(model: viewModel.hospitalInfoDetailModels[indexPath.row - 1])
+            
+            let model = viewModel.hospitalInfoDetailModels[indexPath.row - 1]
+            if model.infoType == .none {
+                separator += 1
+            } else {
+                separator = 0
+            }
+            cell.configure(model: model, separator >= 2)
             return cell
         }
     }

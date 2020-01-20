@@ -49,7 +49,7 @@ final class HospitalDetailsTableViewCell: UITableViewCell {
         
     }
     
-    func configure(model: HospitalDetailsCellViewModelType) {
+    func configure(model: HospitalDetailsCellViewModelType, _ doubleSeparator: Bool = false) {
         imageWidthConstraint.constant = model.infoType == .none ? 0 : 20
         
         switch model.infoType {
@@ -62,8 +62,13 @@ final class HospitalDetailsTableViewCell: UITableViewCell {
         case .none:
             break
         }
-        topSeparatorView.isHidden = model.infoType != .none
-        bottomSeparatorView.isHidden = model.infoType != .none
+        if doubleSeparator {
+            topSeparatorView.isHidden = true
+            bottomSeparatorView.isHidden = false
+        } else {
+            topSeparatorView.isHidden = model.infoType != .none
+            bottomSeparatorView.isHidden = model.infoType != .none
+        }
 
         infoTypeLabel.text = model.infoTypeStr
         infoLabel.text = model.info
