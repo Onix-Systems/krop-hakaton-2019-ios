@@ -11,6 +11,7 @@ import UIKit
 final class ListViewController: UIViewController {
     var viewModel: ListViewModelType!
     
+    @IBOutlet weak var tableViewShadowView: UIView!
     @IBOutlet private weak var tableView: UITableView!
     
     override func viewWillAppear(_ animated: Bool) {
@@ -47,6 +48,14 @@ final class ListViewController: UIViewController {
     
     private func configure() {
         
+        tableViewShadowView.layer.shadowColor = UIColor.darkGray.cgColor
+           tableViewShadowView.layer.shadowOpacity = 0.5
+           tableViewShadowView.layer.shadowOffset = .zero
+           tableViewShadowView.layer.shadowRadius = 5
+           tableViewShadowView.layer.shadowPath = UIBezierPath(rect: tableViewShadowView.bounds).cgPath
+           tableViewShadowView.layer.shouldRasterize = true
+           tableViewShadowView.layer.rasterizationScale = UIScreen.main.scale
+        
         self.view.backgroundColor = navigationController?.navigationBar.barTintColor
         
         tableView.layer.cornerRadius = Style.Radius.defaultRadius
@@ -66,6 +75,8 @@ final class ListViewController: UIViewController {
         navigationController?.isNavigationBarHidden = false
         navigationController?.navigationBar.isTranslucent = false
         navigationController?.navigationBar.shadowImage = UIImage()
+       
+        
         
         let backBarButton = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
         navigationItem.backBarButtonItem = backBarButton
@@ -78,6 +89,7 @@ final class ListViewController: UIViewController {
         
         let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: view.frame.width - 50, height: 50))
         titleLabel.font = Style.Font.navTitleFont
+        titleLabel.textAlignment = .justified
         titleLabel.textColor = .white
         titleLabel.text = viewModel.screenTitle
         navigationItem.titleView = titleLabel
