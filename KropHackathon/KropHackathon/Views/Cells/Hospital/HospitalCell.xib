@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,8 +23,8 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kPa-HH-mtz">
-                        <rect key="frame" x="0.0" y="183" width="397" height="1"/>
-                        <color key="backgroundColor" red="0.98039871450000005" green="0.98038035629999998" blue="0.98039287330000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <rect key="frame" x="-65.5" y="183" width="528" height="1"/>
+                        <color key="backgroundColor" red="0.9082091177275422" green="0.9082091177275422" blue="0.9082091177275422" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="1" id="bFJ-dv-vQg"/>
                         </constraints>
@@ -114,7 +114,6 @@
                 <constraints>
                     <constraint firstItem="kPa-HH-mtz" firstAttribute="centerX" secondItem="bf3-uo-vYa" secondAttribute="centerX" id="6N2-iH-anX"/>
                     <constraint firstAttribute="bottom" secondItem="kPa-HH-mtz" secondAttribute="bottom" id="Rxo-qi-av9"/>
-                    <constraint firstItem="kPa-HH-mtz" firstAttribute="width" secondItem="bf3-uo-vYa" secondAttribute="width" id="UvG-BV-TQp"/>
                     <constraint firstAttribute="bottom" secondItem="m5x-ox-K9j" secondAttribute="bottom" constant="5" id="WzC-Um-22R"/>
                     <constraint firstAttribute="trailing" secondItem="m5x-ox-K9j" secondAttribute="trailing" constant="15" id="aME-nm-pRX"/>
                     <constraint firstItem="m5x-ox-K9j" firstAttribute="top" secondItem="bf3-uo-vYa" secondAttribute="top" constant="5" id="lqC-ZU-uOn"/>
@@ -122,6 +121,9 @@
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="kPa-HH-mtz" firstAttribute="width" secondItem="xF5-ff-v0l" secondAttribute="width" constant="100" id="8It-et-qRe"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="5Pt-jY-Eyk"/>
             <connections>
                 <outlet property="hospitalNameLabel" destination="znq-ha-2gz" id="2HX-cr-hzX"/>
