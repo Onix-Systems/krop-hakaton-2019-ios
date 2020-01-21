@@ -17,7 +17,6 @@ class AnalyticsService: AnalyticsServiceType {
     func log(event: AnalyticsEvent, parameters: [String: Any]?) {
         Analytics.logEvent(event.rawValue, parameters: parameters)
     }
-    
 }
 
 enum AnalyticsParameter: String, Codable {

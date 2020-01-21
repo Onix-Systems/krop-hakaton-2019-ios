@@ -16,7 +16,6 @@ protocol MainViewModelType {
     var serviceModels: [ServiceTypeModel] { get }
     var searchModels: [HospitalModel] { get }
     
-    //    func showAboutInfo()
     func openList(row: Int)
     func openDetails(_ index: Int, text: String)
     func search(text: String?)

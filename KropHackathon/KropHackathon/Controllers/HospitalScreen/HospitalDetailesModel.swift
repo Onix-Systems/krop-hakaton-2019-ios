@@ -19,6 +19,8 @@ protocol HospitalDetailsModelType {
     var title: String { get set }
     var isHUD: Bool { get }
     
+    func getCellSeparator(_ index: Int) -> Bool
+    
     func sendEventOpen()
     func sendEventMap()
     func goBack()
@@ -30,6 +32,8 @@ final class HospitalDetailsModel: HospitalDetailsModelType {
     var title: String = ""
     var point: CLLocationCoordinate2D?
     var isHUD: Bool = true
+    
+    private var separator = 0
     
     private let coordinator: HospitalDetailsCoordinatorType
     private let networkService: NetworkServiceType
@@ -68,7 +72,7 @@ final class HospitalDetailsModel: HospitalDetailsModelType {
             let lanit = model.lan, !lanit.contains("null"), let lan = Double(lanit) {
             self.point = CLLocationCoordinate2D.init(latitude: lat, longitude: lan)
         }
-
+        
         self.hospitalInfoDetailModels = []
         if let addressa = model.adress, !addressa.contains("null") {
             self.hospitalInfoDetailModels.append( HospitalDetailsCellViewModel(infoType: .address, infoTypeStr: "Вулиця та номер будинку:", info: addressa))
@@ -118,4 +122,13 @@ final class HospitalDetailsModel: HospitalDetailsModelType {
         analiticsService.log(event: .GOOGLEMAP_OPEN, parameters: nil)
     }
     
+    func getCellSeparator(_ index: Int) -> Bool {
+        
+        if hospitalInfoDetailModels[index].infoType == .none {
+            separator += 1
+        } else {
+            separator = 0
+        }
+        return separator >= 2
+    }
 }

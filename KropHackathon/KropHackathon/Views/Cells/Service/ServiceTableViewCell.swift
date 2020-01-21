@@ -20,6 +20,7 @@ final class ServiceTableViewCell: UITableViewCell {
     
     func configure(_ serviceName: String) {
         border.backgroundColor = UIColor(red: 0.8, green: 0.82, blue: 0.84, alpha: 0.5)
+        
         let uzd = "УЗД"
         let isUzd = hasStrUZD(string: serviceName)
         let typeStr = isUzd ? uzd : ""
@@ -37,7 +38,7 @@ final class ServiceTableViewCell: UITableViewCell {
         
         attributes = [NSAttributedString.Key.font: font,
                       .foregroundColor: UIColor.lightGray]
-
+        
         
         let attributedSpeck = NSAttributedString(string: typeStr, attributes: attributes)
         

@@ -41,5 +41,4 @@ final class HospitalDetailsCoordinator: HospitalDetailsCoordinatorType {
     deinit {
         print("ListCoordinator - deinit")
     }
-
 }

@@ -10,7 +10,7 @@ import UIKit
 
 final class HospitalDetailsController: UIViewController {
     var viewModel: HospitalDetailsModelType!
-    private var separator = 0
+    
     @IBOutlet weak var tableViewShadowView: UIView!
     @IBOutlet private weak var gradientView: UIView!
     @IBOutlet private weak var lookOnMapButton: UIButton!
@@ -72,22 +72,11 @@ final class HospitalDetailsController: UIViewController {
             map.addMarker(coordinate: point)
             map.moveToLocation(coordinate: point)
         }
-        
-        tableViewShadowView.layer.shadowColor = UIColor.lightGray.cgColor
-        tableViewShadowView.layer.shadowOpacity = 0.7
-        tableViewShadowView.layer.shadowOffset = .zero
-        tableViewShadowView.layer.shadowRadius = 4
-        tableViewShadowView.layer.shadowPath = UIBezierPath(rect: tableViewShadowView.bounds).cgPath
-        tableViewShadowView.layer.shouldRasterize = true
-        tableViewShadowView.layer.rasterizationScale = UIScreen.main.scale
-        
+                
         gradientView.layer.shadowColor = UIColor.black.cgColor
         gradientView.layer.shadowOpacity = 1
         gradientView.layer.shadowOffset = CGSize(width: 0, height: 3)
         gradientView.layer.shadowRadius = 70
-        
-        
-        //tableViewShadowView.layer.shadowPath = UIBezierPath(rect: tableViewShadowView.bounds).cgPath
         gradientView.layer.shouldRasterize = true
         gradientView.layer.rasterizationScale = UIScreen.main.scale
          
@@ -104,21 +93,17 @@ final class HospitalDetailsController: UIViewController {
     
     private func configureTableView() {
         
-        tableView.layer.shadowColor = UIColor.black.cgColor
-        tableView.layer.shadowOpacity = 1
-        tableView.layer.shadowOffset = .zero
-        tableView.layer.shadowRadius = 10
-        tableView.layer.shadowPath = UIBezierPath(rect: tableView.bounds).cgPath
-        tableView.layer.shouldRasterize = true
-        tableView.layer.rasterizationScale = UIScreen.main.scale
-        
+        tableViewShadowView.layer.shadowColor = UIColor.lightGray.cgColor
+        tableViewShadowView.layer.shadowOpacity = 0.7
+        tableViewShadowView.layer.shadowOffset = .zero
+        tableViewShadowView.layer.shadowRadius = 4
+        tableViewShadowView.layer.shadowPath = UIBezierPath(rect: tableViewShadowView.bounds).cgPath
+        tableViewShadowView.layer.shouldRasterize = true
+        tableViewShadowView.layer.rasterizationScale = UIScreen.main.scale
         
         tableView.register([HospitalDetailsTableViewCell.className, TitleTableViewCell.className])
         tableView.setDataSource(self)
         tableView.layer.cornerRadius = 10.0
-        tableView.layer.borderWidth = 0.5
-        tableView.layer.borderColor = Style.Color.borderColor.cgColor
-        tableView.layer.applySketchShadow(color: Style.Color.shadowColor, alpha: 0.3, xxx: 0, yyy: -8, blur: 8, spread: 0)
         self.tableView.reloadData()
     }
     
@@ -149,13 +134,7 @@ extension HospitalDetailsController: UITableViewDataSource {
                 return UITableViewCell()
             }
             
-            let model = viewModel.hospitalInfoDetailModels[indexPath.row - 1]
-            if model.infoType == .none {
-                separator += 1
-            } else {
-                separator = 0
-            }
-            cell.configure(model: model, separator >= 2)
+            cell.configure(model: viewModel.hospitalInfoDetailModels[indexPath.row], viewModel.getCellSeparator(indexPath.row))
             return cell
         }
     }

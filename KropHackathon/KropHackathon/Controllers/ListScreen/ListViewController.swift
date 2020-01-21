@@ -49,18 +49,16 @@ final class ListViewController: UIViewController {
     private func configure() {
         
         tableViewShadowView.layer.shadowColor = UIColor.darkGray.cgColor
-           tableViewShadowView.layer.shadowOpacity = 0.5
-           tableViewShadowView.layer.shadowOffset = .zero
-           tableViewShadowView.layer.shadowRadius = 5
-           tableViewShadowView.layer.shadowPath = UIBezierPath(rect: tableViewShadowView.bounds).cgPath
-           tableViewShadowView.layer.shouldRasterize = true
-           tableViewShadowView.layer.rasterizationScale = UIScreen.main.scale
+        tableViewShadowView.layer.shadowOpacity = 0.5
+        tableViewShadowView.layer.shadowOffset = .zero
+        tableViewShadowView.layer.shadowRadius = 5
+        tableViewShadowView.layer.shadowPath = UIBezierPath(rect: tableViewShadowView.bounds).cgPath
+        tableViewShadowView.layer.shouldRasterize = true
+        tableViewShadowView.layer.rasterizationScale = UIScreen.main.scale
         
         self.view.backgroundColor = navigationController?.navigationBar.barTintColor
         
         tableView.layer.cornerRadius = 10.0
-        tableView.layer.borderWidth = 0.5
-        tableView.layer.borderColor = Style.Color.borderColor.cgColor
         tableView.register([ServiceTableViewCell.className, HospitalCell.className])
         tableView.setDataSource(self, delegate: self)
         
@@ -75,8 +73,6 @@ final class ListViewController: UIViewController {
         navigationController?.isNavigationBarHidden = false
         navigationController?.navigationBar.isTranslucent = false
         navigationController?.navigationBar.shadowImage = UIImage()
-       
-        
         
         let backBarButton = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
         navigationItem.backBarButtonItem = backBarButton

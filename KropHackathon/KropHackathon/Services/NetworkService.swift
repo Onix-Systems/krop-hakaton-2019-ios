@@ -130,10 +130,4 @@ final class NetworkService: NetworkServiceType {
             ParsingHelper.parsingByType(data, completion)
         })
     }
-    
-    
-    
-    
-    
-    
 }

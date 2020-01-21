@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9534237123D5D1E900F2F270 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9534237023D5D1E900F2F270 /* ShadowView.swift */; };
 		9541B0A7239707920084A0C0 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9541B0A6239707920084A0C0 /* Style.swift */; };
 		9541B0A9239708130084A0C0 /* CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9541B0A8239708130084A0C0 /* CALayer.swift */; };
 		9547427D239A79F600320C07 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9547427C239A79F600320C07 /* NetworkManager.swift */; };
@@ -73,7 +72,6 @@
 /* Begin PBXFileReference section */
 		6C96965C529B59196D073CA5 /* Pods-KropHackathon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KropHackathon.debug.xcconfig"; path = "Target Support Files/Pods-KropHackathon/Pods-KropHackathon.debug.xcconfig"; sourceTree = "<group>"; };
 		72C9A0A53B930FB5B67DD84F /* Pods-KropHackathon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KropHackathon.release.xcconfig"; path = "Target Support Files/Pods-KropHackathon/Pods-KropHackathon.release.xcconfig"; sourceTree = "<group>"; };
-		9534237023D5D1E900F2F270 /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		9541B0A6239707920084A0C0 /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
 		9541B0A8239708130084A0C0 /* CALayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayer.swift; sourceTree = "<group>"; };
 		9547427C239A79F600320C07 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -158,19 +156,10 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		9534236F23D5D1CD00F2F270 /* ShadowView */ = {
-			isa = PBXGroup;
-			children = (
-				9534237023D5D1E900F2F270 /* ShadowView.swift */,
-			);
-			path = ShadowView;
-			sourceTree = "<group>";
-		};
 		9541B09A2396AE060084A0C0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				95EB52F723994D9800A6BD26 /* SearchResult */,
-				9534236F23D5D1CD00F2F270 /* ShadowView */,
 				954BDE4B239A33D5008EA75F /* Map */,
 				9541B09B2396AE670084A0C0 /* Cells */,
 			);
@@ -599,7 +588,6 @@
 				9547427D239A79F600320C07 /* NetworkManager.swift in Sources */,
 				9541B0A9239708130084A0C0 /* CALayer.swift in Sources */,
 				954CAAF32397EC5A007A77C0 /* HospitalDetailesModel.swift in Sources */,
-				9534237123D5D1E900F2F270 /* ShadowView.swift in Sources */,
 				C659F9132396B44F009DE50B /* AppCoordinator.swift in Sources */,
 				954CAAE82397B597007A77C0 /* HospitalCell.swift in Sources */,
 				C659F9372396B533009DE50B /* NSObject.swift in Sources */,
