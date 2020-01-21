@@ -122,7 +122,7 @@ final class HospitalDetailsModel: HospitalDetailsModelType {
         analiticsService.log(event: .GOOGLEMAP_OPEN, parameters: nil)
     }
     
-    func setCellSeparator(_ hospitals: [HospitalDetailsCellViewModel]) -> [HospitalDetailsCellViewModel] {
+    func setCellSeparator(_ hospitals: [HospitalDetailsCellViewModel]) {
         
         hospitals.forEach { hospital in
             if hospital.infoType == .none {
@@ -132,6 +132,5 @@ final class HospitalDetailsModel: HospitalDetailsModelType {
             }
             hospital.separator = (separator >= 2)
         }
-        return hospitals
     }
 }
