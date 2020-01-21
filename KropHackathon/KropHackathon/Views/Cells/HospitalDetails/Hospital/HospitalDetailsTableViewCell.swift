@@ -19,12 +19,14 @@ protocol HospitalDetailsCellViewModelType: AnyObject {
     var infoType: DetailsInfoType { get set }
     var infoTypeStr: String { get set }
     var info: String { get set }
+    var separator: Bool { get set }
 }
 
 final class HospitalDetailsCellViewModel: HospitalDetailsCellViewModelType {
     var infoType: DetailsInfoType
     var infoTypeStr: String
     var info: String
+    var separator = false
     
     init(infoType: DetailsInfoType, infoTypeStr: String, info: String) {
         self.infoType = infoType
@@ -49,7 +51,7 @@ final class HospitalDetailsTableViewCell: UITableViewCell {
         
     }
     
-    func configure(model: HospitalDetailsCellViewModelType, _ separator: Bool = false) {
+    func configure(model: HospitalDetailsCellViewModelType) {
         imageWidthConstraint.constant = model.infoType == .none ? 0 : 20
         
         switch model.infoType {
@@ -62,16 +64,16 @@ final class HospitalDetailsTableViewCell: UITableViewCell {
         case .none:
             break
         }
-        if separator {
+        
+        infoTypeLabel.text = model.infoTypeStr
+        infoLabel.text = model.info
+        
+        if model.separator {
             topSeparatorView.isHidden = true
             bottomSeparatorView.isHidden = false
         } else {
             topSeparatorView.isHidden = model.infoType != .none
             bottomSeparatorView.isHidden = model.infoType != .none
         }
-
-        infoTypeLabel.text = model.infoTypeStr
-        infoLabel.text = model.info
-        
     }
 }

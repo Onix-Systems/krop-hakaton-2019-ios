@@ -134,7 +134,7 @@ extension HospitalDetailsController: UITableViewDataSource {
                 return UITableViewCell()
             }
             
-            cell.configure(model: viewModel.hospitalInfoDetailModels[indexPath.row], viewModel.getCellSeparator(indexPath.row))
+            cell.configure(model: viewModel.hospitalInfoDetailModels[indexPath.row - 1])
             return cell
         }
     }

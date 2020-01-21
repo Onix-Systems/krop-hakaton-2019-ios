@@ -19,8 +19,6 @@ protocol HospitalDetailsModelType {
     var title: String { get set }
     var isHUD: Bool { get }
     
-    func getCellSeparator(_ index: Int) -> Bool
-    
     func sendEventOpen()
     func sendEventMap()
     func goBack()
@@ -112,6 +110,8 @@ final class HospitalDetailsModel: HospitalDetailsModelType {
         if let equipCondition = model.equipCondition, !equipCondition.contains("null") {
             self.hospitalInfoDetailModels.append( HospitalDetailsCellViewModel(infoType: .none, infoTypeStr: "Експлуатаційний стан обладнання:", info: equipCondition))
         }
+        
+        setCellSeparator(self.hospitalInfoDetailModels)
     }
     
     func sendEventOpen() {
@@ -122,13 +122,16 @@ final class HospitalDetailsModel: HospitalDetailsModelType {
         analiticsService.log(event: .GOOGLEMAP_OPEN, parameters: nil)
     }
     
-    func getCellSeparator(_ index: Int) -> Bool {
+    func setCellSeparator(_ hospitals: [HospitalDetailsCellViewModel]) -> [HospitalDetailsCellViewModel] {
         
-        if hospitalInfoDetailModels[index].infoType == .none {
-            separator += 1
-        } else {
-            separator = 0
+        hospitals.forEach { hospital in
+            if hospital.infoType == .none {
+                separator += 1
+            } else {
+                separator = 0
+            }
+            hospital.separator = (separator >= 2)
         }
-        return separator >= 2
+        return hospitals
     }
 }
