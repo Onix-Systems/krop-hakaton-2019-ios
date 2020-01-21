@@ -22,4 +22,8 @@ final class ServiceTypeModel {
         self.services = services
     }
     
+    func copy() -> ServiceTypeModel{
+        return ServiceTypeModel.init(name: name, image: image, backColor: backColor, services: services)
+    }
+    
 }

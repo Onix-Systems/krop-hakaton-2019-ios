@@ -46,7 +46,7 @@ final class NetworkManager {
         guard let point = endpoint.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
             let url = URL(string: point) else { assertionFailure("URL is nil"); return }
         
-        loadData(by: url) { data, responce, error in
+        loadData(by: url) { data, _, error in
             if let error = error { completion(.failure(error.localizedDescription)) }
             if let data = data { completion(.success(data)) }
         }

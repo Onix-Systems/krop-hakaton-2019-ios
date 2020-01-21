@@ -16,7 +16,7 @@ protocol MainViewModelType {
     var serviceModels: [ServiceTypeModel] { get }
     var searchModels: [HospitalModel] { get }
     
-//    func showAboutInfo()
+    //    func showAboutInfo()
     func openList(row: Int)
     func openDetails(_ index: Int, text: String)
     func search(text: String?)
@@ -36,7 +36,7 @@ final class MainViewModel: MainViewModelType {
     private let networkService: NetworkServiceType
     private let analiticsService: AnalyticsServiceType
     private let disposeBag = DisposeBag()
-
+    
     var didLoadData: (() -> Void)?
     var didLoadFailed: ((String) -> Void)?
     
@@ -77,6 +77,24 @@ final class MainViewModel: MainViewModelType {
             let serviceType = ServiceTypeModel(name: category.element.name, image: style.0, backColor: style.1, services: category.element.list)
             serviceModels.append(serviceType)
         }
+        
+        serviceModels = filterServices(serviceModels: serviceModels)
+    }
+    
+    private func filterServices(serviceModels: [ServiceTypeModel]) -> [ServiceTypeModel] {
+        var startModels = serviceModels
+        var filteredModels: [ServiceTypeModel] = []
+        let parametrs = ["Ультразвук", "Рентген", "Ендоскоп", "Функціонал"]
+        for filter in parametrs {
+            for i in 0...startModels.count - 1 {
+                if startModels[i].name.contains(filter) {
+                    filteredModels.append(startModels[i])
+                    startModels.remove(at: i)
+                    break
+                }
+            }
+        }
+        return filteredModels + startModels
     }
     
     func search(text: String?) {
@@ -95,7 +113,7 @@ final class MainViewModel: MainViewModelType {
     }
     
     func sendEventSearch(text: String) {
-        analiticsService.log(event: .SEARCH, parameters: [AnalyticsParameter.TEXT.rawValue:text])
+        analiticsService.log(event: .SEARCH, parameters: [AnalyticsParameter.TEXT.rawValue: text])
     }
     
     func sendEventApp() {
@@ -103,7 +121,7 @@ final class MainViewModel: MainViewModelType {
     }
     
     func sendEventCategory(type: String) {
-        analiticsService.log(event: .CATEGORY_OPEN, parameters: [AnalyticsParameter.TYPE.rawValue:type])
+        analiticsService.log(event: .CATEGORY_OPEN, parameters: [AnalyticsParameter.TYPE.rawValue: type])
     }
     
     func sendEventOpenAbout() {
