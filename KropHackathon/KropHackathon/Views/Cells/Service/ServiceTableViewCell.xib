@@ -22,14 +22,14 @@
                 <rect key="frame" x="0.0" y="0.0" width="293" height="44"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="Xe4-la-kyx">
-                        <rect key="frame" x="15" y="22" width="263" height="0.0"/>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="Xe4-la-kyx">
+                        <rect key="frame" x="20" y="22" width="258" height="0.0"/>
                         <fontDescription key="fontDescription" name="SFProRounded-Regular" family="SF Pro Rounded" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KmD-TC-hO9">
-                        <rect key="frame" x="15" y="43" width="320" height="1"/>
+                        <rect key="frame" x="20" y="43" width="320" height="1"/>
                         <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="deviceRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="1" id="omE-D1-j3W"/>
@@ -40,7 +40,7 @@
                     <constraint firstItem="Xe4-la-kyx" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="3Wo-YM-toy"/>
                     <constraint firstAttribute="trailing" secondItem="Xe4-la-kyx" secondAttribute="trailing" constant="15" id="SoD-9v-SLQ"/>
                     <constraint firstItem="KmD-TC-hO9" firstAttribute="leading" secondItem="Xe4-la-kyx" secondAttribute="leading" id="bdo-z4-1mg"/>
-                    <constraint firstItem="Xe4-la-kyx" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="z1S-ru-4Lt"/>
+                    <constraint firstItem="Xe4-la-kyx" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="z1S-ru-4Lt"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="tintColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
