@@ -12,18 +12,20 @@ final class ServiceTypeModel {
     
     var name: String
     var image: String
+    var tagImage: String
     var backColor: UIColor
     var services: [String]
     
-    init(name: String, image: String, backColor: UIColor, services: [String]) {
+    init(name: String, image: String, tagImage: String, backColor: UIColor, services: [String]) {
         self.name = name
         self.image = image
         self.backColor = backColor
         self.services = services
+        self.tagImage = tagImage
     }
     
     func copy() -> ServiceTypeModel{
-        return ServiceTypeModel.init(name: name, image: image, backColor: backColor, services: services)
+        return ServiceTypeModel.init(name: name, image: image, tagImage: tagImage, backColor: backColor, services: services)
     }
     
 }

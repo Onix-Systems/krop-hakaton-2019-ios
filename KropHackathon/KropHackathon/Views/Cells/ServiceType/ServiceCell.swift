@@ -11,6 +11,7 @@ import TagListView
 
 final class ServiceCell: UITableViewCell {
     
+    @IBOutlet weak var tagsImageView: UIImageView!
     @IBOutlet weak var tagsListView: TagListView!
     @IBOutlet private weak var servicesLabel: UILabel!
     @IBOutlet private weak var wrapperView: UIView!
@@ -35,35 +36,37 @@ final class ServiceCell: UITableViewCell {
         self.textChanger()
         self.serviceTypeLabel.text = self.model.name
         self.serviceImageView.image = UIImage(named: self.model.image) ?? UIImage(named: "redCross")
+        self.tagsImageView.image = UIImage(named: self.model.tagImage) ?? UIImage()
+//        tagsListView.addTags([])
+//        var i = 0
+//        var more = 0
+//        var f: [String] = []
+//        if tagsListView.isHidden {
+//            tagsListView.isHidden = false
+//            let servises = self.model.services.prefix(while: { element -> Bool in
+//                if element.count > 30 {
+//                    return true
+//                }
+//                i += 1 + element.count
+//                if i <= getSize() { // Max length of line
+//                    more += 1
+//                    f.append(element)
+//                    return true
+//                } else {
+//                    return false
+//                }
+//            }).joined(separator: " | ")
+//            if self.model.services.count - more == 0 {
+//                self.servicesLabel.text = servises
+//            } else {
+//                self.servicesLabel.text = servises + " | інше(+\(self.model.services.count - more))"
+//                f.append("Iнше(\(self.model.services.count - more))")
+//            }
+//            tagsListView.addTags([])
+//            tagsListView.addTags(f)
+//        }
         
-        tagsListView.addTags([])
-        var i = 0
-        var more = 0
-        var f: [String] = []
-        if tagsListView.isHidden {
-            tagsListView.isHidden = false
-            let servises = self.model.services.prefix(while: { element -> Bool in
-                if element.count > 30 {
-                    return true
-                }
-                i += 1 + element.count
-                if i <= getSize() { // Max length of line
-                    more += 1
-                    f.append(element)
-                    return true
-                } else {
-                    return false
-                }
-            }).joined(separator: " | ")
-            if self.model.services.count - more == 0 {
-                self.servicesLabel.text = servises
-            } else {
-                self.servicesLabel.text = servises + " | інше(+\(self.model.services.count - more))"
-                f.append("Iнше(\(self.model.services.count - more))")
-            }
-            tagsListView.addTags([])
-            tagsListView.addTags(f)
-        }
+        
     }
     
     private func textChanger() {

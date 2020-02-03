@@ -73,7 +73,7 @@ final class MainViewModel: MainViewModelType {
         serviceModels = []
         categories.categories.enumerated().forEach { category in
             let style = Style.setCellStyle(category: category.element)
-            let serviceType = ServiceTypeModel(name: category.element.name, image: style.0, backColor: style.1, services: category.element.list)
+            let serviceType = ServiceTypeModel(name: category.element.name, image: style.0, tagImage: style.1, backColor: style.2, services: category.element.list)
             serviceModels.append(serviceType)
         }
         

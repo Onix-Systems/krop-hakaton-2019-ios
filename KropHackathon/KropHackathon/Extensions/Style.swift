@@ -42,19 +42,19 @@ final class Style {
         static let navTitleFont = UIFont.sfRoundedHeavy(17)
     }
     
-    static func setCellStyle(category: Category) -> (String, UIColor) {
+    static func setCellStyle(category: Category) -> (String, String, UIColor) {
         if category.name.contains("льтразвук") {
-            return ("img_uzi", Color.uziPink)
+            return ("img_uzi", "tag_uzi", Color.uziPink)
         }
         if category.name.contains("ентген") {
-            return ("img_rentgen", Color.rengenBlue)
+            return ("img_rentgen", "tag_rengen", Color.rengenBlue)
         }
         if category.name.contains("ункц") {
-            return ("img_funct", Color.funcOrange)
+            return ("img_funct", "tag_funk", Color.funcOrange)
         }
         if category.name.contains("ндо") {
-            return ("img_endo", Color.endGreen)
+            return ("img_endo", "tag_endo", Color.endGreen)
         }
-        return ("img_all", Color.pinkDef)
+        return ("img_all", "", Color.pinkDef)
     }
 }

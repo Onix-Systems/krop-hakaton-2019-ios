@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -33,15 +33,14 @@
                                 </constraints>
                             </view>
                             <button alpha="0.65000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OfS-WO-tK1">
-                                <rect key="frame" x="0.0" y="64" width="68" height="59"/>
+                                <rect key="frame" x="20" y="64" width="28" height="28"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="59" id="P4S-Cp-hdj"/>
-                                    <constraint firstAttribute="width" secondItem="OfS-WO-tK1" secondAttribute="height" multiplier="68:59" id="RSJ-C2-oWT"/>
-                                    <constraint firstAttribute="width" constant="68" id="j9E-SX-Y0S"/>
+                                    <constraint firstAttribute="width" secondItem="OfS-WO-tK1" secondAttribute="height" multiplier="1:1" id="M8i-yX-lie"/>
+                                    <constraint firstAttribute="width" constant="28" id="Sve-GU-ffH"/>
                                 </constraints>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" image="closeBtnIcon">
+                                <state key="normal" image="ic_close">
                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -86,11 +85,11 @@
                             <constraint firstAttribute="bottom" secondItem="wlz-ss-tES" secondAttribute="bottom" id="MnM-NX-qH4"/>
                             <constraint firstItem="wlz-ss-tES" firstAttribute="width" secondItem="tll-co-7eH" secondAttribute="width" id="Q4q-cC-p1N"/>
                             <constraint firstItem="wlz-ss-tES" firstAttribute="top" secondItem="J71-Ym-ZyB" secondAttribute="bottom" constant="20" id="RtP-gG-REU"/>
-                            <constraint firstItem="OfS-WO-tK1" firstAttribute="leading" secondItem="tll-co-7eH" secondAttribute="leading" id="YSt-s9-11D"/>
                             <constraint firstItem="mjC-sY-jQT" firstAttribute="centerX" secondItem="PIN-UV-pdu" secondAttribute="centerX" id="kGP-aR-s0s"/>
                             <constraint firstItem="spl-LT-t3w" firstAttribute="height" secondItem="tll-co-7eH" secondAttribute="height" multiplier="0.07" constant="18.959999999999994" id="oU0-gf-FbS"/>
+                            <constraint firstItem="OfS-WO-tK1" firstAttribute="leading" secondItem="PIN-UV-pdu" secondAttribute="leading" constant="20" id="pkn-41-0Mc"/>
                             <constraint firstItem="wlz-ss-tES" firstAttribute="centerX" secondItem="tll-co-7eH" secondAttribute="centerX" id="syw-Hn-Pja"/>
-                            <constraint firstItem="tll-co-7eH" firstAttribute="top" secondItem="OfS-WO-tK1" secondAttribute="bottom" constant="-241" id="zdT-yc-KJp"/>
+                            <constraint firstItem="OfS-WO-tK1" firstAttribute="top" secondItem="PIN-UV-pdu" secondAttribute="top" constant="20" id="uZo-Nc-4oC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PIN-UV-pdu"/>
                     </view>
@@ -110,6 +109,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="closeBtnIcon" width="30" height="30"/>
+        <image name="ic_close" width="28" height="28"/>
     </resources>
 </document>
