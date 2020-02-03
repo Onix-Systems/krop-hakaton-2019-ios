@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <array key="SF-Pro-Rounded-Heavy.otf">
             <string>SFProRounded-Heavy</string>
-        </array>
-        <array key="SF-Pro-Rounded-Semibold.otf">
-            <string>SFProRounded-Semibold</string>
         </array>
     </customFonts>
     <scenes>
@@ -52,10 +49,9 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="xwp-a7-Idj"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uIN-Aa-WUL">
-                                <rect key="frame" x="237" y="120" width="157" height="40"/>
-                                <fontDescription key="fontDescription" name="SFProRounded-Semibold" family="SF Pro Rounded" pointSize="23"/>
-                                <state key="normal" title="About">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uIN-Aa-WUL">
+                                <rect key="frame" x="244" y="126" width="28" height="28"/>
+                                <state key="normal" image="ic_info">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -83,11 +79,11 @@
                             <constraint firstItem="v1t-jx-zZZ" firstAttribute="centerY" secondItem="UE2-gd-JfI" secondAttribute="centerY" id="Ae8-Bt-e8X"/>
                             <constraint firstItem="wH3-ZH-tAV" firstAttribute="top" secondItem="UE2-gd-JfI" secondAttribute="bottom" constant="25" id="DHx-w9-1AT"/>
                             <constraint firstItem="I7f-qX-JQs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="DfW-Xm-WCh"/>
-                            <constraint firstItem="wH3-ZH-tAV" firstAttribute="trailing" secondItem="uIN-Aa-WUL" secondAttribute="leading" constant="-5" id="EHB-Gm-Lkr"/>
+                            <constraint firstItem="uIN-Aa-WUL" firstAttribute="leading" secondItem="wH3-ZH-tAV" secondAttribute="trailing" constant="12" id="Uav-ml-NXg"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="I7f-qX-JQs" secondAttribute="trailing" id="Woo-eh-TmZ"/>
                             <constraint firstItem="UE2-gd-JfI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="XcZ-1N-QDu"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UE2-gd-JfI" secondAttribute="trailing" constant="15" id="ado-k5-vhG"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uIN-Aa-WUL" secondAttribute="trailing" constant="20" id="bLZ-be-zq7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="uIN-Aa-WUL" secondAttribute="trailing" constant="20" id="bLZ-be-zq7"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="v1t-jx-zZZ" secondAttribute="trailing" constant="5" id="iYh-BU-qeL"/>
                             <constraint firstItem="wH3-ZH-tAV" firstAttribute="leading" secondItem="UE2-gd-JfI" secondAttribute="leading" constant="5" id="jPO-bx-Koa"/>
                             <constraint firstItem="I7f-qX-JQs" firstAttribute="top" secondItem="UE2-gd-JfI" secondAttribute="bottom" constant="15" id="jvm-3P-cfA"/>
@@ -122,4 +118,7 @@
             <point key="canvasLocation" x="137.68115942028987" y="115.84821428571428"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ic_info" width="28" height="28"/>
+    </resources>
 </document>
