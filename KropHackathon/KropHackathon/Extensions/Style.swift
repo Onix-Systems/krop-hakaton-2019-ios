@@ -23,6 +23,7 @@ final class Style {
         static let alphaForClearColor: Float = 0
         static let alphaForFullColor: Float = 1
         static let alphaForShadow: Float = 0.14
+        static let mapButton = UIColor(red: 0.33, green: 0.71, blue: 0.78, alpha: 1.0)
         static let uziPink = UIColor(red: 0.62, green: 0.29, blue: 0.81, alpha: 1)
         static let rengenBlue = UIColor(red: 0.33, green: 0.71, blue: 0.78, alpha: 1)
         static let funcOrange = UIColor(red: 0.92, green: 0.45, blue: 0.28, alpha: 1)

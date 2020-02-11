@@ -59,7 +59,7 @@
                             </tableView>
                             <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J71-Ym-ZyB">
                                 <rect key="frame" x="107" y="269" width="200" height="40"/>
-                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.32549019607843138" green="0.71372549019607845" blue="0.77647058823529413" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="DXy-l0-h93"/>
                                     <constraint firstAttribute="width" constant="200" id="oE4-Nd-mbZ"/>

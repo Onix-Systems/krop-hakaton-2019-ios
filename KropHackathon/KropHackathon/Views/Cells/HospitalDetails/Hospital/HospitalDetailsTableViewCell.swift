@@ -40,6 +40,7 @@ final class HospitalDetailsTableViewCell: UITableViewCell {
     @IBOutlet private weak var infoTypeIcon: UIImageView!
     @IBOutlet private weak var infoTypeLabel: UILabel!
     @IBOutlet private weak var infoLabel: UILabel!
+    @IBOutlet weak var leadingSpaceDetailsView: NSLayoutConstraint!
     
     @IBOutlet private weak var imageWidthConstraint: NSLayoutConstraint!
     
@@ -53,7 +54,8 @@ final class HospitalDetailsTableViewCell: UITableViewCell {
     
     func configure(model: HospitalDetailsCellViewModelType) {
         imageWidthConstraint.constant = model.infoType == .none ? 0 : 20
-        
+        leadingSpaceDetailsView.constant = model.infoType == .none ? 0 : 10
+
         switch model.infoType {
         case .address:
             infoTypeIcon.image = Style.Images.locationIcon
