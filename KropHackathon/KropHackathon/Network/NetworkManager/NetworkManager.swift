@@ -18,7 +18,7 @@ enum Result<T> {
 final class NetworkManager {
     
     static let shared = NetworkManager()
-    fileprivate let path = "https://onix-systems-krop-hakaton-2019.staging.onix.ua/api/"
+    fileprivate let path = "https://medical.kr-rada.gov.ua/api/"
 
     func getHospital(id: String, complition: @escaping (Result<Data>) -> Void) {
         let endpoint = (path + "hospital/\(id)")
